@@ -1,0 +1,62 @@
+nav {
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    color: #282E3C;
+    padding: 20px;
+    position: sticky;
+    border-bottom: 2px solid #C2BABA;
+    position: sticky;
+}
+        
+a {
+  font-weight: 500;
+  text-decoration: none;
+  color: #282E3C;
+  font-family: 'Manrope';
+  margin-right: 30px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+a:visited {
+  color: #282E3C;
+}
+
+@media only screen and (min-width: 650px) {
+  nav {
+    flex-direction: row;
+    height: 30hv;
+    width: auto;
+  }
+}
+
+.navdiv {
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  justify-content: center;
+  height: 15hv;
+  
+  @media (max-width: 650px) {
+      flex-direction: column;
+  }
+}
+
+.navdiv:hover {
+  background-color: #CDD6E9;
+  opacity: 0.25;
+}
+
+.phoneAndWorkingHours{
+  @media (max-width: 650px) {
+      display: none;
+  }
+}
+
+p {
+  font-weight: 400;
+}

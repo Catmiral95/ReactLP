@@ -2,6 +2,19 @@
   --mainGrey: #f2f2f2;
 }
 
+* {
+  color: #282E3C;
+  font-family: 'Manrope', sans-serif;
+}
+
+*, *::before, *,::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.5;
+    text-align: center;
+  }
+
 body {
   background: var(--mainGrey);
   margin: 0;
