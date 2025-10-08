@@ -5,6 +5,7 @@ import Navbar from "./components/navbar/Navbar.jsx";
 import LegalFees from "./components/legalFees/LegalFees.jsx";
 import Message from "./components/messageSentNotification/message.jsx";
 import Cases from "./components/cases/cases.jsx";
+import Contacts from "./components/contacts/Contacts.jsx";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <LegalFees />
       <Cases />
       <Message />
+      <Contacts />
     </div>
   );
 }

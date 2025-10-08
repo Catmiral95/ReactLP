@@ -1,5 +1,5 @@
 .caseName {
-    background-color: #F2F2F2;
+    background-color: var(--main);
     width: 130px;
     padding: 5px;
     border: 1px solid red;

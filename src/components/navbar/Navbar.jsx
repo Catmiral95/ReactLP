@@ -1,10 +1,12 @@
 import './navbar.css';
-import dataNavbar from '../../data/dataNavbar.json';    
+import dataNavbar from '../../data/dataNavbar.json';
+import { useState } from "react";  
 
 export default function Navbar() {
   return (
+    <header>
+        <img src='/images/logo.svg'></img>
         <nav>
-            <img src='/images/logo.svg'></img>
             {dataNavbar.map((item, index) => (
                 <div className='navdiv'key={index}>
                     <a href={item.link}>
@@ -17,8 +19,9 @@ export default function Navbar() {
                         </picture>
                     )}
                 </div>
-            ))}
-            <div className='phoneAndWorkingHours'>
+            ))} 
+        </nav>
+        <div className='phoneAndWorkingHours'>
                 <p>
                     пн-пт 9:00-18:00
                 </p>
@@ -26,6 +29,6 @@ export default function Navbar() {
                     +7(961)346-70-77
                 </p>
             </div>
-        </nav>
+    </header>
     );
 }
