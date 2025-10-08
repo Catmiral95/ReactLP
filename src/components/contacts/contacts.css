@@ -1,0 +1,45 @@
+.readFeedback > p {
+    color: #DD9859;
+}
+
+#contactsContainer {
+    padding: 5vw;
+    gap: 1rem;
+}
+
+.info, form {
+    gap: 0.35lh;
+align-items: self-start;
+    width: 100%;
+}
+
+.info {
+    width: 50%;
+}
+
+.info > div {
+    gap: 1rem;
+}
+
+input, textarea, select {
+    width: 75%;
+    border: 0px;
+    border-bottom: 1px solid #112134;
+    height: 1.5lh;
+}
+
+textarea {
+    height: 5lh;
+}
+
+label {
+    width: 75%;
+    text-align: left;
+    padding-left: 1rem;
+}
+
+input, textarea, select, input::placeholder, 
+textarea::placeholder{
+    text-align: left;
+    padding-left: 1rem;
+}

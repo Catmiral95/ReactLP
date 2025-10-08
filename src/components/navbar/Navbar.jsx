@@ -1,14 +1,34 @@
+import './navbar.css';
+import dataNavbar from '../../data/dataNavbar.json';
+import { useState } from "react";  
+
 export default function Navbar() {
-  const navbarStyle = {
-    display: 'flex', 
-    flexDirection: 'row',
-    gap: '10px'
-  }
-  return(<div style={navbarStyle}>
-    <a>Главная</a>
-    <a>О нас</a>
-    <a>Услуги</a>
-    <a>Кейсы</a>
-    <a>Контакты</a>
-    </div>);
+  return (
+    <header>
+        <img src='/images/logo.svg'></img>
+        <nav>
+            {dataNavbar.map((item, index) => (
+                <div className='navdiv'key={index}>
+                    <a href={item.link}>
+                        {item.name}
+                    </a>
+                    {index !== dataNavbar.length - 1 && (
+                        <picture>
+                            <source media="(max-width: 650px)" srcSet="/images/horizontalDash.svg" />
+                            <img src="/images/verticalDash.svg"/>
+                        </picture>
+                    )}
+                </div>
+            ))} 
+        </nav>
+        <div className='phoneAndWorkingHours'>
+                <p>
+                    пн-пт 9:00-18:00
+                </p>
+                <p>
+                    +7(961)346-70-77
+                </p>
+            </div>
+    </header>
+    );
 }

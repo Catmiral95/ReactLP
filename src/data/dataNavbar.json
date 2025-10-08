@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Главная",
+    "link": "#heroPage"
+  },
+  {
+    "name": "О нас",
+    "link": "#about"
+  },
+  {
+    "name": "Услуги",
+    "link": "#legalFees"
+  },
+  {
+    "name": "Кейсы",
+    "link": "#cases"
+  },
+  {
+    "name": "Контакты",
+    "link": "#contacts"
+  }
+]   
