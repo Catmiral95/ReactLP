@@ -24,7 +24,7 @@ nav {
     color: #282E3C;
     padding: 20px;
 }
-        
+   
 a {
   font-weight: 500;
   text-decoration: none;
@@ -35,8 +35,12 @@ a {
   cursor: pointer;
 }
 
-a:visited {
-  color: #282E3C;
+.navhr {
+  height: 2px;
+  width: 50px;
+  border: none;
+  border-bottom: 1px solid #9a9494;
+  text-align: center;
 }
 
 @media only screen and (min-width: 650px) {
@@ -53,6 +57,14 @@ a:visited {
     border-right: 0px;
     height: 100px;
     max-width: 100vw;
+  }
+
+  .navhr {
+    height: 50px;
+    width: 2px;
+    border: none;
+    border-left: 1px solid #9a9494;
+    text-align: center;
   }
 }
 

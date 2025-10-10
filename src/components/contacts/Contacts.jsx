@@ -39,8 +39,7 @@ export default function Contacts(){
     return(
     <>
         <h1>Контакты</h1>
-        <img src="/images/diamondDecoration.svg" alt="декоративный элемент"/>
-        
+        <hr className="diamondhr"/> 
         <div className="container" id="contactsContainer">
                 <div className="info col">
                     <div className="row">

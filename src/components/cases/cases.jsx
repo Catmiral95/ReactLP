@@ -5,8 +5,8 @@ export default function Cases() {
   return(
     <section id="#cases">
       <h1>Кейсы</h1>
+      <hr className="diamondhr"/>
       <p>Дела, которые мы вели и успешно закрыли. Реальные примеры из нашей практики.</p>
-      <img src="/images/diamondDecoration.svg" alt="diamond divider"/>
       {cases.map((item, index) => (
         <div className="caseDiv">
             <img src={item.picture} alt={item.name}></img>

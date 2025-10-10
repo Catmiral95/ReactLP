@@ -6,7 +6,7 @@ export default function LegalFees() {
   return(
       <section id='legalFees' className='col'>
         <h1>Услуги</h1>
-        <img src='/images/diamondDecoration.svg'></img>
+        <hr className="diamondhr"/>
         <p>Мы оказываем полный спектр юридических услуг. <b>Консультация бесплатна.</b></p>
         <div className='listOfFees col'>
           {feesList.map((item, index) => (

@@ -1,6 +1,6 @@
 import "./App.css";
 import About from "./components/about/About.jsx";
-import Consent from "./components/consent/Consent.jsx";
+/*import Consent from "./components/consent/Consent.jsx";*/
 import Navbar from "./components/navbar/Navbar.jsx";
 import LegalFees from "./components/legalFees/LegalFees.jsx";
 import Message from "./components/messageSentNotification/message.jsx";

@@ -13,10 +13,7 @@ export default function Navbar() {
                         {item.name}
                     </a>
                     {index !== dataNavbar.length - 1 && (
-                        <picture>
-                            <source media="(max-width: 650px)" srcSet="/images/horizontalDash.svg" />
-                            <img src="/images/verticalDash.svg"/>
-                        </picture>
+                        <hr className="navhr"/>
                     )}
                 </div>
             ))} 

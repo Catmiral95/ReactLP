@@ -1,10 +1,7 @@
-#legalFees {
-    gap: 15px;
-}
 
 .listOfFees {
     gap: 35px;
-    
+    margin-top: 1rem;
     @media (min-width: 650px) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
