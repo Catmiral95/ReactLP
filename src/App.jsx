@@ -17,6 +17,7 @@ function App() {
       <Cases />
       <Message />
       <Contacts />
+      <Consent />
     </div>
   );
 }
