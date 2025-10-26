@@ -2,9 +2,9 @@ import './message.css'
 
 export default function Message(){
     return(
-        <div className="message">
-            <img src='/images/tickMark.svg'></img>
+        <dialog className="message">
+            <img src='/images/tickMark.svg' alt='Галочка'></img>
             <p>Заявка отправлена</p>
-        </div>
+        </dialog>
     )
 }

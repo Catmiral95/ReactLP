@@ -1,28 +1,56 @@
 import './legalFees.css';
-import feesList from '../../data/dataFees.json'
+import feesList from '../../data/dataFees.json';
+import { useState } from 'react';
 
-export default function LegalFees() {
+// Компонент для отдельной карточки услуги
+function ServiceCard({ service }) {
+  const [showDescription, setShowDescription] = useState(false);
 
-  return(
-      <section id='legalFees' className='col'>
-        <h1>Услуги</h1>
-        <hr className="diamondhr"/>
-        <p>Мы оказываем полный спектр юридических услуг. <b>Консультация бесплатна.</b></p>
-        <div className='listOfFees col'>
-          {feesList.map((item, index) => (
-          <div className="feediv" key={index}>
-            <div className="col thumbnail">
-              <img src={item.icon} alt={item.name}></img>
-              <h3>{item.name}</h3>
-              <button name="LearnMore" className='learnMoreFees'>Узнать больше</button>
-            </div>
-              <div className='description hidden'>
-                <pre>{item.description}</pre>
-                <img src='/images/closeSign.svg' />
-              </div>
-          </div>
-        ))}
+  return (
+    <div className='card'>
+      {!showDescription ? (
+        // Показывает название и картинку
+        <div className="col card-front">
+          <img src={service.icon} alt={service.name} style={service.cropStyle}/>
+          <h3>{service.name}</h3>
+          <button 
+            name="LearnMore" 
+            className='learnMoreFees'
+            onClick={() => setShowDescription(true)}
+          >
+            Узнать больше
+          </button>
         </div>
-      </section>
+      ) : (
+        // Показывает описание
+        <div className='description'>
+          <pre>{service.description}</pre>
+          <button 
+            className="closeCross"
+            onClick={() => setShowDescription(false)}>
+            <img src='/images/closeSign.svg' alt="Закрыть" />
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// Основной компонент
+export default function LegalFees() {
+  return (
+    <section id='legalFees' className='col'>
+      <h1>Услуги</h1>
+      <p>
+        Мы оказываем полный спектр юридических услуг.
+        <br />
+        <b>Консультация бесплатна.</b>
+      </p>
+      <hr className="diamondhr"/>
+      
+      <div className="listOfFees col">
+        {feesList.map(service => (<ServiceCard key={service.id} service={service} />))}
+      </div>
+    </section>
   );
 }

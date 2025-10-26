@@ -1,22 +1,27 @@
 [
   {
     "name": "Главная",
-    "link": "#heroPage"
+    "link": "#heroPage",
+    "id":"1"
   },
   {
     "name": "О нас",
-    "link": "#about"
+    "link": "#about",
+    "id":"2"
   },
   {
     "name": "Услуги",
-    "link": "#legalFees"
+    "link": "#legalFees",
+    "id":"3"
   },
   {
     "name": "Кейсы",
-    "link": "#cases"
+    "link": "#cases",
+    "id":"4"
   },
   {
     "name": "Контакты",
-    "link": "#contacts"
+    "link": "#contacts",
+    "id":"5"
   }
 ]   

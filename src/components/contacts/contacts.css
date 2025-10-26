@@ -1,31 +1,36 @@
-.readFeedback > p {
+.readFeedback p {
     color: #DD9859;
 }
 
 #contactsContainer {
     padding: 5vw;
-    gap: 1rem;
 }
 
 .info, form {
     gap: 0.35lh;
-align-items: self-start;
+    align-items: self-start;
     width: 100%;
+    margin-bottom: 2lh;
 }
 
-.info {
-    width: 50%;
-}
+.info, .formDiv {
+    @media (min-width: 650px) {
+            width: 50%;
+}}
 
 .info > div {
     gap: 1rem;
 }
 
 input, textarea, select {
-    width: 75%;
+    width: 100%;
     border: 0px;
     border-bottom: 1px solid #112134;
     height: 1.5lh;
+
+    @media (min-width: 650px) {
+        width: 75%;
+    }
 }
 
 textarea {
@@ -38,8 +43,24 @@ label {
     padding-left: 1rem;
 }
 
-input, textarea, select, input::placeholder, 
+input, textarea, select, option, input::placeholder, 
 textarea::placeholder{
     text-align: left;
-    padding-left: 1rem;
+    padding: 1rem;
 }
+
+.disclaimer {
+    font-size: small;
+    width: 75%;
+}
+
+.disclaimer, .formDiv p {
+    text-align: left;
+}
+
+.disclaimer a {
+    color: #456D8C;
+    text-decoration: underline;
+    margin: 0 0;
+}
+

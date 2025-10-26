@@ -1,74 +1,112 @@
 .cns-area {
-  width: 100%;
+  width: 95%;
   height: 80px;
   display: flex;
   justify-content: center;
+  align-self: center;
   position: fixed;
   z-index: 1000;
   top: 0;
   left: 0;
   overflow: auto;
-
-  /* justify-content: center; */
 }
 
 .consent {
+  min-width: 250px;
+  max-width: 750px;
+  width: 50%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: fixed;
   z-index: 20;
-  bottom: 0;
-  width: 1400px;
-  height: 74px;
-  background-color: rgba(85, 90, 94, 0.5);
-  box-shadow: 0 4px 8px rgba(17, 17, 17, 0.3);
+  bottom: 1lh;
+  background-color: #2c2f3ceb;
+  box-shadow: 0 4px 8px rgba(17, 17, 17, 0.5);
+  border-radius: 5px;
+  padding: 25px 30px;
+
+  @media (min-width: 650px) {
+      width: 80%;
+      flex-direction: row;
+  }
 }
+
 .consent-content {
   display: flex;
-  width: 1200px;
-  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  gap: 1rem;
   align-items: center;
+  justify-content: space-around;
+  text-align: justify;
+
+  @media (max-width: 650px) {
+      flex-direction: column;
+  }
 }
+
 .poltext {
   color: #f2f2f2;
 }
 
 .consent-buttons {
   display: flex;
-  width: 240px;
-  height: 60px;
+  flex-direction: row;
   justify-content: space-between;
+  gap: 1rem;
   align-items: center;
+
+  @media (max-width: 650px) {
+      flex-direction: column;
+  }
 }
 
-.cns-btn-1 {
-  color: #f2f2f2;
+#acceptButton, #privpolicy {
   cursor: pointer;
-  background-color: #7d8fb5;
-  width: 115px;
-  height: 25px;
-  border: 1px solid #7d8fb5;
-  border-radius: 2px;
-  box-shadow: 0 4px 8px rgba(17, 17, 17, 0.3);
+  min-width: 125px;
+  padding: 5px 20px;
+  border-radius: 5px;
+  position: relative;
+  border: none;
 }
 
-.cns-btn-2 {
-  color: #fffbfb;
-  cursor: pointer;
-  background-color: #d28757;
-  width: 115px;
-  height: 25px;
-  border: 1px solid #d28757;
-  border-radius: 2px;
-  box-shadow: 0 4px 8px rgba(17, 17, 17, 0.3);
+#acceptButton {
+  background-color: white;
+  color:black;
+}
+
+#privpolicy {
+  background-color: black;
+  color: white;
+}
+
+#acceptButton::before, #privpolicy::before {
+  content: '';
+  position: absolute;
+  top: -4px;  /* Смещение вверх */
+  left: -4px; /* Смещение влево */
+  right: 4px;  /* Компенсация смещения */
+  bottom: 4px; /* Компенсация смещения */
+  border-radius: 5px;
+  z-index: 21; /* Чтобы рамка была под контентом */
+  pointer-events: none; /* Чтобы не мешала кликам */
+}
+
+#acceptButton::before {
+  border: 2px solid black;
+}
+
+#privpolicy::before {
+  border: 2px solid #ffffff;
 }
 
 .cns-cross {
   display: block;
   position: absolute;
-  /* color: #f2f2f2; */
   cursor: pointer;
-  top: 1px;
+  top: 7px;
   right: 10px;
 }
+

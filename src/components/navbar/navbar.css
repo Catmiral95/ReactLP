@@ -2,19 +2,23 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   height: 100vh;
   min-width: 75px;
   max-width: 150px;
-  background-color: var(--main);
-  border-right: 2px solid #C2BABA;
+  background-color: var(--secondary);
+  border-right: 2px solid #d1d8e8;
   border-bottom: 0px;
-  position: sticky;
-  top:0;
-  left: 0;
+  position: absolute;
+  top: 0;
+  transition: 0.3s;
+
+    @media only screen and (min-width: 650px) {
+      position: sticky;
+      opacity: 0.9;
+    }
 }
 
-nav {
+header nav {
     width: 50px;
     display: flex;
     flex-direction: column;
@@ -28,7 +32,7 @@ nav {
 a {
   font-weight: 500;
   text-decoration: none;
-  color: #282E3C;
+  color: #d1d8e8;
   font-family: 'Manrope';
   margin-right: 30px;
   margin-left: 10px;
@@ -45,7 +49,7 @@ a {
 
 @media only screen and (min-width: 650px) {
   header,
-  nav {
+  header nav {
     flex-direction: row;
     width: auto;
   }
@@ -53,17 +57,17 @@ a {
   header {
     justify-content: space-around;
     width: 10wv;
-    border-bottom: 2px solid #C2BABA;
+    border-bottom: 2px solid #d1d8e8;
     border-right: 0px;
     height: 100px;
     max-width: 100vw;
   }
 
   .navhr {
-    height: 50px;
+    height: 7vh;
     width: 2px;
     border: none;
-    border-left: 1px solid #9a9494;
+    border-left: 1px solid #766D6D;
     text-align: center;
   }
 }
@@ -73,7 +77,8 @@ a {
   flex-direction: row; 
   align-items: center;
   justify-content: center;
-  height: 15hv;
+  padding: 0px;
+  height: 7vh;
   
   @media (max-width: 650px) {
       flex-direction: column;
@@ -81,8 +86,12 @@ a {
 }
 
 .navdiv:hover {
-  background-color: #CDD6E9;
-  opacity: 0.25;
+    border-bottom: 4px solid #7ba2f77b;
+    margin-bottom: -4px;
+}
+
+.navdiv a {
+  margin-right: 1rem;
 }
 
 .phoneAndWorkingHours{
@@ -91,6 +100,15 @@ a {
   }
 }
 
-.phoneAndWorkingHours > p {
+.phoneAndWorkingHours p {
   font-weight: 500;
+  color: #d1d8e8;
+}
+
+.headerShort {
+  transition: 0.3s;
+  @media (max-width: 650px) {
+    max-height: 10vh;
+    padding: 5px;
+  }
 }

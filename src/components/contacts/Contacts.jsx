@@ -1,7 +1,61 @@
 import './contacts.css'
 import { useState } from 'react';
 
+
 export default function Contacts(){
+    return(
+    <section id="contacts">
+        <h1>Контакты</h1>
+        <div className="container" id="contactsContainer">
+                <div className="info col">
+                    <div className="row">
+                        {/*Тут должна будет быть карта яндекса*/}
+                        <img src="/images/address.svg" alt="адрес"/>
+                        <p style={{display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'flex-start'
+                        }}>428003, Чувашская Республика, <br/> г. Чебоксары, ул. Афанасьева, д. 2, оф. 56.</p>
+                    </div>
+                    <div className="row">
+                        <img src="/images/workingHours.svg" alt="часы работы"/>
+                        <p>пн-пт 9:00-18:00</p>
+                    </div>
+                    <div className="row">
+                        <img src="/images/phone.svg" alt="телефон"/>
+                        <p>+7(961)346-70-77</p>
+                    </div>
+                    <div className='row'>
+                        <img src="/images/mail.svg"/>
+                        <p>liderprava21@ya.ru</p>
+                    </div>
+                    <div className="row">
+                        <img src="/images/owner.svg" alt="владелец"/>
+                        <p>ИП Артемьев Артём Сергеевич</p>
+                    </div>
+                <div className="readFeedback row">
+                    <p>Читайте отзывы о нас: </p>
+                    <a href="https://yandex.ru/maps/org/lider_prava/34845163518/reviews/?ll=50.123226%2C55.641204&z=7">
+                        <img src="/images/yandex.svg" alt="Яндекс отзывы"/>
+                    </a>
+                    <a href="https://2gis.ru/cheboksary/firm/70000001053905641/tab/reviews">
+                        <img src="/images/2gis.svg" alt="2gis отзывы"/>
+                    </a>
+                </div>
+            </div>
+
+            <div className="col formDiv">
+                <h2>Связаться с нами</h2>
+                <br />
+                <p>Заполните форму, чтобы записаться на бесплатную консультацию или задать вопрос.</p>
+                <hr className="diamondhr" style={{"margin-top":"0px"}}/>
+                <Form />
+            </div>
+        </div>
+    </section>)
+}
+
+export function Form(){
+    
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
     const [isValidPhone, setIsValidPhone] = useState(true);
@@ -37,39 +91,7 @@ export default function Contacts(){
     };
     
     return(
-    <>
-        <h1>Контакты</h1>
-        <hr className="diamondhr"/> 
-        <div className="container" id="contactsContainer">
-                <div className="info col">
-                    <div className="row">
-                        {/*Тут должна будет быть карта яндекса*/}
-                        <img src="/images/address.svg" alt="адрес"/>
-                        <p>428003, Чувашская Республика, г. Чебоксары, ул. Афанасьева, д. 2, оф. 56.</p>
-                    </div>
-                    <div className="row">
-                        <img src="/images/workingHours.svg" alt="часы работы"/>
-                        <p>пн-пт 9:00-18:00</p>
-                    </div>
-                    <div className="row">
-                        <img src="/images/phone.svg" alt="телефон"/>
-                        <p>+7(961)346-70-77</p>
-                    </div>
-                    <div className="row">
-                        <img src="/images/owner.svg" alt="владелец"/>
-                        <p>ИП Артемьев Артём Сергеевич</p>
-                    </div>
-                <div className="readFeedback row">
-                    <p>Читайте отзывы о нас: </p>
-                    <a href="#"><img src="/images/yandex.svg" alt="яндекс отзывы"/></a>
-                    <a href="#"><img src="/images/2gis.svg" alt="2gis отзывы"/></a>
-                </div>
-            </div>
-
-            <div className="col contactsDiv">
-                <h2>Связаться с нами</h2>
-                <p>Заполните форму, чтобы записаться на бесплатную консультацию или задать вопрос.</p>
-                <form className="col">
+            <form className="col">
                     <label htmlFor="name">Ф.И.О.
                         <span className='asterisk'>*</span>
                     </label>
@@ -116,6 +138,7 @@ export default function Contacts(){
 
                     <label htmlFor="topic">Тема сообщения</label>
                     <select id="messageTopic" name="topic">
+                        <option value="" disabled selected>Выберите тему сообщения</option>
                         <option value="Запись на прием">Запись на прием</option>
                         <option value="Оформление претензии">Оформление претензии</option>
                         <option value="Представительство в суде">Представительство в суде</option>
@@ -130,10 +153,10 @@ export default function Contacts(){
                         name="message"
                         placeholder="Текст сообщения"
                     />
-                    
+                    <p className="disclaimer">Нажимая кнопку, я подтверждаю, что ознакомлен(а) 
+                        и принимаю условия<a href="#"> Политики Конфиденциальности </a>
+                        и соглашаюсь на <a href="#">обработку персональных данных</a>.</p>
                     <button className="buttonGen" type="submit" name="submit">ОТПРАВИТЬ</button>
-                </form>
-            </div>
-        </div>
-    </>)
-}
+            </form>
+            )
+        }

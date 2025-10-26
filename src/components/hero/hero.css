@@ -1,0 +1,23 @@
+.heroMain {
+    background-image: url('/public/images/justice_backs.jpg');
+    height: 100vh;
+    background-size: cover;      /* Scales to cover entire element */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+}
+
+#consultButton{
+    width: 75%;
+    height: 3lh;
+    font-size: larger;
+    font-weight: 500;
+    border: none;
+
+    @media (min-width: 650px){
+        max-width: 545px;
+    }
+}
