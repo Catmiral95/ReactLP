@@ -2,26 +2,26 @@
   {
     "name": "Главная",
     "link": "#heroPage",
-    "id":"1"
+    "id":1
   },
   {
     "name": "О нас",
     "link": "#about",
-    "id":"2"
+    "id":2
   },
   {
     "name": "Услуги",
     "link": "#legalFees",
-    "id":"3"
+    "id":3
   },
   {
     "name": "Кейсы",
     "link": "#cases",
-    "id":"4"
+    "id":4
   },
   {
     "name": "Контакты",
     "link": "#contacts",
-    "id":"5"
+    "id":5
   }
 ]   

@@ -10,13 +10,17 @@ function CaseCard({ props }){
   }
 
   return(
-    <div className="caseCard col">
-      <div className='illustrationCase'><p className="caseName">{props.name}</p>
-      <img src={props.picture}/></div>
+    <div className="caseCard container">
+
+      <div className='illustrationCase col'>
+        <img src={props.picture} alt={`Дело ${props.id}`}/>
+        <h4>{`Дело ${props.id}`}</h4>
+      </div>
+
       {!showFullCase ? 
       ( 
         //показывает только половину текста
-        <>
+        <div className="textCase col">
           <p>{textCut(props.text.case)}</p>
           <button
             name='read_more'
@@ -24,16 +28,16 @@ function CaseCard({ props }){
             onClick={() => setShowFullCase(true)}>
               Читать дальше
             </button>
-          </>
+          </div>
 
       ):( 
         //показывает текст кейса полностью
-        <>
+        <div className="textCase col">
           <p>{props.text.case}</p>
           <br/>
           <p>{props.text.result}</p>
           <button className="buttonGen" onClick={() => setShowFullCase(false)}>скрыть</button>
-        </>
+        </div>
       )}
     </div>
   )

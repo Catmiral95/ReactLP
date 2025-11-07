@@ -55,24 +55,22 @@ export default function Contacts(){
 }
 
 export function Form(){
-    
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
     const [isValidPhone, setIsValidPhone] = useState(true);
     const [isValidEmail, setIsValidEmail] = useState(true);
+    const [submitAnimation, setSubmitAnimation] = useState({});
 
-  const handleEmailChange = (e) => {
-    const value = e.target.value;
-    setEmail(value);
-
-    // Валидация email
-    if (value === "") {
-      setIsValidEmail(true); // Пустое поле - валидно
-    } else {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      setIsValidEmail(emailRegex.test(value));
+  const animateSubmit = () => {
+    setSubmitAnimation({
+      animation: ' fly 0.6s ease-in forwards',
+      pointerEvents: 'none'
     }
-  };
+    ); 
+    setTimeout(() => {
+    setSubmitAnimation({});
+  }, 600);
+};  
 
   const handlePhoneChange = (e) => {
     const value = e.target.value;
@@ -128,6 +126,7 @@ export function Form(){
 
       if (data.success) {
         setStatus("Сообщение успешно отправлено!");
+        animateSubmit();
         setFormData({ name: "", phone: "", email: "", topic: "", message: "" }); // Очистить форму
       } else {
         setStatus(`Ошибка: ${data.message}`);
@@ -138,50 +137,7 @@ export function Form(){
     }
   };
 
-  return (
-    <>
-      <h1>Контакты</h1>
-      <img src="/images/diamondDecoration.svg" alt="декоративный элемент" />
-
-      <div className="container" id="contactsContainer">
-        <div className="info col">
-          <div className="row">
-            {/*Тут должна будет быть карта яндекса*/}
-            <img src="/images/address.svg" alt="адрес" />
-            <p>
-              428003, Чувашская Республика, г. Чебоксары, ул. Афанасьева, д. 2,
-              оф. 56.
-            </p>
-          </div>
-          <div className="row">
-            <img src="/images/workingHours.svg" alt="часы работы" />
-            <p>пн-пт 9:00-18:00</p>
-          </div>
-          <div className="row">
-            <img src="/images/phone.svg" alt="телефон" />
-            <p>+7(961)346-70-77</p>
-          </div>
-          <div className="row">
-            <img src="/images/owner.svg" alt="владелец" />
-            <p>ИП Артемьев Артём Сергеевич</p>
-          </div>
-          <div className="readFeedback row">
-            <p>Читайте отзывы о нас: </p>
-            <a href="#">
-              <img src="/images/yandex.svg" alt="яндекс отзывы" />
-            </a>
-            <a href="#">
-              <img src="/images/2gis.svg" alt="2gis отзывы" />
-            </a>
-          </div>
-        </div>
-
-        <div className="col contactsDiv">
-          <h2>Связаться с нами</h2>
-          <p>
-            Заполните форму, чтобы записаться на бесплатную консультацию или
-            задать вопрос.
-          </p>
+  return (  
           <form onSubmit={handleSubmit} className="col">
             <label htmlFor="name">
               Ф.И.О.
@@ -204,7 +160,8 @@ export function Form(){
             <input
               id="phone"
               name="phone"
-              type="text"
+              type="tel"
+              pattern="+[7]{1}\([0-9]{3}\)-[0-9]{3}-[0-9]{2}-[0-9]{2}"
               placeholder="+7(900)123-45-67"
               value={formData.phone}
               onChange={handleChange}
@@ -239,8 +196,7 @@ export function Form(){
               name="topic"
               type="topic"
               value={formData.topic}
-              onChange={handleChange}
-            >
+              onChange={handleChange}>
               <option value="Запись на прием">Запись на прием</option>
               <option value="Оформление претензии">Оформление претензии</option>
               <option value="Представительство в суде">
@@ -265,15 +221,33 @@ export function Form(){
               required
             />
 
-            <button className="buttonGen" type="submit" name="submit">
-              ОТПРАВИТЬ
+            <button type="submit" 
+                    name="submit" 
+                    className="buttonGen submitButton"
+                    >
+              <div className={`svg-wrapper`} style={submitAnimation}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                >
+                  <path fill="none" d="M0 0h24v24H0z"></path>
+                  <path
+                    fill="white"
+                    d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                  ></path>
+                  </svg>
+                  </div>
+              <span style={submitAnimation}>ОТПРАВИТЬ</span>
             </button>
+            <p>{status}</p>
+            <small>
+              Нажимая кнопку, я подтверждаю, 
+              что ознакомлен(а) и принимаю условия 
+              <a href="#" style={{color: "royalblue"}}>Политики Конфиденциальности</a> и соглашаюсь 
+              на <a href='#' style={{color: "royalblue"}}>обработку персональных данных</a>.
+              </small>
           </form>
-          {status && (
-            <p style={{ marginTop: "15px", fontWeight: "bold" }}>{status}</p>
-          )}
-        </div>
-      </div>
-    </>
-  );
+  )
 }

@@ -13,5 +13,6 @@ export default function About() {
     <h2>Наши юристы</h2>
       <p>Наши опытные юристы готовы ответить на все ваши вопросы.</p>
       <hr className="diamondhr"/>
+      <br />
   </section>);
 }
