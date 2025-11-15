@@ -25,7 +25,7 @@ export default function Footer() {
               </div>
               <div className="row">
                   <img src="/images/phoneW.svg" alt="телефон"/>
-                  <p>+7(961)346-70-77</p>
+                  <a href='tel:+79613467077' style={{textDecoration:'none'}}>+7(961)346-70-77</a>
               </div>
               <div className='row'>
                         <img src="/images/mailW.svg"/>

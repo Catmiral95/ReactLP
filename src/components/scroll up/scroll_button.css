@@ -1,0 +1,15 @@
+.scroll-btn {
+    position: sticky;
+    top: 85vh;
+    left: 90vw;
+    z-index: 1000;
+    text-decoration: none;
+    padding: 10px 30px;
+    font-size: xxx-large;
+}
+
+.scroll-btn img {
+    transform: scale(4);
+    background-color: #777c877a;
+    border-radius: 50%;
+}

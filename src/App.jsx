@@ -1,5 +1,5 @@
 import "./App.css";
-import Header from "./components/header/Header.jsx"
+import Header from "./components/header/HeaderNavbar.jsx"
 import About from "./components/about/About.jsx";
 import LegalFees from "./components/legalFees/LegalFees.jsx";
 import Cases from "./components/cases/cases.jsx";
@@ -9,7 +9,6 @@ import Consent from "./components/consent/Consent.jsx";
 import Hero from "./components/hero/Hero.jsx";
 import Jurists from "./components/jurists/Jurists.jsx";
 import { useState, useEffect } from "react";
-
 
 function App() {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -26,8 +25,8 @@ function App() {
 
   return (
     <>
-    <Header />
-    <main style={{"margin":"1rem"}}>
+    <Header windowWidth={windowWidth} />
+    <main>
       <Hero />
       <About />
       <Consent />

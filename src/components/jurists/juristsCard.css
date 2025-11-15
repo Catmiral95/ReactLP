@@ -4,12 +4,16 @@
 }
 
 .chevronContainer {
-    gap: 75vw;
+    gap: 70vw;
     margin-top: 1lh;
     align-items: center;
     justify-content: baseline;
     position: absolute;
     top: 50%;
+
+    @media (max-width: 1400px){
+        gap: 35vw;
+    }
 }
 
 .staffCard {

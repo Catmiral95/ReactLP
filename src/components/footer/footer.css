@@ -86,6 +86,10 @@ footer img:hover, footer nav div a:hover {
     transition: 0.3s;
 }
 
+footer div a{
+    text-decoration: none;
+}
+
 footer div a:hover {
     filter: drop-shadow(0px 0px 3px #98aedb);
     transition: 0.3s;

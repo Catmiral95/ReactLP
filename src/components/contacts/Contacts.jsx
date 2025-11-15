@@ -22,7 +22,7 @@ export default function Contacts(){
                     </div>
                     <div className="row">
                         <img src="/images/phone.svg" alt="телефон"/>
-                        <p>+7(961)346-70-77</p>
+                        <a href='tel:+79613467077' style={{textDecoration:'none'}}>+7(961)346-70-77</a>
                     </div>
                     <div className='row'>
                         <img src="/images/mail.svg"/>
@@ -239,13 +239,13 @@ export function Form(){
                   ></path>
                   </svg>
                   </div>
-              <span style={submitAnimation}>ОТПРАВИТЬ</span>
+              <span style={submitAnimation}>отправить</span>
             </button>
             <p>{status}</p>
             <small>
               Нажимая кнопку, я подтверждаю, 
               что ознакомлен(а) и принимаю условия 
-              <a href="#" style={{color: "royalblue"}}>Политики Конфиденциальности</a> и соглашаюсь 
+               <a href="#" style={{color: "royalblue"}}> Политики Конфиденциальности</a> и соглашаюсь 
               на <a href='#' style={{color: "royalblue"}}>обработку персональных данных</a>.
               </small>
           </form>

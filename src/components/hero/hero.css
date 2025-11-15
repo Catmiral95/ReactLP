@@ -10,14 +10,37 @@
     bottom: -20px;
 }
 
-#consultButton{
+.contact-hero-button {
     width: 75%;
     height: 3lh;
     font-size: larger;
     font-weight: 500;
     border: none;
+    border-radius: 10px;
+    background-color: var(--secondary);
+    color: var(--main);
+    margin: 2lh;
+    text-transform: uppercase;
 
     @media (min-width: 650px){
         max-width: 545px;
     }
+}
+
+.contact-hero-button:hover{
+    cursor: pointer;
+}
+
+.dialog-form[open]{
+    background-color: var(--main);
+    padding: 1rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -2%);
+    padding-bottom: 0;
+}
+
+.dialog-form[open]::backdrop {
+    background-color: rgba(0, 0, 0, 0.3);
 }

@@ -19,6 +19,7 @@
 
 html, body {
   scroll-behavior: smooth;
+  min-width: 350px;
 }
 
 body {
@@ -27,13 +28,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-main {
-  padding: 1rem;
-}
-
 html body p {
     font-weight: 400;
     text-align: justify;
+}
+
+section {
+  margin: 0 5%;
 }
 
 .container {
@@ -41,7 +42,7 @@ html body p {
   flex-direction: column;
   align-items: center;
 
-  @media only screen and (min-width: 650px) {
+  @media only screen and (min-width: 1200px) {
     flex-direction: row;
   }
 }
@@ -51,7 +52,7 @@ html body p {
   flex-direction: row;
   align-items: center;
 
-  @media only screen and (min-width: 650px) {
+  @media only screen and (min-width: 1200px) {
     flex-direction: column;
   }
 }
@@ -68,12 +69,8 @@ html body p {
   align-items: center;
 }
 
-.visible {
-  display: visible;
-}
-
 .hidden {
-  display: hidden;
+  display: none;
 }
 
 .buttonGen {
@@ -82,9 +79,11 @@ html body p {
   color: #FFFFFF;
   border-radius: 4px;
   border: 0px;
-  box-shadow: 0px 4px 4px #6c7794;
+  box-shadow: 0px 4px 4px #5054649f;
   transition: 0.3s;
   font-weight: 500;
+  text-transform: uppercase;
+  
    @media only screen and (min-width: 650px) {
     width: 20vw;
   }
@@ -123,7 +122,6 @@ h2::before, h2::after {
 .diamondhr::after {
   content: url("../public/images/diamondDecoration.svg");
 }
-
 
 .additionalPageshr {
     border: none;
@@ -169,4 +167,8 @@ dialog {
     appearance: none; /* Resets platform-native styling for UI widgets */
     -webkit-appearance: none; /* For WebKit browsers */
     -moz-appearance: none;
+}
+
+body:has(dialog[open]) {
+    overflow: hidden
 }
