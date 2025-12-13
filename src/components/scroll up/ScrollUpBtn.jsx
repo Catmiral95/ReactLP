@@ -1,9 +1,17 @@
-import './scroll_button.css'
+import "./scroll_button.css";
 
 export default function ScrollUp() {
-    return(
-        <a role='button' className='scroll-btn' href='#heroPage'>
-            <img src='./images/chevron.svg' />
-        </a>
-    )
+  const scrollToTop = function () {
+    // Scroll to top logic
+    document.documentElement.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  return (
+    <button className="scroll-btn" onClick={scrollToTop}>
+      <img src={process.env.PUBLIC_URL + "/images/scrollUp.svg"} alt="наверх" />
+    </button>
+  );
 }

@@ -1,15 +1,17 @@
-import './dots.css'
+import "./dots.css";
 
-export default function Dots({dataJurists, currentSlides}){
-
-   const checkActivity = (id) => {
-       return currentSlides.some(slide => slide.id === id);
+export default function Dots({ dataJurists, currentSlides }) {
+  const checkActivity = (id) => {
+    return currentSlides.some((slide) => slide.id === id);
   };
 
-    return(
+  return (
     <div className="row">
-        {dataJurists.map((item) => (<OneDot key={item.id} id={item.id} isActive={checkActivity(item.id)}/>))}
-    </div>)
+      {dataJurists.map((item) => (
+        <OneDot key={item.id} id={item.id} isActive={checkActivity(item.id)} />
+      ))}
+    </div>
+  );
 }
 
 export function OneDot({ id, isActive }) {

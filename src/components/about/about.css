@@ -1,0 +1,140 @@
+#about {
+  margin-right: 0%;
+  overflow: hidden;
+}
+
+.bg-and-info {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-info-container {
+  background-color: var(--main);
+  justify-items: center;
+  align-content: center;
+  width: 50%;
+  height: auto;
+  padding: clamp(2rem, 2%, 4rem);
+  z-index: 0;
+
+  @media (max-width: 1200px) {
+    width: 100dvw;
+  }
+}
+
+.about-info-container h1 {
+  z-index: 0;
+}
+
+.about-info-container h1::before {
+  z-index: -1;
+}
+
+.advantages-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+
+  @media (max-width: 1200px) {
+    width: 100%;
+    justify-content: left;
+    font-size: 0.9rem;
+  }
+}
+
+.advantage {
+  gap: 0.3rem;
+}
+
+.advantage p {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.to-the-left {
+  align-self: self-start;
+}
+
+.to-the-right {
+  align-self: self-end;
+}
+
+.div1 {
+  @media (min-width: 1200px) {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+}
+.div2 {
+  @media (min-width: 1200px) {
+    grid-area: 1 / 3 / 2 / 4;
+  }
+}
+.div3 {
+  @media (min-width: 1200px) {
+    grid-area: 1 / 5 / 2 / 6;
+  }
+}
+.div4 {
+  @media (min-width: 1200px) {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+}
+.div5 {
+  @media (min-width: 1200px) {
+    grid-area: 2 / 4 / 3 / 5;
+  }
+}
+
+.carousel {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  width: calc(100dvw - 2px);
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  animation: smoothSlide 120s infinite linear;
+  transform: translateX(100%);
+  filter: grayscale(100%);
+  animation-delay: -20s;
+}
+
+.slide-1 {
+  background-image: url("/public/images/LiderPravaPhotos/groupPhoto1.JPG");
+  animation-delay: -40s;
+  left: 0;
+}
+
+.slide-2 {
+  background-image: url("/public/images/LiderPravaPhotos/groupPhoto2.JPG");
+  animation-delay: 0s;
+}
+
+.slide-3 {
+  background-image: url("/public/images/LiderPravaPhotos/groupPhoto3.JPG");
+  animation-delay: 40s;
+}
+
+@keyframes smoothSlide {
+  0% {
+    transform: translateX(100%);
+  }
+  33.33% {
+    transform: translateX(0);
+  }
+  66.66% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

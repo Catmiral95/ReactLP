@@ -1,19 +1,18 @@
 import "./Consent.css";
-import { useState, useEffect } from 'react';
-
+import { useState, useEffect } from "react";
 
 export default function Consent() {
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     // Проверяет localStorage при рендере компонента
-    if (!localStorage.getItem('privacyPolicyAccepted')) {
+    if (!localStorage.getItem("privacyPolicyAccepted")) {
       setShowModal(true);
     }
   }, []);
 
   const handleAccept = () => {
-    localStorage.setItem('privacyPolicyAccepted', 'true');
+    localStorage.setItem("privacyPolicyAccepted", "true");
     setShowModal(false);
   };
 
@@ -23,7 +22,7 @@ export default function Consent() {
 
   // обрабатывает клик вне окна консента
   const handleOutsideClick = (event) => {
-    if (event.target.id === 'privacyModal') {
+    if (event.target.id === "privacyModal") {
       setShowModal(false);
     }
   };
@@ -41,12 +40,19 @@ export default function Consent() {
             данных и Политики Конфиденциальности.
           </p>
           <div className="consent-buttons">
-            <button id="acceptButton" onClick={handleAccept}>ОК</button>
-            <button id="privpolicy" target="_blank" href="#">СОГЛАШЕНИЕ</button>
+            <button id="acceptButton" onClick={handleAccept}>
+              ОК
+            </button>
+            <button id="privpolicy" target="_blank" href="#">
+              СОГЛАШЕНИЕ
+            </button>
           </div>
         </div>
         <button className="closeCross cns-cross" onClick={handleClose}>
-          <img src='/images/closeSign.svg' alt="Закрыть" />
+          <img
+            src={process.env.PUBLIC_URL + "/images/closeSign.svg"}
+            alt="Закрыть"
+          />
         </button>
       </div>
     </div>

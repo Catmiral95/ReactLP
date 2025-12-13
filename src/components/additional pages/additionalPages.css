@@ -1,30 +1,30 @@
 .mainText {
-    background-color: var(--main);
-    font-family: 'Inter', sans-serif;
-    color: #534545;
-    padding: 2rem;
+  background-color: var(--main);
+  font-family: "Inter", sans-serif;
+  color: #534545;
+  padding: 2rem;
 }
 
 .mainText h1 {
-    font-weight: 300;
-    margin-bottom: 5px;
-    font-size: x-large;
+  font-weight: 300;
+  margin-bottom: 5px;
+  font-size: x-large;
 }
 
 .mainText h1::after {
-    content: none;
+  content: none;
 }
 
 .mainText h2 {
-    font-weight: 400;
-    font-size: large;
-    align-self: self-start;
-    margin: 0.5lh 0;
+  font-weight: 400;
+  font-size: large;
+  align-self: self-start;
+  margin: 0.5lh 0;
 }
 
 .mainText p {
-    text-align: justify;
-    white-space: pre-wrap;
-    line-height: 1.5lh;
-    font-weight: 300;   
+  text-align: justify;
+  white-space: pre-wrap;
+  line-height: 1.5lh;
+  font-weight: 300;
 }

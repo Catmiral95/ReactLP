@@ -2,33 +2,30 @@ header {
   background-color: var(--secondary);
   justify-content: space-between;
   padding: 1rem 2.5rem;
-  min-height: 3lh;
-  max-height: 3.5lh;
+  height: 11dvh;
 
-  @media (max-width: 1200){
-    padding: 1rem 4rem;
+  @media (max-width: 1200) {
+    padding: min(0.5rem, 1dvw);
   }
 }
 
 header nav hr {
   text-align: center;
-  
   margin: 1rem 1rem;
   height: 2px;
-  width: 4rem;
+  width: clamp(3rem, calc(2rem + 5vw), 3.5rem);
   border: none;
   border-bottom: 1px solid #9a9494;
 
-  @media (min-width: 1200px){
-    transform: scale(2);
+  @media (min-width: 1200px) {
     margin: 0 2vw;
-    height: 1lh;
+    height: clamp(1lh, 7vh, 3.5rem);
     width: 2px;
     border: none;
     border-left: 1px solid #9a9494;
   }
 
-  @media (min-width: 1700px){
+  @media (min-width: 1700px) {
     margin: 0 3vw;
   }
 }
@@ -38,19 +35,21 @@ header nav div a {
   text-decoration: none;
   font-size: x-large;
 
-   @media (min-width: 1700px){
+  @media (min-width: 1700px) {
     transform: scale(1);
-   }
+  }
 }
 
-header a, .hours-and-phone-container p, .hours-and-phone-container p a {
+header a,
+.hours-and-phone-container p,
+.hours-and-phone-container p a {
   color: #d1d8e8;
   font-size: large;
   text-decoration: none;
 }
 
 header a {
-  font-size: xx-large;
+  font-size: clamp(24px, 1vh, 2rem);
 }
 
 nav a:hover {
@@ -58,29 +57,40 @@ nav a:hover {
   margin-bottom: -0.2rem;
 }
 
-button[name="burger menu"]{
+button[name="burger-menu"] {
   background-color: transparent;
   color: white;
   font-size: xx-large;
   border: none;
   cursor: pointer;
+  margin: -1rem;
+}
+
+.hours-and-phone-container p,
+.hours-and-phone-container p a {
+  font-size: clamp(24px, 1vh, 2rem);
+}
+
+.hours-and-phone-container p:hover,
+.hours-and-phone-container p a:hover {
+  transition: color 0.15s ease-in;
+  color: royalblue;
 }
 
 .mobile-header {
   position: sticky;
-  top: 0; 
-  z-Index: 500
+  top: 0;
+  z-index: 500;
 }
 
 .menu-dialog:not([open]) {
-    display: none !important;
+  display: none !important;
 }
 
 .menu-dialog[open] {
   position: fixed;
   justify-content: center;
-  padding: 0 1rem;
-  height: 100%;
+  height: 100dvh;
   max-height: none;
   overflow: auto;
   top: 0;
@@ -92,24 +102,26 @@ button[name="burger menu"]{
   animation: slideIn 0.3s ease-in-out;
 }
 
-.menu-dialog[open]::backdrop{
+.menu-dialog[open]::backdrop {
   background-color: rgba(0, 0, 0, 0.25);
 }
 
-@keyframes slideIn { /*ВЖУХ слева*/
-    from {
-        transform: translateX(-100%);
-    }
-    to {
-        transform: translateX(0);
-    }
+@keyframes slideIn {
+  /*ВЖУХ слева*/
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
-@keyframes slideOut { /*ВЖУХ вправо*/
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-100%);
-    }
+@keyframes slideOut {
+  /*ВЖУХ вправо*/
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }

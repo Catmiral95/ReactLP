@@ -28,8 +28,8 @@
   padding: 25px 30px;
 
   @media (min-width: 650px) {
-      width: 80%;
-      flex-direction: row;
+    width: 80%;
+    flex-direction: row;
   }
 }
 
@@ -43,7 +43,7 @@
   text-align: justify;
 
   @media (max-width: 650px) {
-      flex-direction: column;
+    flex-direction: column;
   }
 }
 
@@ -59,11 +59,12 @@
   align-items: center;
 
   @media (max-width: 650px) {
-      flex-direction: column;
+    flex-direction: column;
   }
 }
 
-#acceptButton, #privpolicy {
+#acceptButton,
+#privpolicy {
   cursor: pointer;
   min-width: 125px;
   padding: 5px 20px;
@@ -74,7 +75,7 @@
 
 #acceptButton {
   background-color: white;
-  color:black;
+  color: black;
 }
 
 #privpolicy {
@@ -82,12 +83,13 @@
   color: white;
 }
 
-#acceptButton::before, #privpolicy::before {
-  content: '';
+#acceptButton::before,
+#privpolicy::before {
+  content: "";
   position: absolute;
-  top: -4px;  /* Смещение вверх */
+  top: -4px; /* Смещение вверх */
   left: -4px; /* Смещение влево */
-  right: 4px;  /* Компенсация смещения */
+  right: 4px; /* Компенсация смещения */
   bottom: 4px; /* Компенсация смещения */
   border-radius: 5px;
   z-index: 21; /* Чтобы рамка была под контентом */
@@ -109,4 +111,3 @@
   top: 7px;
   right: 10px;
 }
-

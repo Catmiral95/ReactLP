@@ -1,40 +1,72 @@
 :root {
-  --main: #FDFAF3;
-  --secondary: #404458;
-  font-size: 20px;
+  --main: #eeebd9;
+  --secondary: #453738;
+  --tertiary: #282427;
+  --button: #8a6966;
+  --header-marker: hsla(10, 27%, 31%, 0.3);
+  font-size: 24px;
+
+  @media (max-width: 1200px) {
+    font-size: 18px;
+  }
 }
 
 * {
-  color: #282E3C;
-  font-family: 'Manrope', sans-serif;
+  color: #282e3c;
+  font-family: "Manrope", sans-serif;
 }
 
-*, *::before, *,::after{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    line-height: 1.5;
-    text-align: center;
-  }
+*,
+*::before,
+*,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.5;
+  text-align: center;
+}
 
-html, body {
+html,
+body {
   scroll-behavior: smooth;
   min-width: 350px;
+  box-sizing: border-box;
+  width: 100dvw;
 }
 
 body {
-  background: var(--main);
+  background-color: var(--main);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 html body p {
-    font-weight: 400;
-    text-align: justify;
+  font-weight: 400;
+  text-align: justify;
 }
 
 section {
   margin: 0 5%;
+}
+
+h1 {
+  font-family: "Playfair Display", serif;
+  align-self: flex-start;
+  margin-left: 5%;
+}
+
+h1::before {
+  background-color: #c58e89;
+  height: 1rem;
+  width: 100%;
+  content: "";
+  display: block;
+  opacity: 50%;
+  position: relative;
+  z-index: -1;
+  top: 2.75rem;
+  left: -1rem;
 }
 
 .container {
@@ -74,65 +106,44 @@ section {
 }
 
 .buttonGen {
-  background-color: #7D8FB5;
+  background-color: var(--button);
   padding: 8px 20px 8px 20px;
-  color: #FFFFFF;
+  color: #ffffff;
   border-radius: 4px;
   border: 0px;
   box-shadow: 0px 4px 4px #5054649f;
   transition: 0.3s;
   font-weight: 500;
   text-transform: uppercase;
-  
-   @media only screen and (min-width: 650px) {
+
+  @media only screen and (min-width: 650px) {
     width: 20vw;
   }
 }
 
-.buttonGen:hover{
-  background-color: #456D8C;
+.buttonGen:hover {
+  background-color: #456d8c;
 }
 
 .buttonGen:active {
   box-shadow: none;
-  background-color: #324A5F;
+  background-color: #324a5f;
 }
 
 .asterisk {
   color: red;
 }
 
-h1 {
-  margin-top: 1rem;
-}
-
-h2::before, h2::after {
-  top: -0.7lh;
-  border-bottom: 1px solid grey;
-}
-
-.diamondhr {
+.additionalPageshr {
   border: none;
+  border-top: 1px solid #534545;
   overflow: visible;
   text-align: center;
-  height: 5px;
-  margin-bottom: 0.5lh;
-}
+  width: 60vw;
 
-.diamondhr::after {
-  content: url("../public/images/diamondDecoration.svg");
-}
-
-.additionalPageshr {
-    border: none;
-    border-top: 1px solid #534545;
-    overflow: visible;
-    text-align: center;
-    width: 60vw;
-
-     @media only screen and (min-width: 1280px) {
-        width: 30vw;
-     }
+  @media only screen and (min-width: 1280px) {
+    width: 30vw;
+  }
 }
 
 .additionalPageshr::after {
@@ -150,25 +161,36 @@ dialog {
 }
 
 .dialog::backdrop {
-    background-color: rgb(0 0 0 / 0.6);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+  background-color: rgb(0 0 0 / 0.6);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 .closeCross {
-    background-color: transparent; /* Makes the background fully transparent */
-    border: none; /* Removes the default border */
-    padding: 0; /* Removes default padding */
-    margin: 0; /* Removes default margin */
-    font: inherit; /* Inherits font styles from its parent element */
-    color: inherit; /* Inherits text color from its parent element */
-    cursor: pointer; /* Ensures the cursor changes to a pointer on hover */
-    outline: none; /* Removes the outline that appears on focus in some browsers */
-    appearance: none; /* Resets platform-native styling for UI widgets */
-    -webkit-appearance: none; /* For WebKit browsers */
-    -moz-appearance: none;
+  background-color: transparent; /* Makes the background fully transparent */
+  border: none; /* Removes the default border */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Removes default margin */
+  font: inherit; /* Inherits font styles from its parent element */
+  color: inherit; /* Inherits text color from its parent element */
+  cursor: pointer; /* Ensures the cursor changes to a pointer on hover */
+  outline: none; /* Removes the outline that appears on focus in some browsers */
+  appearance: none; /* Resets platform-native styling for UI widgets */
+  -webkit-appearance: none; /* For WebKit browsers */
+  -moz-appearance: none;
 }
 
 body:has(dialog[open]) {
-    overflow: hidden
+  overflow: hidden;
+}
+
+li {
+  text-align: left;
+  white-space: pre-wrap;
+  margin-left: 1rem;
+}
+
+::selection {
+  background-color: #8a6966a9;
+  color: white;
 }
