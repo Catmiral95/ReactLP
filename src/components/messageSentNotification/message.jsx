@@ -1,10 +1,13 @@
-import './message.css'
+import "./message.css";
 
-export default function Message(){
-    return(
-        <div className="message">
-            <img src='/images/tickMark.svg'></img>
-            <p>Заявка отправлена</p>
-        </div>
-    )
+export default function Message() {
+  return (
+    <dialog className="message">
+      <img
+        src={process.env.PUBLIC_URL + "/images/tickMark.svg"}
+        alt="Галочка"
+      ></img>
+      <p>Заявка отправлена</p>
+    </dialog>
+  );
 }

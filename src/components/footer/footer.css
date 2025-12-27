@@ -1,0 +1,98 @@
+footer {
+  background-color: var(--tertiary);
+  padding-left: 3rem;
+  padding-top: 0.5lh;
+  padding-bottom: 0.5lh;
+
+  @media (max-width: 650px) {
+    padding: 1rem;
+  }
+}
+
+footer * {
+  color: #cdd6e9;
+  font-family: "Inter", sans-serif;
+  font-weight: 100 !important;
+}
+
+footer h3 {
+  text-align: left;
+  letter-spacing: -2px;
+  font-weight: 100;
+  font-size: 200%;
+  margin-bottom: 0.5lh;
+}
+
+footer span {
+  color: #ffaa5a;
+  font-weight: 200 !important;
+}
+
+footer hr {
+  border: none;
+  border-left: 1px solid #cdd6e9;
+  width: 2px;
+  height: 15vh;
+  margin: 5px;
+
+  @media (max-width: 650px) {
+    border: none;
+    border-bottom: 1px solid #cdd6e9;
+    width: 15vh;
+    height: 2px;
+  }
+}
+
+.footerContainer {
+  margin: 0px;
+  margin-bottom: 3lh;
+  padding: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  overflow-wrap: anywhere;
+
+  @media (max-width: 650px) {
+    flex-direction: column;
+    margin-bottom: 1.5lh;
+  }
+}
+
+.footerContainer nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  height: auto;
+
+  @media (max-width: 650px) {
+    gap: 0rem;
+    align-items: flex-start;
+  }
+}
+
+.footerDiv,
+.footerDiv span {
+  align-items: flex-start;
+}
+
+footer img {
+  transition: 0.5s;
+  margin-right: 1rem;
+}
+
+footer img:hover,
+footer nav div a:hover {
+  transform: scale(1.5);
+  filter: drop-shadow(0px 0px 3px #98aedb);
+  transition: 0.3s;
+}
+
+footer div a {
+  text-decoration: none;
+}
+
+footer div a:hover {
+  filter: drop-shadow(0px 0px 3px #98aedb);
+  transition: 0.3s;
+}

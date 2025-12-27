@@ -1,20 +1,18 @@
 import "./Consent.css";
+import { useState, useEffect } from "react";
 
-import React, { useState, useEffect } from 'react';
-
-
-const Consent  = () => {
+export default function Consent() {
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    // Проверяем localStorage при монтировании компонента
-    if (!localStorage.getItem('privacyPolicyAccepted')) {
+    // Проверяет localStorage при рендере компонента
+    if (!localStorage.getItem("privacyPolicyAccepted")) {
       setShowModal(true);
     }
-  }, []); // Пустой массив зависимостей означает, что эффект запустится один раз при монтировании
+  }, []);
 
   const handleAccept = () => {
-    localStorage.setItem('privacyPolicyAccepted', 'true');
+    localStorage.setItem("privacyPolicyAccepted", "true");
     setShowModal(false);
   };
 
@@ -22,9 +20,9 @@ const Consent  = () => {
     setShowModal(false);
   };
 
-  // Обработчик клика вне модального окна
+  // обрабатывает клик вне окна консента
   const handleOutsideClick = (event) => {
-    if (event.target.id === 'privacyModal') { // Проверяем, что клик был именно по фону модального окна
+    if (event.target.id === "privacyModal") {
       setShowModal(false);
     }
   };
@@ -42,14 +40,21 @@ const Consent  = () => {
             данных и Политики Конфиденциальности.
           </p>
           <div className="consent-buttons">
-            <button className="cns-btn-1" id="acceptButton" onClick={handleAccept}>ОК</button>
-            <button className="cns-btn-2" id="privpolicy" target="_blank" href="">СОГЛАШЕНИЕ</button>
+            <button id="acceptButton" onClick={handleAccept}>
+              ОК
+            </button>
+            <button id="privpolicy" target="_blank" href="#">
+              СОГЛАШЕНИЕ
+            </button>
           </div>
         </div>
-        <img className="cns-cross" onClick={handleClose} src="public/images/closeSign.svg"/>
+        <button className="closeCross cns-cross" onClick={handleClose}>
+          <img
+            src={process.env.PUBLIC_URL + "/images/closeSign.svg"}
+            alt="Закрыть"
+          />
+        </button>
       </div>
     </div>
   );
 }
-
-export default Consent;

@@ -1,0 +1,20 @@
+.scroll-btn {
+  position: fixed;
+  top: 87vh;
+  left: 93vw;
+  z-index: 1000;
+  padding: 1rem 0rem;
+  background: var(--tertiary);
+  opacity: 75%;
+  border: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.scroll-btn img {
+  transform: rotate(-90deg);
+}
+
+.scroll-btn:hover {
+  opacity: 100%;
+  transition: opacity 0.3s ease-in-out;
+}

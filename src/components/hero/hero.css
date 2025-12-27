@@ -1,0 +1,227 @@
+.hero {
+  background: url("/public/images/justice_backs.jpg"), #2b2424;
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: fit-content;
+  height: 100dvh;
+  padding: 1%;
+  -webkit-animation: text-focus-in 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+    both;
+  animation: text-focus-in 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+.hero-content {
+  padding: 1rem;
+  align-items: center;
+
+  -webkit-animation: text-focus-in 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+    both;
+  animation: text-focus-in 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+.title-container {
+  align-items: flex-start;
+}
+
+.title {
+  margin-top: -0.75rem;
+  margin-left: 0%;
+  text-transform: uppercase;
+  font-family: "Playfair display", serif;
+  font-size: clamp(2rem, 20vh, 4rem);
+  font-weight: 500;
+  letter-spacing: -5px;
+  line-height: 100%;
+  order: 2;
+  color: var(--main);
+}
+
+@media (min-width: 1200px) {
+  .title {
+    font-size: clamp(4rem, 20vh, 10rem);
+    letter-spacing: -10px;
+  }
+}
+
+@media (max-width: 450px) {
+  .title {
+    font-size: 4rem;
+    letter-spacing: -1px;
+  }
+}
+
+.title::before {
+  display: none;
+}
+
+.undertitle {
+  text-transform: uppercase;
+  font-weight: 200;
+  font-family: "IBM Plex Mono", sans-serif;
+  color: var(--main);
+  order: 1;
+  font-size: clamp(1rem, 1vh, 2rem);
+  margin-left: 3%;
+
+  @media (min-width: 1200px) {
+    font-size: clamp(1rem, 5vh, 2rem);
+  }
+
+  @media (max-width: 450px) {
+    font-size: 0.85rem;
+    margin-left: 22%;
+  }
+}
+
+.cath-phrase {
+  color: var(--main);
+  font-size: clamp(1rem, 5vh, 1.5rem);
+  font-weight: 300;
+  @media (max-width: 450px) {
+    font-size: 0.9rem;
+  }
+}
+
+.contact-hero-button {
+  text-transform: none;
+  background-color: var(--secondary);
+  border-bottom: 4px solid #775e5c;
+  border-right: 4px solid #775e5c;
+  font-weight: 300;
+  box-shadow: none;
+  padding: min(1rem, 4vw); /* Исправил на vw вместо % */
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: fit-content;
+  display: flex; /* Добавьте это если используете flex-свойства */
+}
+
+@media (max-width: 450px) {
+  .contact-hero-button {
+    padding: max(0.5rem, 2vw); /* Увеличил процент для мобильных */
+  }
+}
+
+.contact-hero-button p {
+  color: var(--main);
+  width: min-content;
+  font-size: clamp(1rem, 2.5vw, 1.5rem); /* Исправленные значения */
+  margin: 0; /* Добавьте чтобы убрать стандартные отступы */
+}
+
+@media (max-width: 650px) {
+  .contact-hero-button p {
+    font-size: max(1rem, 1vh); /* Исправленные значения */
+  }
+
+  .hero-content br {
+    height: 0.1lh;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contact-hero-button img {
+    transform: scale(1.5);
+  }
+}
+
+.contact-hero-button img {
+  transform: scale(1);
+}
+
+.contact-hero-button:hover {
+  cursor: pointer;
+}
+
+.icons-container {
+  gap: 35%;
+  margin-top: 2lh;
+  justify-content: center;
+  @media (max-width: 450px) {
+    gap: 1rem;
+    margin-top: 1lh;
+  }
+}
+
+.icons-container a:hover {
+  filter: drop-shadow(0px 0px 3px #98aedb);
+  transition: 0.3s;
+}
+
+@media (max-width: 450px) {
+  .icon {
+    transform: scale(1.5);
+  }
+}
+
+@media (min-width: 1200px) {
+  .icon {
+    transform: scale(2);
+  }
+}
+
+.dialog-form[open] {
+  background-color: var(--main);
+  padding: 1rem;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -2%);
+  padding-bottom: 0;
+  animation: slideInDown 0.6s ease-in-out;
+  width: 90dvw;
+
+  @media (min-width: 600px) {
+    width: 50dvw;
+  }
+}
+
+.dialog-form[open]::backdrop {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slideInDown {
+  /*ВЖУХ сверху*/
+  from {
+    transform: translate(-50%, -100%);
+  }
+  to {
+    transform: translate(-50, -2%);
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 4%;
+  left: 94%;
+  cursor: pointer;
+  transform: scale(1.5);
+}
+
+@-webkit-keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}

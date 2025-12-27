@@ -1,0 +1,16 @@
+.dot {
+  display: block;
+  margin: 5px;
+  border-radius: 50%;
+  height: 1rem;
+  width: 1rem;
+  float: left;
+}
+
+.activeDot {
+  background-color: rgb(51, 59, 79);
+}
+
+.inactiveDot {
+  background-color: rgb(166, 154, 139);
+}
