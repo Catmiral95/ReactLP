@@ -11,7 +11,7 @@ export default function ScrollUp() {
 
   return (
     <button className="scroll-btn" onClick={scrollToTop}>
-      <img src={process.env.PUBLIC_URL + "/images/scrollUp.svg"} alt="наверх" />
+      <img src={process.env.PUBLIC_URL + "/images/arrow.svg"} alt="наверх" />
     </button>
   );
 }

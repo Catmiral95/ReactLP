@@ -3,7 +3,7 @@
   --secondary: #453738;
   --tertiary: #282427;
   --button: #8a6966;
-  --header-marker: hsla(10, 27%, 31%, 0.3);
+  --header-marker: hsla(10, 53%, 54%, 0.3);
   font-size: 24px;
 
   @media (max-width: 1200px) {
@@ -57,7 +57,7 @@ h1 {
 }
 
 h1::before {
-  background-color: #c58e89;
+  background-color: var(--header-marker);
   height: 1rem;
   width: 100%;
   content: "";

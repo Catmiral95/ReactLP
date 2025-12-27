@@ -3,11 +3,18 @@
   top: 87vh;
   left: 93vw;
   z-index: 1000;
-  padding: 10px 30px;
-  background: transparent;
+  padding: 1rem 0rem;
+  background: var(--tertiary);
+  opacity: 75%;
   border: none;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .scroll-btn img {
-  transform: scale(1.7);
+  transform: rotate(-90deg);
+}
+
+.scroll-btn:hover {
+  opacity: 100%;
+  transition: opacity 0.3s ease-in-out;
 }

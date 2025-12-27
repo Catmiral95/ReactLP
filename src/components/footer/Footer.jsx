@@ -40,7 +40,7 @@ export default function Footer() {
           </div>
           <div className="row">
             <img src={process.env.PUBLIC_URL + "/images/mailW.svg"} />
-            <p>liderprava21@ya.ru</p>
+            <a href="mailto:mailto:liderprava@ya.ru">liderprava21@ya.ru</a>
           </div>
           <div className="row" style={{ marginTop: "1rem" }}>
             <img src={process.env.PUBLIC_URL + "/images/tgW.svg"} />

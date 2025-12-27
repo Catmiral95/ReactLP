@@ -1,7 +1,8 @@
 import "./about.css";
 import Jurists from "../jurists/Jurists";
 
-export default function About() {
+export default function About({ windowWidth }) {
+  const isMobile = windowWidth <= 1200;
   const advantages = [
     {
       image: "/images/yearsOfExperience.svg",
@@ -38,11 +39,13 @@ export default function About() {
   return (
     <section id="about">
       <div className="bg-and-info">
-        <div className="row bg-photo-container carousel">
-          <div class="slide slide-1"></div>
-          <div class="slide slide-2"></div>
-          <div class="slide slide-3"></div>
-        </div>
+        {!isMobile && (
+          <div className="row bg-photo-container carousel">
+            <div class="slide slide-1"></div>
+            <div class="slide slide-2"></div>
+            <div class="slide slide-3"></div>
+          </div>
+        )}
         <div className="col about-info-container">
           <h1>О нас</h1>
           <br />

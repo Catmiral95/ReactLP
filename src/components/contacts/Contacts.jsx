@@ -19,52 +19,62 @@ export default function Contacts() {
             frameborder="0"
           ></iframe>
           <br />
-          <div className="row">
-            <img
-              src={process.env.PUBLIC_URL + "/images/address.svg"}
-              alt="адрес"
-            />
-            <p
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "flex-start",
-              }}
-            >
-              428003, Чувашская Республика, <br /> г. Чебоксары, ул. Афанасьева,
-              д. 2, оф. 56.
-            </p>
+
+          <div>
+            <div className="row">
+              <img
+                src={process.env.PUBLIC_URL + "/images/address.svg"}
+                alt="адрес"
+              />
+              <p
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "flex-start",
+                }}
+              >
+                428003, Чувашская Республика, <br /> г. Чебоксары, ул.
+                Афанасьева, д. 2, оф. 56.
+              </p>
+            </div>
+            <div className="row">
+              <img
+                src={process.env.PUBLIC_URL + "/images/workingHours.svg"}
+                alt="часы работы"
+              />
+              <p>пн-пт 9:00-18:00</p>
+            </div>
+            <div className="row phone-info">
+              <img
+                src={process.env.PUBLIC_URL + "/images/phone.svg"}
+                alt="телефон"
+              />
+              <a href="tel:+79613467077" style={{ textDecoration: "none" }}>
+                +7(961)346-70-77
+              </a>
+            </div>
+            <div className="row mail-info">
+              <img
+                src={process.env.PUBLIC_URL + "/images/mail.svg"}
+                alt="почта"
+              />
+              <a
+                href="mailto:liderprava@ya.ru"
+                style={{ textDecoration: "none" }}
+              >
+                liderprava21@ya.ru
+              </a>
+            </div>
+            <div className="row">
+              <img
+                src={process.env.PUBLIC_URL + "/images/owner.svg"}
+                alt="владелец"
+              />
+              <p>ИП Артемьев Артём Сергеевич</p>
+            </div>
           </div>
-          <div className="row">
-            <img
-              src={process.env.PUBLIC_URL + "/images/workingHours.svg"}
-              alt="часы работы"
-            />
-            <p>пн-пт 9:00-18:00</p>
-          </div>
-          <div className="row">
-            <img
-              src={process.env.PUBLIC_URL + "/images/phone.svg"}
-              alt="телефон"
-            />
-            <a href="tel:+79613467077" style={{ textDecoration: "none" }}>
-              +7(961)346-70-77
-            </a>
-          </div>
-          <div className="row">
-            <img
-              src={process.env.PUBLIC_URL + "/images/mail.svg"}
-              alt="почта"
-            />
-            <p>liderprava21@ya.ru</p>
-          </div>
-          <div className="row">
-            <img
-              src={process.env.PUBLIC_URL + "/images/owner.svg"}
-              alt="владелец"
-            />
-            <p>ИП Артемьев Артём Сергеевич</p>
-          </div>
+          <br />
+
           <div className="readFeedback row">
             <p>Читайте отзывы о нас: </p>
             <a href="https://yandex.ru/maps/org/lider_prava/34845163518/reviews/?ll=50.123226%2C55.641204&z=7">

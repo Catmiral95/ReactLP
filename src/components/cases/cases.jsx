@@ -2,9 +2,10 @@ import "./cases.css";
 import cases from "../../data/dataCases.json";
 import { useState } from "react";
 
-function CaseCard({ props }) {
+function CaseCard({ props, windowWidth }) {
   const [showFullCase, setShowFullCase] = useState(false);
   const [isShown, setIsShown] = useState(false);
+  const isMobile = windowWidth <= 1200;
 
   const formatWithRegex = (text) => {
     const regex = /(\d+(?:[\s]\d+)*)₽/g;
@@ -61,14 +62,11 @@ function CaseCard({ props }) {
           <p>{props.text?.courtDecision}</p>
           <br />
           <table>
-            {props.text.tableData?.map((item) => (
+            {props.text.tableData?.map((item, index) => (
               <tr
                 key={item[0]}
                 className={`${
-                  props.text.tableData.indexOf(item) !==
-                  props.text.tableData.length - 1
-                    ? "tr-divider"
-                    : ""
+                  index !== props.text.tableData.length - 1 ? "tr-divider" : ""
                 }`}
               >
                 <td className="victim-td">{item[0]}</td>
@@ -76,7 +74,7 @@ function CaseCard({ props }) {
                   {item[1]?.map((penalty) => (
                     <ul>
                       <li className="no-marker">
-                        <tr>
+                        <tr className={isMobile && "col"}>
                           <td className="penalty-sum">
                             {formatWithRegex(penalty[0])}
                           </td>
@@ -101,7 +99,7 @@ function CaseCard({ props }) {
 }
 
 //основной компонент
-export default function Cases() {
+export default function Cases({ windowWidth }) {
   const [currentCaseId, setCurrentCaseId] = useState(4);
   const currentCase = cases.find((caseItem) => caseItem.id === currentCaseId);
 
@@ -111,11 +109,23 @@ export default function Cases() {
 
   return (
     <section id="cases" className="col">
-      <h1>Кейсы</h1>
+      <h1 className="whiteText">Кейсы</h1>
       <br />
-      <p>
-        Дела, которые мы вели и успешно закрыли. Реальные примеры из нашей
-        практики.
+      <p className="whiteText">
+        Лучшее доказательство профессионализма — реальные дела и судебные
+        решения. В этом разделе вы можете ознакомиться с примерами дел из нашей
+        практики, которые мы успешно закрыли. Изучите, как мы добивались:
+        <ul style={{ marginLeft: "3rem" }} className="whiteText">
+          <li className="whiteText">
+            Защиты прав клиента при несоблюдении удовлетворения требований и
+            нарушении сроков сдачи проекта
+          </li>
+          <li className="whiteText">Взыскания компенсации морального ущерба</li>
+          <li className="whiteText">Поддержки при подачи аппеляции</li>
+        </ul>
+        Эти реальные истории показывают наш системный подход, глубокое знание
+        законов и нацеленность на результат. Узнайте, как мы можем помочь в
+        вашей ситуации.
       </p>
       <br />
       <div className="case-pile col">
@@ -130,7 +140,9 @@ export default function Cases() {
             </button>
           ))}
         </div>
-        {currentCase && <CaseCard props={currentCase} />}
+        {currentCase && (
+          <CaseCard props={currentCase} windowWidth={windowWidth} />
+        )}
       </div>
     </section>
   );

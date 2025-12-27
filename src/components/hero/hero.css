@@ -1,8 +1,8 @@
 .hero {
   background: url("/public/images/justice_backs.jpg"), #2b2424;
   background-blend-mode: multiply;
-  background-size: cover; /* Scales to cover entire element */
-  background-position: center; /* Centers the image */
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   min-height: fit-content;
   height: 100dvh;
@@ -14,25 +14,24 @@
 
 .hero-content {
   padding: 1rem;
-  justify-content: space-around;
-  align-items: start;
+  align-items: center;
+
   -webkit-animation: text-focus-in 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53)
     both;
   animation: text-focus-in 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 
 .title-container {
-  align-items: start;
-  gap: 0.2rem;
+  align-items: flex-start;
 }
 
 .title {
   margin-top: -0.75rem;
+  margin-left: 0%;
   text-transform: uppercase;
   font-family: "Playfair display", serif;
-  font-size: clamp(1rem, 20vh, 4rem);
+  font-size: clamp(2rem, 20vh, 4rem);
   font-weight: 500;
-  text-align: left;
   letter-spacing: -5px;
   line-height: 100%;
   order: 2;
@@ -48,7 +47,7 @@
 
 @media (max-width: 450px) {
   .title {
-    font-size: 3rem;
+    font-size: 4rem;
     letter-spacing: -1px;
   }
 }
@@ -59,12 +58,12 @@
 
 .undertitle {
   text-transform: uppercase;
-  text-align: left;
   font-weight: 200;
   font-family: "IBM Plex Mono", sans-serif;
   color: var(--main);
   order: 1;
   font-size: clamp(1rem, 1vh, 2rem);
+  margin-left: 3%;
 
   @media (min-width: 1200px) {
     font-size: clamp(1rem, 5vh, 2rem);
@@ -72,14 +71,14 @@
 
   @media (max-width: 450px) {
     font-size: 0.85rem;
+    margin-left: 22%;
   }
 }
 
 .cath-phrase {
   color: var(--main);
-  font-size: clamp(1rem, 5vh, 2rem);
+  font-size: clamp(1rem, 5vh, 1.5rem);
   font-weight: 300;
-  text-align: left;
   @media (max-width: 450px) {
     font-size: 0.9rem;
   }
@@ -140,15 +139,16 @@
 .icons-container {
   gap: 35%;
   margin-top: 2lh;
-
+  justify-content: center;
   @media (max-width: 450px) {
     gap: 1rem;
     margin-top: 1lh;
   }
 }
 
-.icon {
-  transform: scale(1.8);
+.icons-container a:hover {
+  filter: drop-shadow(0px 0px 3px #98aedb);
+  transition: 0.3s;
 }
 
 @media (max-width: 450px) {
@@ -172,6 +172,11 @@
   transform: translate(-50%, -2%);
   padding-bottom: 0;
   animation: slideInDown 0.6s ease-in-out;
+  width: 90dvw;
+
+  @media (min-width: 600px) {
+    width: 50dvw;
+  }
 }
 
 .dialog-form[open]::backdrop {

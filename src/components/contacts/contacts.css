@@ -15,6 +15,11 @@
   }
 }
 
+.phone-info:hover a,
+.mail-info:hover a {
+  color: royalblue;
+}
+
 .info,
 form {
   font-size: x-large;
@@ -22,6 +27,10 @@ form {
 
 form {
   width: 100%;
+
+  @media (max-width: 1200px) {
+    width: 100%;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -44,13 +53,9 @@ input,
 textarea,
 select {
   width: 100%;
-  border: 0px;
+  border: none;
   border-bottom: 1px solid #112134;
   height: 1.5lh;
-
-  @media (min-width: 1200px) {
-    width: 75%;
-  }
 }
 
 textarea {
@@ -58,7 +63,7 @@ textarea {
 }
 
 label {
-  width: 75%;
+  width: 100%;
   text-align: left;
   padding-left: 1rem;
 }

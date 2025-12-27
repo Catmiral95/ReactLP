@@ -30,10 +30,10 @@ function App() {
       {windowWidth > 1200 && <ScrollUp />}
       <main>
         <Hero windowWidth={windowWidth} />
-        <About />
+        <About windowWidth={windowWidth} />
         <Consent />
         <LegalFees />
-        <Cases />
+        <Cases windowWidth={windowWidth} />
         <Contacts />
       </main>
       <Footer />
