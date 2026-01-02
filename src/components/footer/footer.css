@@ -4,7 +4,7 @@ footer {
   padding-top: 0.5lh;
   padding-bottom: 0.5lh;
 
-  @media (max-width: 650px) {
+  @media (max-width: 1200px) {
     padding: 1rem;
   }
 }
@@ -35,7 +35,7 @@ footer hr {
   height: 15vh;
   margin: 5px;
 
-  @media (max-width: 650px) {
+  @media (max-width: 1200px) {
     border: none;
     border-bottom: 1px solid #cdd6e9;
     width: 15vh;
@@ -49,10 +49,9 @@ footer hr {
   padding: 0px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   overflow-wrap: anywhere;
-
-  @media (max-width: 650px) {
+  @media (max-width: 1200px) {
     flex-direction: column;
     margin-bottom: 1.5lh;
   }
@@ -65,14 +64,15 @@ footer hr {
   gap: 0.5rem;
   height: auto;
 
-  @media (max-width: 650px) {
+  @media (max-width: 1200px) {
     gap: 0rem;
     align-items: flex-start;
   }
 }
 
 .footerDiv,
-.footerDiv span {
+.footerDiv span,
+.feedback-footer {
   align-items: flex-start;
 }
 

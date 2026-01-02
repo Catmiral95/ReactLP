@@ -7,7 +7,7 @@
       "Представительство в суде в любой точке страны",
       "Удобная рассрочка"
     ],
-    "image": "/images/Fees/bankrupsyFees.jpg",
+    "image": "/images/Fees/bankrupsyFees.webp",
     "id": 1
   },
   {
@@ -18,7 +18,7 @@
       "Обжалование протоколов и постановлений ГИБДД",
       "Сохранение водительских прав"
     ],
-    "image": "/images/Fees/autoFees.jpg",
+    "image": "/images/Fees/autoFees.webp",
     "id": 2
   },
 
@@ -30,7 +30,7 @@
       "Возмещения вреда здоровью или имуществу",
       "Компенсация морального и материального ущерба"
     ],
-    "image": "/images/Fees/consumerRightsFees.jpg",
+    "image": "/images/Fees/consumerRightsFees.webp",
     "id": 3
   },
   {
@@ -41,7 +41,7 @@
       "Споры о согласии на лечение",
       "Споры о цене и оплате медицинских услуг"
     ],
-    "image": "/images/Fees/medicalRightsFees.jpg",
+    "image": "/images/Fees/medicalRightsFees.webp",
     "id": 4
   },
   {
@@ -52,7 +52,7 @@
       "Споры о наступлении страхового случая",
       "Нарушение сроков страховщиком"
     ],
-    "image": "/images/Fees/insuranceFees.jpg",
+    "image": "/images/Fees/insuranceFees.webp",
     "id": 5
   },
   {
@@ -62,7 +62,7 @@
       "Споры об выплатах денежных компенсаций и возмещении убытков",
       "Споры об использовании норм ТК"
     ],
-    "image": "/images/Fees/workerRightsFees.jpg",
+    "image": "/images/Fees/workerRightsFees.webp",
     "id": 6
   }
 ]

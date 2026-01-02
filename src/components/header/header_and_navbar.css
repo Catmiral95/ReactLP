@@ -1,11 +1,16 @@
 header {
   background-color: var(--secondary);
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 1rem 2.5rem;
   height: 11dvh;
+  position: sticky;
 
-  @media (max-width: 1200) {
+  @media (max-width: 1200px) {
     padding: min(0.5rem, 1dvw);
+    position: fixed;
+    top: 1dvh;
+    right: 1dvh;
+    z-index: 1000;
   }
 }
 
@@ -33,7 +38,7 @@ header nav hr {
 header nav div a {
   color: #d1d8e8;
   text-decoration: none;
-  font-size: x-large;
+  font-size: large;
 
   @media (min-width: 1700px) {
     transform: scale(1);
@@ -44,17 +49,18 @@ header a,
 .hours-and-phone-container p,
 .hours-and-phone-container p a {
   color: #d1d8e8;
-  font-size: large;
   text-decoration: none;
-}
-
-header a {
-  font-size: clamp(24px, 1vh, 2rem);
 }
 
 nav a:hover {
   border-bottom: 0.2rem solid royalblue;
   margin-bottom: -0.2rem;
+  color: royalblue;
+  transition: 0.1s ease-in-out;
+}
+
+.burger-container {
+  width: 100%;
 }
 
 button[name="burger-menu"] {
@@ -63,23 +69,23 @@ button[name="burger-menu"] {
   font-size: xx-large;
   border: none;
   cursor: pointer;
-  margin: -1rem;
 }
 
 .hours-and-phone-container p,
 .hours-and-phone-container p a {
-  font-size: clamp(24px, 1vh, 2rem);
+  font-size: clamp(1rem, 3vh, 24px);
 }
 
-.hours-and-phone-container p:hover,
 .hours-and-phone-container p a:hover {
   transition: color 0.15s ease-in;
   color: royalblue;
 }
 
 .mobile-header {
-  position: sticky;
-  top: 0;
+  width: fit-content;
+  border-radius: 5px;
+  margin: 1rem;
+  padding: 1.2rem;
   z-index: 500;
 }
 
@@ -100,6 +106,7 @@ button[name="burger-menu"] {
   border: none;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   animation: slideIn 0.3s ease-in-out;
+  padding: 0 1rem;
 }
 
 .menu-dialog[open]::backdrop {

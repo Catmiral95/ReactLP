@@ -1,11 +1,15 @@
 #about {
   margin-right: 0%;
-  overflow: hidden;
+  margin-left: 0%;
+  width: 100dvw;
+  align-items: center;
+  justify-content: center;
 }
 
 .bg-and-info {
-  position: relative;
   overflow: hidden;
+  position: relative;
+  width: 95dvw;
 }
 
 .about-info-container {
@@ -16,7 +20,6 @@
   height: auto;
   padding: clamp(2rem, 2%, 4rem);
   z-index: 0;
-
   @media (max-width: 1200px) {
     width: 100dvw;
   }
@@ -34,12 +37,13 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 0.5rem;
+  max-width: 550px;
+  grid-row-gap: 0.5lh;
 
   @media (max-width: 1200px) {
     width: 100%;
-    justify-content: left;
     font-size: 0.9rem;
+    max-width: 400px;
   }
 }
 
@@ -62,31 +66,21 @@
 }
 
 .div1 {
-  @media (min-width: 1200px) {
-    grid-area: 1 / 1 / 2 / 2;
-  }
+  grid-area: 1 / 1 / 2 / 2;
 }
 .div2 {
-  @media (min-width: 1200px) {
-    grid-area: 1 / 3 / 2 / 4;
-  }
+  grid-area: 2 / 2 / 3 / 3;
 }
 .div3 {
-  @media (min-width: 1200px) {
-    grid-area: 1 / 5 / 2 / 6;
-  }
+  grid-area: 3 / 1 / 4 / 2;
 }
 .div4 {
-  @media (min-width: 1200px) {
-    grid-area: 2 / 2 / 3 / 3;
-  }
+  grid-area: 4 / 2 / 5 / 3;
 }
 .div5 {
-  @media (min-width: 1200px) {
-    grid-area: 2 / 4 / 3 / 5;
-  }
+  grid-area: 5 / 1 / 6 / 2;
 }
-
+/*
 .carousel {
   width: 100%;
   height: 100%;
@@ -98,30 +92,30 @@
 .slide {
   position: absolute;
   top: 0;
-  width: calc(100dvw - 2px);
+  left: 0;
+  width: 100%;
   height: 100%;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
   animation: smoothSlide 120s infinite linear;
   transform: translateX(100%);
   filter: grayscale(100%);
   animation-delay: -20s;
 }
-
 .slide-1 {
-  background-image: url("/public/images/LiderPravaPhotos/groupPhoto1.JPG");
+  background-image: url("/public/images/LiderPravaPhotos/group-photo-1.webp");
   animation-delay: -40s;
-  left: 0;
 }
 
 .slide-2 {
-  background-image: url("/public/images/LiderPravaPhotos/groupPhoto2.JPG");
-  animation-delay: 0s;
+  background-image: url("/public/images/LiderPravaPhotos/group-photo-2.webp");
+  animation-delay: -20s;
 }
 
 .slide-3 {
-  background-image: url("/public/images/LiderPravaPhotos/groupPhoto3.JPG");
-  animation-delay: 40s;
+  background-image: url("/public/images/LiderPravaPhotos/group-photo-3.webp");
+  animation-delay: 0s;
 }
 
 @keyframes smoothSlide {
@@ -137,4 +131,78 @@
   100% {
     transform: translateX(-100%);
   }
+}
+  */
+
+.carousel {
+  margin: 0;
+  max-height: 100%;
+  height: 100dvh;
+  width: 100dvw;
+  max-width: 1200px;
+  gap: 0;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+}
+
+.carousel-inside {
+  gap: 0;
+  animation: spin 100s infinite linear;
+  height: 100dvh;
+  width: fit-content;
+  padding-right: -1px;
+}
+
+.slide {
+  flex: 0 0 55em;
+  height: 100dvh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: grayscale(100%);
+  overflow: hidden;
+  padding-right: -2px;
+}
+
+@keyframes spin {
+  from {
+    translate: 0;
+  }
+  to {
+    translate: -100%;
+  }
+}
+
+.slide-1 {
+  background-image: url("/public/images/LiderPravaPhotos/group-photo-1.webp");
+}
+
+.slide-2 {
+  background-image: url("/public/images/LiderPravaPhotos/group-photo-2.webp");
+}
+
+.slide-3 {
+  background-image: url("/public/images/LiderPravaPhotos/group-photo-3.webp");
+}
+
+.about-jurists-container {
+  background: url("/public/images/jurists-backs.jpg"), #2b2424;
+  background-repeat: no-repeat, no-repeat;
+  background-size: cover, cover;
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: fit-content;
+  height: 100dvh;
+  width: 120%;
+  margin-left: -6%;
+}
+
+.about-jurists-container h2,
+.about-jurists-container p:not(.staffCard p) {
+  color: var(--main);
+  margin: clamp(1rem, 5%, 1.5rem);
+  margin-bottom: 0;
 }

@@ -1,20 +1,27 @@
 .hero {
-  background: url("/public/images/justice_backs.jpg"), #2b2424;
+  background: url("/public/images/justice_backs.webp"), #2b2424;
   background-blend-mode: multiply;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   min-height: fit-content;
-  height: 100dvh;
+  height: 90dvh;
   padding: 1%;
+  align-items: center;
+  justify-content: center;
   -webkit-animation: text-focus-in 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53)
     both;
   animation: text-focus-in 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+
+  @media (max-width: 1200px) {
+    height: 100dvh;
+  }
 }
 
 .hero-content {
   padding: 1rem;
   align-items: center;
+  justify-content: center;
 
   -webkit-animation: text-focus-in 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53)
     both;
@@ -87,8 +94,8 @@
 .contact-hero-button {
   text-transform: none;
   background-color: var(--secondary);
-  border-bottom: 4px solid #775e5c;
-  border-right: 4px solid #775e5c;
+  border-bottom: 3px solid #775e5c;
+  border-right: 3px solid #775e5c;
   font-weight: 300;
   box-shadow: none;
   padding: min(1rem, 4vw); /* Исправил на vw вместо % */
@@ -134,6 +141,8 @@
 
 .contact-hero-button:hover {
   cursor: pointer;
+  border-bottom: 3px solid #abc3f4;
+  border-right: 3px solid #abc3f4;
 }
 
 .icons-container {
@@ -146,8 +155,13 @@
   }
 }
 
+.icons-container a {
+  transition: 0.3s;
+}
+
 .icons-container a:hover {
-  filter: drop-shadow(0px 0px 3px #98aedb);
+  filter: drop-shadow(0px 0px 5px royalblue);
+  transform: scale(1.1);
   transition: 0.3s;
 }
 

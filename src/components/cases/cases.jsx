@@ -21,7 +21,7 @@ function CaseCard({ props, windowWidth }) {
   return (
     <div className="caseCard col">
       <div className="textCase col">
-        <div className="container">
+        <div className="container up">
           <div className="illustrationCase col">
             <img
               src={process.env.PUBLIC_URL + props.picture}
@@ -38,9 +38,7 @@ function CaseCard({ props, windowWidth }) {
           </div>
         </div>
 
-        <br />
-
-        <div className="container">
+        <div className="container up">
           <div className="col">
             <h3>Пострадавшие</h3>
             <ul>

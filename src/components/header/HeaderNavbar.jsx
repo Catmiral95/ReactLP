@@ -33,9 +33,11 @@ export default function Header({ windowWidth }) {
         </>
       ) : (
         <>
-          <button name="burger-menu" type="button" onClick={openDialog}>
-            ☰
-          </button>
+          <div className="burger-container row">
+            <button name="burger-menu" type="button" onClick={openDialog}>
+              ☰
+            </button>
+          </div>
           <dialog
             className="col menu-dialog"
             ref={dialogRef}

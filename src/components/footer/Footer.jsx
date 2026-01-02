@@ -4,7 +4,8 @@ import dataNavbar from "../../data/dataNavbar.json";
 export default function Footer() {
   return (
     <footer>
-      <h3>
+      <h3 className="row">
+        <img src="/images/logo.svg" alt="лого Лидер Права" />
         ЛИДЕР <span>ПРАВА</span>
       </h3>
       <div className="footerContainer">
@@ -49,7 +50,7 @@ export default function Footer() {
           </div>
         </div>
         <hr />
-        <div className="col">
+        <div className="col feedback-footer">
           <span>Читайте отзывы о нас: </span>
           <div className="row" style={{ marginTop: "1rem" }}>
             <a href="https://yandex.ru/maps/org/lider_prava/34845163518/reviews/?ll=50.123226%2C55.641204&z=7">
