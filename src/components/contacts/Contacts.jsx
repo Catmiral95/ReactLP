@@ -14,8 +14,8 @@ export default function Contacts() {
         <div className="info col">
           <iframe
             src="https://yandex.ru/map-widget/v1/?um=constructor%3A00541c80d8680d38f16ccd2bcfaa20fe7d0459b926fef3c1252ac0aa7e599697&amp;source=constructor"
-            width="340"
-            height="280"
+            width="300"
+            height="250"
             frameborder="0"
           ></iframe>
           <br />

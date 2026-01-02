@@ -4,10 +4,10 @@
   --tertiary: #282427;
   --button: #8a6966;
   --header-marker: hsla(10, 53%, 54%, 0.3);
-  font-size: 24px;
+  font-size: 18px;
 
   @media (max-width: 1200px) {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
@@ -33,10 +33,12 @@ body {
   min-width: 350px;
   box-sizing: border-box;
   width: 100dvw;
+  overflow-x: hidden;
 }
 
 body {
   background-color: var(--main);
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

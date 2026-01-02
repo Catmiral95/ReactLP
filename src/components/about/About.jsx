@@ -37,15 +37,8 @@ export default function About({ windowWidth }) {
   ];
 
   return (
-    <section id="about">
-      <div className="bg-and-info">
-        {!isMobile && (
-          <div className="row bg-photo-container carousel">
-            <div class="slide slide-1"></div>
-            <div class="slide slide-2"></div>
-            <div class="slide slide-3"></div>
-          </div>
-        )}
+    <section id="about row">
+      <div className="bg-and-info row">
         <div className="col about-info-container">
           <h1>О нас</h1>
           <br />
@@ -86,11 +79,24 @@ export default function About({ windowWidth }) {
             ))}
           </div>
         </div>
+
+        {!isMobile && (
+          <div className="carousel row">
+            <div className="row carousel-inside">
+              <div className="slide slide-1"></div>
+              <div className="slide slide-2"></div>
+              <div className="slide slide-3"></div>
+            </div>
+            <div className="row carousel-inside" aria-hidden>
+              <div className="slide slide-1"></div>
+              <div className="slide slide-2"></div>
+              <div className="slide slide-3"></div>
+            </div>
+          </div>
+        )}
       </div>
 
-      <br />
-
-      <div className="col">
+      <div className="col about-jurists-container">
         <h2>Наши юристы</h2>
         <p>Наши опытные юристы готовы ответить на все ваши вопросы.</p>
         <br />

@@ -9,7 +9,7 @@ export default function Jurists() {
   const [rightSlideAnimation, setRightSlideAnimation] = useState("");
   const [leftSlideAnimation, setLeftSlideAnimation] = useState("");
 
-  const test = window.matchMedia("(max-width: 1400px)").matches ? true : false;
+  const test = window.matchMedia("(max-width: 1200px)").matches ? true : false;
   const currentSlides = test
     ? [dataJurists[index]]
     : [
