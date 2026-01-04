@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/ReactLP/static/css/main.518292ab.css",
+    "main.js": "/ReactLP/static/js/main.882d1bd3.js",
+    "static/js/453.96453769.chunk.js": "/ReactLP/static/js/453.96453769.chunk.js",
+    "static/media/group-photo-2.webp": "/ReactLP/static/media/group-photo-2.bbc6ecf692f31302808a.webp",
+    "static/media/group-photo-1.webp": "/ReactLP/static/media/group-photo-1.4a36ec283060a37981e3.webp",
+    "static/media/group-photo-3.webp": "/ReactLP/static/media/group-photo-3.fa9721a15979a2ace751.webp",
+    "static/media/justice_backs.webp": "/ReactLP/static/media/justice_backs.5f10e43a8fe97c063948.webp",
+    "static/media/jurists-backs.jpg": "/ReactLP/static/media/jurists-backs.4ea824edf48d83371951.jpg",
+    "static/media/ceilingPhoto.webp": "/ReactLP/static/media/ceilingPhoto.71b297d816061909b743.webp",
+    "index.html": "/ReactLP/index.html",
+    "static/media/diamondDecoration.svg": "/ReactLP/static/media/diamondDecoration.e07f313fbe968812843e.svg",
+    "main.518292ab.css.map": "/ReactLP/static/css/main.518292ab.css.map",
+    "main.882d1bd3.js.map": "/ReactLP/static/js/main.882d1bd3.js.map",
+    "453.96453769.chunk.js.map": "/ReactLP/static/js/453.96453769.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.518292ab.css",
+    "static/js/main.882d1bd3.js"
+  ]
+}
