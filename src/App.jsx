@@ -34,7 +34,7 @@ function App() {
         <Consent />
         <LegalFees />
         <Cases windowWidth={windowWidth} />
-        <Contacts />
+        <Contacts windowWidth={windowWidth} />
       </main>
       <Footer />
     </>

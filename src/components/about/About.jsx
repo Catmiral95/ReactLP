@@ -37,7 +37,7 @@ export default function About({ windowWidth }) {
   ];
 
   return (
-    <section id="about row">
+    <section id="about">
       <div className="bg-and-info row">
         <div className="col about-info-container">
           <h1>О нас</h1>

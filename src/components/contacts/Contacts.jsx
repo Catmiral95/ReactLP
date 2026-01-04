@@ -1,7 +1,8 @@
 import "./contacts.css";
 import { useState } from "react";
 
-export default function Contacts() {
+export default function Contacts({ windowWidth }) {
+  const isMobile = windowWidth <= 1200;
   return (
     <section id="contacts" className="col">
       <h1>Контакты</h1>
@@ -12,12 +13,21 @@ export default function Contacts() {
       <div className="container" id="contactsContainer">
         {/*Содержит левую часть - контакты, карту и "читайте о нас" */}
         <div className="info col">
-          <iframe
-            src="https://yandex.ru/map-widget/v1/?um=constructor%3A00541c80d8680d38f16ccd2bcfaa20fe7d0459b926fef3c1252ac0aa7e599697&amp;source=constructor"
-            width="300"
-            height="250"
-            frameborder="0"
-          ></iframe>
+          {!isMobile ? (
+            <iframe
+              src="https://yandex.ru/map-widget/v1/?um=constructor%3A00541c80d8680d38f16ccd2bcfaa20fe7d0459b926fef3c1252ac0aa7e599697&amp;source=constructor"
+              width="500"
+              height="240"
+              frameborder="0"
+            ></iframe>
+          ) : (
+            <iframe
+              src="https://yandex.ru/map-widget/v1/?um=constructor%3A00541c80d8680d38f16ccd2bcfaa20fe7d0459b926fef3c1252ac0aa7e599697&amp;source=constructor"
+              width="300"
+              height="200"
+              frameborder="0"
+            ></iframe>
+          )}
           <br />
 
           <div>
