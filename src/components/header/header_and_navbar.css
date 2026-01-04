@@ -11,6 +11,7 @@ header {
     top: 1dvh;
     right: 1dvh;
     z-index: 1000;
+    height: 7%;
   }
 }
 
@@ -85,7 +86,7 @@ button[name="burger-menu"] {
   width: fit-content;
   border-radius: 5px;
   margin: 1rem;
-  padding: 1.2rem;
+  padding: 0.1rem 0.5rem;
   z-index: 500;
 }
 
@@ -131,4 +132,16 @@ button[name="burger-menu"] {
   to {
     transform: translateX(-100%);
   }
+}
+
+.visibleBtn {
+  /* display: flex; */
+  top: 0;
+  transition: top 0.4s ease-out;
+}
+
+.hiddenBtn {
+  /* display: none; */
+  top: -80px;
+  transition: top 0.4s ease-out;
 }

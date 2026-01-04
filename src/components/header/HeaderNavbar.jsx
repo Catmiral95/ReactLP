@@ -1,20 +1,38 @@
 import "./header_and_navbar.css";
 import Navbar from "./Navbar";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 
 export default function Header({ windowWidth }) {
   const dialogRef = useRef(null);
   const isMobile = windowWidth <= 1200;
+  const [position, setPosition] = useState(window.pageYOffset);
+  const [visible, setVisible] = useState(true);
 
   const handleDialogClick = (e) => {
+    // открывает меню слева в мобильной версии
     if (e.target === dialogRef.current) {
       dialogRef.current.close();
     }
   };
   const openDialog = () => dialogRef.current.showModal();
 
+  useEffect(() => {
+    //исчезающая кнопка меню при скролле вниз
+    const handleScroll = () => {
+      let moving = window.pageYOffset;
+
+      setVisible(position > moving);
+      setPosition(moving);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
+  const cls = visible ? "visibleBtn" : "hiddenBtn";
+
   return (
-    <header className={`row ${isMobile && "mobile-header"}`}>
+    <header className={`row ${isMobile && `mobile-header ${cls}`}`}>
       {!isMobile ? (
         <>
           <img src="/images/logo.svg" alt="лого Лидер Права" />

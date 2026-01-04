@@ -2,16 +2,10 @@
   color: #dd9859;
 }
 
-#contacts {
-  padding: 0rem;
-}
-
 #contactsContainer {
-  padding: 1vw;
-  justify-content: space-between;
-
+  justify-content: center;
   @media (min-width: 1200px) {
-    gap: 1rem;
+    margin-left: -10vw;
   }
 }
 
@@ -20,16 +14,34 @@
   color: royalblue;
 }
 
+.info {
+  @media (max-width: 1200px) {
+    margin-top: 1rem;
+  }
+}
+
 .info,
 form {
   font-size: x-large;
+  width: 100%;
+  @media (max-width: 1200px) {
+    padding: 0 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .formDiv {
+    margin: 0 0 0 -2.5%;
+  }
 }
 
 form {
   width: 100%;
+  align-items: center;
+  justify-content: center;
 
-  @media (max-width: 1200px) {
-    width: 100%;
+  @media (min-width: 500px) and (max-width: 1200px) {
+    width: 75%;
   }
 }
 
@@ -66,6 +78,7 @@ label {
   width: 100%;
   text-align: left;
   padding-left: 1rem;
+  margin: 0.4rem 0;
 }
 
 input,
@@ -112,6 +125,9 @@ small,
   margin: 1lh 0;
 
   width: clamp(200px, 50%, 400px);
+  @media (max-width: 1200px) {
+    margin: 0.4lh 0;
+  }
 }
 
 .submitButton span {

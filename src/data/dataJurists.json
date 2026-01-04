@@ -2,28 +2,28 @@
   {
     "name": "Имя 1",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "picture": "/images/LiderPravaPhotos/jursitman1.webp",
+    "picture": "/images/LiderPravaPhotos/lawyer1.jpg",
     "id": 1
   },
 
   {
     "name": "Имя 2",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "picture": "/images/LiderPravaPhotos/juristgirl1.webp",
+    "picture": "/images/LiderPravaPhotos/lawyer2.jpg",
     "id": 2
   },
 
   {
     "name": "Имя 3",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "picture": "/images/LiderPravaPhotos/juristgirl2.webp",
+    "picture": "/images/LiderPravaPhotos/lawyer3.jpg",
     "id": 3
   },
 
   {
     "name": "Имя 4",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "picture": "/images/LiderPravaPhotos/juristman2.webp",
+    "picture": "/images/LiderPravaPhotos/lawyer4.jpg",
     "id": 4
   }
 ]
