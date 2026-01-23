@@ -19,11 +19,19 @@
 .arrowsButton:hover {
   transition-duration: 0.3s;
   cursor: pointer;
-  transform: scale(1.1);
+  transform: scale(1.2);
+}
+
+.chevronPrev:hover {
+  transform: scale(1.2) rotate(-180deg);
 }
 
 .arrowsButton:active {
-  transform: scale(0.95);
+  transform: scale(0.8);
+}
+
+.chevronPrev:active {
+  transform: scale(0.8) rotate(-180deg);
 }
 
 /*Animation*/

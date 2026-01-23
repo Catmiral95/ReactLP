@@ -25,8 +25,13 @@ function ServiceCard({ service }) {
           }}
         >
           <h3>{service.name}</h3>
-          <button name="LearnMore" className="learnMoreFees">
-            {!showDescription ? "\u002B" : "\u2212"}
+          <button
+            name="LearnMore"
+            className={
+              !showDescription ? "learnMoreFees" : "learnMoreFeesTransformed"
+            }
+          >
+            {"\u002B"}
           </button>
         </div>
 

@@ -1,7 +1,7 @@
 .scroll-btn {
   position: fixed;
   top: 85vh;
-  left: 93vw;
+  left: 92vw;
   z-index: 1000;
   padding: 1rem 0.1rem;
   background: #282427b5;
@@ -9,6 +9,11 @@
   border-radius: 50%;
   opacity: 75%;
   transition: opacity 0.3s ease-in-out;
+  transform: scale(1.25);
+
+  @media (min-width: 1600px) {
+    transform: scale(2);
+  }
 }
 
 .scroll-btn img {

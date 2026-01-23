@@ -5,7 +5,10 @@ export default function Footer() {
   return (
     <footer>
       <h3 className="row">
-        <img src="/images/logo.svg" alt="лого Лидер Права" />
+        <img
+          src={process.env.PUBLIC_URL + "/images/logo.svg"}
+          alt="лого Лидер Права"
+        />
         ЛИДЕР <span>ПРАВА</span>
       </h3>
       <div className="footerContainer">
@@ -18,7 +21,7 @@ export default function Footer() {
           ))}
         </nav>
         <hr />
-        <div class="col footerDiv">
+        <div className="col footerDiv">
           <span>Связаться с нами: </span>
           <div className="row">
             <img
@@ -40,13 +43,25 @@ export default function Footer() {
             </a>
           </div>
           <div className="row">
-            <img src={process.env.PUBLIC_URL + "/images/mailW.svg"} />
+            <img
+              src={process.env.PUBLIC_URL + "/images/mailW.svg"}
+              alt="почта"
+            />
             <a href="mailto:mailto:liderprava@ya.ru">liderprava21@ya.ru</a>
           </div>
           <div className="row" style={{ marginTop: "1rem" }}>
-            <img src={process.env.PUBLIC_URL + "/images/tgW.svg"} />
-            <img src={process.env.PUBLIC_URL + "/images/vkW.svg"} />
-            <img src={process.env.PUBLIC_URL + "/images/whatsappW.svg"} />
+            <img
+              src={process.env.PUBLIC_URL + "/images/tgW.svg"}
+              alt="телеграм"
+            />
+            <img
+              src={process.env.PUBLIC_URL + "/images/vkW.svg"}
+              alt="вконтакте"
+            />
+            <img
+              src={process.env.PUBLIC_URL + "/images/whatsappW.svg"}
+              alt="вотсапп"
+            />
           </div>
         </div>
         <hr />
