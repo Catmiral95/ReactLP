@@ -10,7 +10,7 @@ export default function Arrows({
   dataJurists,
   currentSlides,
 }) {
-  const changeSlideNext = () => {
+  const slideNext = () => {
     setRightSlideAnimation("");
     setAnimation("slide-left-out");
     setTimeout(() => {
@@ -19,8 +19,7 @@ export default function Arrows({
       setLeftSlideAnimation("fade-in");
     }, 300);
   };
-
-  const changeSlidePrev = () => {
+  const slidePrev = () => {
     setLeftSlideAnimation("");
     setAnimation("slide-right-out");
     setTimeout(() => {
@@ -32,19 +31,25 @@ export default function Arrows({
 
   return (
     <div className="row chevronContainer">
-      <button className="arrowsButton" onClick={changeSlidePrev}>
-        <img
-          src={process.env.PUBLIC_URL + "/images/chevron.svg"}
-          className="chevronPrev"
-        />
-      </button>
+      <img
+        role="button"
+        alt="предыдущий"
+        id="arrowPrev"
+        src={process.env.PUBLIC_URL + "/images/chevron.svg"}
+        className="chevronPrev arrowsButton"
+        onClick={slidePrev}
+      />
+
       <Dots dataJurists={dataJurists} currentSlides={currentSlides} />
-      <button className="arrowsButton" onClick={changeSlideNext}>
-        <img
-          src={process.env.PUBLIC_URL + "/images/chevron.svg"}
-          className="chevronNext"
-        />
-      </button>
+
+      <img
+        role="button"
+        alt="следующий"
+        id="arrowNext"
+        src={process.env.PUBLIC_URL + "/images/chevron.svg"}
+        className="chevronNext arrowsButton"
+        onClick={slideNext}
+      />
     </div>
   );
 }

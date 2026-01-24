@@ -8,7 +8,6 @@
 
 .bg-and-info {
   overflow: hidden;
-  padding: 0;
   width: 100dvw;
 }
 
@@ -48,7 +47,7 @@
 }
 
 .advantage {
-  gap: 0.3rem;
+  gap: 1rem;
 }
 
 .advantage p {
@@ -137,7 +136,7 @@
 .carousel {
   height: auto;
   width: 100dvw;
-  max-width: 1200px;
+  max-width: 1500px;
   overflow: hidden;
 }
 
@@ -150,13 +149,13 @@
 
 .slide {
   flex: 0 0 150dvh;
-  height: 100dvh;
+  height: 150dvh;
+  min-height: 1200px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   filter: grayscale(100%);
   overflow: hidden;
-  padding-right: -2px;
 }
 
 @keyframes spin {
@@ -191,7 +190,7 @@
   background-attachment: fixed;
   min-height: fit-content;
   height: 100dvh;
-  width: 100%;
+  width: 100dvw;
   margin: 0;
 }
 

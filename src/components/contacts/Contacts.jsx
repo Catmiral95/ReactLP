@@ -19,6 +19,7 @@ export default function Contacts({ windowWidth }) {
               width="500"
               height="240"
               frameborder="0"
+              title="Адрес на карте Яндекс"
             ></iframe>
           ) : (
             <iframe
@@ -26,6 +27,7 @@ export default function Contacts({ windowWidth }) {
               width="300"
               height="200"
               frameborder="0"
+              title="Адрес на карте Яндекс"
             ></iframe>
           )}
           <br />
@@ -99,14 +101,13 @@ export default function Contacts({ windowWidth }) {
                 alt="2gis отзывы"
               />
             </a>
+            <br />
           </div>
         </div>
         <div className="col formDiv">
-          <br />
           <Form />
         </div>
       </div>
-      <br />
     </section>
   );
 }
@@ -246,10 +247,10 @@ export function Form() {
         </p>
       )}
 
-      <label htmlFor="topic">Тема сообщения</label>
+      <label htmlFor="messageTopic">Тема сообщения</label>
       <select
         id="messageTopic"
-        name="topic"
+        name="messageTopic"
         type="topic"
         value={formData.topic}
         onChange={handleChange}

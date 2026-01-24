@@ -9,7 +9,6 @@ export default function Header({ windowWidth }) {
   const [visible, setVisible] = useState(true);
 
   const handleDialogClick = (e) => {
-    // открывает меню слева в мобильной версии
     if (e.target === dialogRef.current) {
       dialogRef.current.close();
     }
@@ -35,7 +34,10 @@ export default function Header({ windowWidth }) {
     <header className={`row ${isMobile && `mobile-header ${cls}`}`}>
       {!isMobile ? (
         <>
-          <img src="/images/logo.svg" alt="лого Лидер Права" />
+          <img
+            src={process.env.PUBLIC_URL + "/images/logo.svg"}
+            alt="лого Лидер Права"
+          />
           <div
             className={"row"}
             style={{ flexGrow: "0.5", justifyContent: "space-between" }}

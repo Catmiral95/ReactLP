@@ -2,46 +2,84 @@
   color: #dd9859;
 }
 
+#contacts {
+  padding: 1rem;
+}
+
 #contactsContainer {
   justify-content: center;
-  @media (min-width: 1200px) {
-    margin-left: -10vw;
+  align-items: flex-start;
+  width: 90%;
+  gap: clamp(2rem, 10%, 5rem);
+
+  @media (max-width: 1200px) {
+    width: 100%;
+    gap: 1lh;
   }
 }
 
 .phone-info:hover a,
 .mail-info:hover a {
   color: royalblue;
+  transition: color 0.2s ease-in-out;
+}
+
+.phone-info a,
+.mail-info a {
+  transition: color 0.2s ease-in-out;
+  color: inherit;
 }
 
 .info {
+  width: fit-content;
+  font-size: x-large;
+  text-align: left;
   @media (max-width: 1200px) {
     margin-top: 1rem;
+    width: 100%;
   }
 }
 
-.info,
 form {
   font-size: x-large;
   width: 100%;
+  max-width: 1200px;
+
   @media (max-width: 1200px) {
     padding: 0 1rem;
+    max-width: 750px;
   }
 }
 
 @media (min-width: 1200px) {
   .formDiv {
     margin: 0 0 0 -2.5%;
+    width: 50%;
   }
+}
+
+iframe {
+  margin-top: 0.75lh;
+}
+
+.readFeedback img:hover {
+  transform: scale(1.25);
+  transition: 0.3s ease-in-out;
+}
+
+.readFeedback img {
+  transition: 0.3s ease-in-out;
 }
 
 form {
   width: 100%;
   align-items: center;
   justify-content: center;
+  margin-top: 0;
 
   @media (min-width: 500px) and (max-width: 1200px) {
     width: 75%;
+    margin-top: 0.25lh;
   }
 }
 
@@ -157,12 +195,17 @@ small,
 
 small {
   font-size: medium;
-  width: 75%;
-  margin-top: 0.2rem;
+  text-align: left;
+  width: 100%;
+  margin-top: 0.75rem;
 
   @media (max-width: 1200px) {
     width: 100%;
   }
+}
+
+.disclaimer {
+  margin-top: 0.5rem;
 }
 
 @keyframes fly {

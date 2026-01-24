@@ -4,11 +4,7 @@
   --tertiary: #282427;
   --button: #8a6966;
   --header-marker: hsla(10, 53%, 54%, 0.3);
-  font-size: 18px;
-
-  @media (max-width: 1200px) {
-    font-size: 16px;
-  }
+  font-size: clamp(1rem, 1.25vw, 3rem);
 }
 
 * {
@@ -48,14 +44,14 @@ html body p {
   text-align: justify;
 }
 
-section {
-  margin: 0 5%;
-}
-
 h1 {
   font-family: "Playfair Display", serif;
   align-self: flex-start;
   margin-left: 5%;
+  font-size: 3rem;
+  @media (max-width: 1000px) {
+    font-size: 2.5rem;
+  }
 }
 
 h1::before {
@@ -67,8 +63,12 @@ h1::before {
   opacity: 50%;
   position: relative;
   z-index: -1;
-  top: 2.75rem;
+  top: 4rem;
   left: -1rem;
+
+  @media (max-width: 1000px) {
+    top: 3.25rem;
+  }
 }
 
 .container {
@@ -186,6 +186,10 @@ body:has(dialog[open]) {
   overflow: hidden;
 }
 
+body.dialog-open {
+  overflow: hidden;
+}
+
 li {
   text-align: left;
   white-space: pre-wrap;
@@ -195,4 +199,8 @@ li {
 ::selection {
   background-color: #8a6966a9;
   color: white;
+}
+
+img[data-img-loading-error] {
+  font-size: 0.75rem;
 }

@@ -9,30 +9,35 @@ export default function About({ windowWidth }) {
       plaintText: "опыта",
       boldText: "7 лет",
       id: "div1",
+      name: "7 лет опыта",
     },
     {
       image: "/images/individualApproach.svg",
       plaintText: "подход",
       boldText: "Индивидуальный",
       id: "div2",
+      name: "Индивидуальный подход",
     },
     {
       image: "/images/flexibilityAndKindness.svg",
       plaintText: "отзывчивость",
       boldText: "Гибкость",
       id: "div3",
+      name: "Гибкость и отзывчивость",
     },
     {
       image: "/images/allAroundCountry.svg",
       plaintText: "Работаем",
       boldText: "по всей стране",
       id: "div4",
+      name: "Работаем по всей стране",
     },
     {
       image: "/images/pricePolicy.svg",
       plaintText: "ценовая политика",
       boldText: "Лояльная",
       id: "div5",
+      name: "Лояльная ценовая политика",
     },
   ];
 
