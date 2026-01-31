@@ -7,7 +7,6 @@ import Contacts from "./components/contacts/Contacts.jsx";
 import Footer from "./components/footer/Footer.jsx";
 import Consent from "./components/consent/Consent.jsx";
 import Hero from "./components/hero/Hero.jsx";
-import Jurists from "./components/jurists/Jurists.jsx";
 import ScrollUp from "./components/scroll up/ScrollUpBtn.jsx";
 import { useState, useEffect } from "react";
 
