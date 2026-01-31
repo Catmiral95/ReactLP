@@ -1,6 +1,6 @@
 import dataJurists from "../../data/dataJurists.json";
 import "./juristsCard.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Arrows from "./Arrows";
 
 export default function Jurists() {

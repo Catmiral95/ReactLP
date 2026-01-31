@@ -4,6 +4,13 @@ header {
   padding: 1rem 2.5rem;
   height: 11dvh;
   position: sticky;
+
+  @media (max-width: 1200px) {
+    height: fit-content;
+    width: fit-content;
+    padding: 0.75rem;
+    justify-content: center;
+  }
 }
 
 header nav hr {
@@ -50,10 +57,6 @@ nav a:hover {
   transition: 0.1s ease-in-out;
 }
 
-.burger-container {
-  width: 100%;
-}
-
 button[name="burger-menu"] {
   background-color: transparent;
   color: white;
@@ -73,11 +76,9 @@ button[name="burger-menu"] {
 }
 
 .mobile-header {
-  width: fit-content;
   border-radius: 5px;
   margin: 1rem;
-  z-index: 500;
-  padding: 0.25rem 1rem;
+  z-index: 100;
   position: fixed;
   top: 1dvh;
   right: 1dvh;
