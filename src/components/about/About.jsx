@@ -59,7 +59,7 @@ export default function About({ windowWidth }) {
             {advantages.map((item) => (
               <div
                 className={`advantage row ${
-                  item.id[item.id.length - 1] % 2 == 0
+                  item.id[item.id.length - 1] % 2 === 0
                     ? "to-the-right"
                     : "to-the-left"
                 } ${item.id}`}
@@ -69,7 +69,7 @@ export default function About({ windowWidth }) {
                   alt={item.name}
                   src={process.env.PUBLIC_URL + item.image}
                 />
-                {item.id != "div4" ? (
+                {item.id !== "div4" ? (
                   <p className="col">
                     <strong>{item.boldText}</strong>
                     {item.plaintText}
