@@ -118,6 +118,14 @@ export function Form() {
   const [isValidPhone, setIsValidPhone] = useState(true);
   const [isValidEmail, setIsValidEmail] = useState(true);
   const [submitAnimation, setSubmitAnimation] = useState({});
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    topic: "",
+    message: "",
+  });
+  const [status, setStatus] = useState("");
 
   const animateSubmit = () => {
     setSubmitAnimation({
@@ -128,35 +136,6 @@ export function Form() {
       setSubmitAnimation({});
     }, 600);
   };
-
-  const handlePhoneChange = (e) => {
-    const value = e.target.value;
-    setPhone(value);
-
-    // Валидация телефона
-    if (value === "") {
-      setIsValidPhone(true); // Пустое поле - валидно
-    } else {
-      const phoneRegex =
-        /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/;
-      const cleanValue = value.replace(/\D/g, "");
-      const hasValidLength =
-        cleanValue.length === 11 || cleanValue.length === 10;
-
-      setIsValidPhone(phoneRegex.test(value) && hasValidLength);
-    }
-  };
-
-  //отправка формы
-
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    topic: "",
-    message: "",
-  });
-  const [status, setStatus] = useState(""); // Для отображения статуса отправки
 
   const handleChange = (e) => {
     const { name, value } = e.target;

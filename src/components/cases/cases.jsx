@@ -3,8 +3,6 @@ import cases from "../../data/dataCases.json";
 import { useState } from "react";
 
 function CaseCard({ props, windowWidth }) {
-  const [showFullCase, setShowFullCase] = useState(false);
-  const [isShown, setIsShown] = useState(false);
   const isMobile = windowWidth <= 1200;
 
   const formatWithRegex = (text) => {
@@ -110,9 +108,10 @@ export default function Cases({ windowWidth }) {
       <h1>Кейсы</h1>
       <br />
       <p className="whiteText">
-        Лучшее доказательство нашего профессионализма — реальные дела и судебные
-        решения. В этом разделе вы можете ознакомиться с примерами дел из нашей
-        практики, которые мы успешно закрыли. Изучите, как мы добивались:
+        Самое лучшее доказательство нашего профессионализма — реальные дела и
+        судебные решения. В этом разделе вы можете ознакомиться с примерами дел
+        из нашей практики, которые мы успешно закрыли. Изучите, как мы
+        добивались:
         <ul>
           <li>
             Защиты прав клиента при несоблюдении удовлетворения требований и
