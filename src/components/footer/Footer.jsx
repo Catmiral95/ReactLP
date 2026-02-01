@@ -4,11 +4,7 @@ import dataNavbar from "../../data/dataNavbar.json";
 export default function Footer() {
   return (
     <footer>
-      <h3 className="row">
-        <img
-          src={process.env.PUBLIC_URL + "/images/logo.svg"}
-          alt="лого Лидер Права"
-        />
+      <h3>
         ЛИДЕР <span>ПРАВА</span>
       </h3>
       <div className="footerContainer">

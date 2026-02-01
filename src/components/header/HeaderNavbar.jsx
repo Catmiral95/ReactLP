@@ -65,7 +65,7 @@ export default function Header({ windowWidth }) {
             closedby="any"
           >
             <img
-              src={process.env.PUBLIC_URL + "images/logo.svg"}
+              src={process.env.PUBLIC_URL + "/images/logo.svg"}
               alt="Лого Лидер Права"
             />
             <Navbar onLinkClick={() => dialogRef.current?.close()} />

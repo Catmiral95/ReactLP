@@ -113,10 +113,9 @@ export default function Contacts({ windowWidth }) {
 }
 
 export function Form() {
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
   const [isValidPhone, setIsValidPhone] = useState(true);
   const [isValidEmail, setIsValidEmail] = useState(true);
+  const [status, setStatus] = useState("");
   const [submitAnimation, setSubmitAnimation] = useState({});
   const [formData, setFormData] = useState({
     name: "",
@@ -125,7 +124,16 @@ export function Form() {
     topic: "",
     message: "",
   });
-  const [status, setStatus] = useState("");
+
+  const validatePhone = (event) => {
+    let phone = event.target;
+    setIsValidPhone(!phone.checkValidity() ? false : true);
+  };
+
+  const validateEmail = (event) => {
+    let email = event.target;
+    setIsValidEmail(!email.checkValidity() ? false : true);
+  };
 
   const animateSubmit = () => {
     setSubmitAnimation({
@@ -145,9 +153,28 @@ export function Form() {
     }));
   };
 
+  const checkBeforeSending = () => {
+    if (
+      isValidEmail == true &&
+      isValidPhone == true &&
+      formData.message &&
+      formData.name
+    ) {
+      console.log("YES");
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("Отправка...");
+    console.log("Sending...");
+    if (!checkBeforeSending) {
+      console.log("ЕГОР");
+      throw new Error("Не все данные заполнены корректно");
+    }
 
     try {
       const response = await fetch("http://localhost:3001/api/feedback", {
@@ -166,10 +193,11 @@ export function Form() {
         setFormData({ name: "", phone: "", email: "", topic: "", message: "" }); // Очистить форму
       } else {
         setStatus(`Ошибка: ${data.message}`);
+        throw new Error("Не получилось отправить сообщение");
       }
     } catch (error) {
       console.error("Ошибка при отправке:", error);
-      setStatus("Произошла ошибка при отправке сообщения.");
+      setStatus("Произошла ошибка отсылки заявки");
     }
   };
 
@@ -197,17 +225,18 @@ export function Form() {
         id="phone"
         name="phone"
         type="tel"
-        pattern="+[7]{1}\([0-9]{3}\)-[0-9]{3}-[0-9]{2}-[0-9]{2}"
-        placeholder="+7(900)123-45-67"
+        pattern="^(\+7|7|8)[\s\-]?\(?\d{3}\)?[\s\-]?\d{3}[\s\-]?\d{2}[\s\-]?\d{2}$"
+        placeholder="+7(900)123-45-67 или 89001234567"
         value={formData.phone}
         onChange={handleChange}
-        style={{ borderColor: isValidPhone ? "initial" : "red" }}
+        onBlur={validatePhone}
+        style={{ borderColor: isValidPhone ? "initial" : "red" }} //окрашивает край в красный, только если телефон введен и введен некорректно
         required
       />
-      {!isValidPhone && phone && (
-        <p style={{ color: "red", fontSize: "14px", margin: "5px 0" }}>
+      {!isValidPhone && (
+        <small style={{ color: "red", fontSize: "14px", margin: "5px 0" }}>
           Введите корректный номер телефона
-        </p>
+        </small>
       )}
 
       <label htmlFor="email">Адрес электронной почты</label>
@@ -218,12 +247,13 @@ export function Form() {
         placeholder="ivanovii@mail.com"
         value={formData.email}
         onChange={handleChange}
-        style={{ borderColor: isValidEmail ? "initial" : "red" }}
+        onBlur={validateEmail}
+        style={{ borderColor: isValidEmail ? "initial" : "red" }} //окрашивает край в красный, только если почта введена и введена некоррентно
       />
-      {!isValidEmail && email && (
-        <p style={{ color: "red", fontSize: "14px", margin: "5px 0" }}>
+      {!isValidEmail && (
+        <small style={{ color: "red", fontSize: "14px", margin: "5px 0" }}>
           Введите корректный email
-        </p>
+        </small>
       )}
 
       <label htmlFor="messageTopic">Тема сообщения</label>
@@ -231,10 +261,12 @@ export function Form() {
         id="messageTopic"
         name="messageTopic"
         type="topic"
-        value={formData.topic}
-        onChange={handleChange}
+        //value={formData.topic} - хз, зачем это тут нужно, но если оставить, то возникнет ошибка при выборе опции
+        //onChange={handleChange}
       >
-        <option value="Запись на прием">Запись на прием</option>
+        <option value="Запись на прием" selected>
+          Запись на прием
+        </option>
         <option value="Оформление претензии">Оформление претензии</option>
         <option value="Представительство в суде">
           Представительство в суде
@@ -289,7 +321,7 @@ export function Form() {
         </div>
         <span style={submitAnimation}>отправить</span>
       </button>
-      <p>{status}</p>
+      <p className="submit-status">{status}</p>
     </form>
   );
 }

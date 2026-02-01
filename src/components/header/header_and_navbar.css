@@ -50,6 +50,14 @@ header a,
   text-decoration: none;
 }
 
+header img {
+  transform: scale(1.5);
+
+  @media (max-width: 1200px) {
+    transform: scale(1);
+  }
+}
+
 nav a:hover {
   border-bottom: 0.2rem solid royalblue;
   margin-bottom: -0.2rem;

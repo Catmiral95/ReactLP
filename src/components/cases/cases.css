@@ -11,6 +11,12 @@
   color: white;
 }
 
+@media (max-width: 1200px) {
+  .textContainer {
+    margin: 0 1rem;
+  }
+}
+
 .whiteText,
 .whiteText ul,
 .whiteText ul li {
@@ -42,7 +48,7 @@
   padding: 1rem 0.5rem 0rem 0.5rem;
   background-color: var(--main);
   box-shadow: 0px 4px 4px rgb(0, 0, 0, 0.15);
-  font-size: clamp(0.5rem, 2.75dvw, 1.2rem);
+  font-size: 1.1rem;
   margin: clamp(1rem, 5%, 2rem);
   margin-top: 0;
 
@@ -77,6 +83,11 @@
   display: flex;
   flex-direction: column;
   align-items: start;
+  max-width: 500px;
+  @media (max-width: 1200px) {
+    align-items: center;
+    max-width: 300px;
+  }
 }
 
 .illustrationCase img {
