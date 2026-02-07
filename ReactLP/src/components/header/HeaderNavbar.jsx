@@ -55,11 +55,11 @@ export default function Header({ windowWidth }) {
         <>
           <div className="burger-container row">
             <button name="burger-menu" type="button" onClick={openDialog}>
-              ☰
+              <img src={process.env.PUBLIC_URL + "/images/burger_menu.svg"} />
             </button>
           </div>
           <dialog
-            className="col menu-dialog"
+            className="col menu-dialog"  
             ref={dialogRef}
             onClick={handleDialogClick}
             closedby="any"

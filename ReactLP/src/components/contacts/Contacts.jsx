@@ -202,7 +202,7 @@ export function Form() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="col">
+    <form onSubmit={handleSubmit} className="col" method="post">
       <label htmlFor="name">
         Ф.И.О.
         <span className="asterisk">*</span>

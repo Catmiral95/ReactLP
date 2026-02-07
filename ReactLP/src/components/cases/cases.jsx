@@ -68,7 +68,7 @@ function CaseCard({ props, windowWidth }) {
                 <td className="victim-td">{item[0]}</td>
                 <td>
                   {item[1]?.map((penalty) => (
-                    <ul>
+                    <ul style={{ listStyleType: "none" }}>
                       <li className="no-marker">
                         <tr className={isMobile && "col"}>
                           <td className="penalty-sum">
