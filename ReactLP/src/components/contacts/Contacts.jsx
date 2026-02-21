@@ -121,7 +121,7 @@ export function Form() {
     name: "",
     phone: "",
     email: "",
-    topic: "",
+    messageTopic: "Запись на прием",
     message: "",
   });
 
@@ -167,7 +167,7 @@ export function Form() {
     }
   };
 
-  const handleSubmit = async (e) => {
+  /* const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("Отправка...");
     console.log("Sending...");
@@ -198,6 +198,39 @@ export function Form() {
     } catch (error) {
       console.error("Ошибка при отправке:", error);
       setStatus("Произошла ошибка отсылки заявки");
+    }
+  };
+  */
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!isValidPhone || !isValidEmail) return;
+
+    try {
+      const response = await fetch("http://localhost:5000/send-message", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setStatus("Сообщение успешно отправлено!");
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          messageTopic: "Запись на прием",
+          message: "",
+        });
+      } else {
+        setStatus("Ошибка при отправке.");
+      }
+    } catch (error) {
+      setStatus("Ошибка соединения с сервером.");
     }
   };
 
@@ -261,12 +294,10 @@ export function Form() {
         id="messageTopic"
         name="messageTopic"
         type="topic"
-        //value={formData.topic} - хз, зачем это тут нужно, но если оставить, то возникнет ошибка при выборе опции
-        //onChange={handleChange}
+        value={formData.topic}
+        onChange={handleChange}
       >
-        <option value="Запись на прием" selected>
-          Запись на прием
-        </option>
+        <option value="Запись на прием">Запись на прием</option>
         <option value="Оформление претензии">Оформление претензии</option>
         <option value="Представительство в суде">
           Представительство в суде
