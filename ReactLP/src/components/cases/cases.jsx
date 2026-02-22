@@ -3,6 +3,7 @@ import cases from "../../data/dataCases.json";
 import { useState } from "react";
 
 function CaseCard({ props, windowWidth }) {
+  const [caseState, setCaseState] = useState("Читать далее");
   const isMobile = windowWidth <= 1200;
 
   const formatWithRegex = (text) => {
@@ -16,10 +17,18 @@ function CaseCard({ props, windowWidth }) {
     });
   };
 
+  const handleCaseClick = () => {
+    if (caseState == "Читать далее") {
+      setCaseState("Закрыть");
+    } else {
+      setCaseState("Читать далее");
+    }
+  };
+
   return (
     <div className="caseCard col">
       <div className="textCase col">
-        <div className="container up">
+        <div className="container up preview-container">
           <div className="illustrationCase col">
             <img
               src={process.env.PUBLIC_URL + props.picture}
@@ -29,65 +38,78 @@ function CaseCard({ props, windowWidth }) {
             <h3>{`Дело ${props.id}`}</h3>
           </div>
 
-          <div className="col text-preview-container">
+          <div className="col text-preview-container col">
             <h3>Суть происшествия</h3>
-            <p>{props.text.case}</p>
+            <p className="align-left-mobile">{props.text.case}</p>
             <br />
+            <button
+              type="button"
+              className="read-more-btn buttonGen col"
+              onClick={handleCaseClick}
+            >
+              {caseState}
+            </button>
           </div>
         </div>
 
-        <div className="container up">
-          <div className="col">
-            <h3>Пострадавшие</h3>
-            <ul>
-              {props.text.victim?.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
+        <div
+          className={`more-details-container ${caseState == "Читать далее" ? "hidden" : ""}`}
+        >
+          <div className="container up">
+            <div className="col">
+              <h3>Пострадавшие</h3>
+              <ul>
+                {props.text.victim?.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="col">
+              <h3>Правовое основание иска</h3>
+              <p className="align-left-mobile">{props.text?.legalBasis}</p>
+            </div>
           </div>
-          <div className="col">
-            <h3>Правовое основание иска</h3>
-            <p>{props.text?.legalBasis}</p>
-          </div>
-        </div>
 
-        <br />
-
-        <div className="col">
-          <h3>Решение суда</h3>
-          <p>{props.text?.courtDecision}</p>
           <br />
-          <table>
-            {props.text.tableData?.map((item, index) => (
-              <tr
-                key={item[0]}
-                className={`${
-                  index !== props.text.tableData.length - 1 ? "tr-divider" : ""
-                }`}
-              >
-                <td className="victim-td">{item[0]}</td>
-                <td>
-                  {item[1]?.map((penalty) => (
-                    <ul style={{ listStyleType: "none" }}>
-                      <li className="no-marker">
-                        <tr className={isMobile && "col"}>
-                          <td className="penalty-sum">
-                            {formatWithRegex(penalty[0])}
-                          </td>
-                          <td className="penalty-fine">{penalty[1]}</td>
-                        </tr>
-                      </li>
-                    </ul>
-                  ))}
-                </td>
-              </tr>
-            ))}
-          </table>
-        </div>
 
-        <div className="case-result col">
-          <h3>Итог дела</h3>
-          <p>{formatWithRegex(props.text.result)}</p>
+          <div className="col">
+            <h3>Решение суда</h3>
+            <p>{props.text?.courtDecision}</p>
+            <br />
+            <table>
+              {props.text.tableData?.map((item, index) => (
+                <tr
+                  key={item[0]}
+                  className={`${
+                    index !== props.text.tableData.length - 1
+                      ? "tr-divider"
+                      : ""
+                  }`}
+                >
+                  <td className="victim-td">{item[0]}</td>
+                  <td>
+                    {item[1]?.map((penalty) => (
+                      <ul style={{ listStyleType: "none" }}>
+                        <li className="no-marker">
+                          <tr className={isMobile && "col"}>
+                            <td className="penalty-sum">
+                              {formatWithRegex(penalty[0])}
+                            </td>
+                            <td className="penalty-fine">{penalty[1]}</td>
+                          </tr>
+                        </li>
+                      </ul>
+                    ))}
+                  </td>
+                </tr>
+              ))}
+            </table>
+          </div>
+          <br />
+          <div className="case-result col">
+            <h3>Итог дела</h3>
+            <p>{formatWithRegex(props.text.result)}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -108,7 +130,7 @@ export default function Cases({ windowWidth }) {
       <h1>Кейсы</h1>
       <br />
       <div className="textContainer">
-        <p className="whiteText">
+        <p className="whiteText align-left-mobile">
           Самое лучшее доказательство нашего профессионализма — реальные дела и
           судебные решения. В этом разделе вы можете ознакомиться с примерами
           дел из нашей практики, которые мы успешно закрыли. Изучите, как мы

@@ -194,6 +194,12 @@
   margin: 0;
 }
 
+@supports (-webkit-touch-callout: none) {
+  .about-jurists-container {
+    background-attachment: scroll !important; /* Чтобы был виден фон на айфоне */
+  }
+}
+
 .about-jurists-container h2,
 .about-jurists-container p:not(.staffCard p) {
   color: var(--main);

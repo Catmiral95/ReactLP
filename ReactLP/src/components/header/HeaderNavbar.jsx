@@ -46,7 +46,9 @@ export default function Header({ windowWidth }) {
             <div className="hours-and-phone-container col">
               <p id="working-hours">пн-пт 9:00 - 18: 00</p>
               <p>
-                <a href="tel:+79613467077">+7(961)346-70-77</a>
+                <a href="tel:+79613467077" title="Телефон для связи">
+                  +7(961)346-70-77
+                </a>
               </p>
             </div>
           </div>
@@ -59,7 +61,7 @@ export default function Header({ windowWidth }) {
             </button>
           </div>
           <dialog
-            className="col menu-dialog"  
+            className="col menu-dialog"
             ref={dialogRef}
             onClick={handleDialogClick}
             closedby="any"

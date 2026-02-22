@@ -26,12 +26,12 @@ export default function Hero({ windowWidth }) {
     {
       image: "/images/vkW.svg",
       link: "https://vk.com/liderprava21",
-      name: "вконтакте",
+      name: "ВКонтакте",
     },
     {
       image: "/images/tgW.svg",
       link: "https://t.me/liderpravacheb",
-      name: "телеграм",
+      name: "Телеграм",
     },
   ];
 
@@ -56,7 +56,7 @@ export default function Hero({ windowWidth }) {
         </button>
         <div className="row icons-container">
           {contanctsHero.map((item) => (
-            <a href={item.link} key={item.name}>
+            <a href={item.link} key={item.name} title={item.name}>
               <img
                 className="icon"
                 src={process.env.PUBLIC_URL + item.image}

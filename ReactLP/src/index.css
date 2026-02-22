@@ -113,7 +113,7 @@ h1::before {
   color: #ffffff;
   border-radius: 4px;
   border: 0px;
-  box-shadow: 0px 4px 4px #5054649f;
+  box-shadow: 0px 3px 3px #5054649f;
   transition: 0.3s;
   font-weight: 500;
   text-transform: uppercase;
@@ -203,4 +203,10 @@ li {
 
 img[data-img-loading-error] {
   font-size: 0.75rem;
+}
+
+.align-left-mobile {
+  @media (max-width: 1200px) {
+    text-align: left;
+  }
 }

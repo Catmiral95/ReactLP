@@ -7,6 +7,12 @@
   background-attachment: fixed;
 }
 
+@supports (-webkit-touch-callout: none) {
+  #cases {
+    background-attachment: scroll !important; /* Чтобы был виден фон на айфоне */
+  }
+}
+
 #cases h1 {
   color: white;
 }
@@ -45,7 +51,7 @@
   width: 90%;
   gap: 0.1lh;
   border-radius: 15px;
-  padding: 1rem 0.5rem 0rem 0.5rem;
+  padding: 1lh 0.5rem 0rem 0.5rem;
   background-color: var(--main);
   box-shadow: 0px 4px 4px rgb(0, 0, 0, 0.15);
   font-size: 1.1rem;
@@ -54,7 +60,7 @@
 
   @media (min-width: 1200px) {
     max-width: 1200px;
-    padding: 1.5rem 1.5rem 0rem 1.5rem;
+    padding: 1.5lh 1.5rem 0rem 1.5rem;
     margin: clamp(2rem, 10%, 5rem);
     margin-top: 0;
   }
@@ -122,6 +128,16 @@
   width: 100%;
 }
 
+.read-more-btn {
+  margin-top: -0.25lh;
+  margin-bottom: 0.55lh;
+  padding: 0.5rem 0.75rem;
+  font-size: large;
+  font-weight: 400;
+  letter-spacing: 10%;
+  max-width: 250px;
+}
+
 table {
   border-collapse: collapse;
 }
@@ -155,14 +171,9 @@ td {
 }
 
 .case-result {
-  background-color: hsla(218, 27%, 92%, 0.5);
-  padding: 0.5lh 2rem;
-  width: calc(100% + 0.5rem);
-  border-radius: 0 0 15px 15px;
-
-  @media (min-width: 1200px) {
-    width: calc(100% + 3rem);
-  }
+  text-align: left;
+  padding: 0.25lh 1lh 1lh 0lh;
+  width: 100%;
 }
 
 .textCase p,

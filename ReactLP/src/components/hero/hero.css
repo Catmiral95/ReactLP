@@ -19,6 +19,12 @@
   }
 }
 
+@supports (-webkit-touch-callout: none) {
+  .hero {
+    background-attachment: scroll !important; /* Чтобы был виден фон на айфоне */
+  }
+}
+
 .hero-content {
   padding: 1rem;
   align-items: center;

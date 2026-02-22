@@ -61,7 +61,11 @@ export default function Contacts({ windowWidth }) {
                 src={process.env.PUBLIC_URL + "/images/phone.svg"}
                 alt="телефон"
               />
-              <a href="tel:+79613467077" style={{ textDecoration: "none" }}>
+              <a
+                href="tel:+79613467077"
+                style={{ textDecoration: "none" }}
+                title="Телефон для связи"
+              >
                 +7(961)346-70-77
               </a>
             </div>
@@ -73,6 +77,7 @@ export default function Contacts({ windowWidth }) {
               <a
                 href="mailto:liderprava@ya.ru"
                 style={{ textDecoration: "none" }}
+                title="Почта для связи"
               >
                 liderprava21@ya.ru
               </a>
@@ -89,13 +94,19 @@ export default function Contacts({ windowWidth }) {
 
           <div className="readFeedback row">
             <p>Читайте отзывы о нас: </p>
-            <a href="https://yandex.ru/maps/org/lider_prava/34845163518/reviews/?ll=50.123226%2C55.641204&z=7">
+            <a
+              href="https://yandex.ru/maps/org/lider_prava/34845163518/reviews/?ll=50.123226%2C55.641204&z=7"
+              title="Отзывы на Яндексе"
+            >
               <img
                 src={process.env.PUBLIC_URL + "/images/yandex.svg"}
                 alt="Яндекс отзывы"
               />
             </a>
-            <a href="https://2gis.ru/cheboksary/firm/70000001053905641/tab/reviews">
+            <a
+              href="https://2gis.ru/cheboksary/firm/70000001053905641/tab/reviews"
+              title="Отзывы на 2гис"
+            >
               <img
                 src={process.env.PUBLIC_URL + "/images/2gis.svg"}
                 alt="2gis отзывы"
@@ -123,6 +134,7 @@ export function Form() {
     email: "",
     messageTopic: "Запись на прием",
     message: "",
+    order: "",
   });
 
   const validatePhone = (event) => {
@@ -166,45 +178,12 @@ export function Form() {
       return false;
     }
   };
-
-  /* const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus("Отправка...");
-    console.log("Sending...");
-    if (!checkBeforeSending) {
-      console.log("ЕГОР");
-      throw new Error("Не все данные заполнены корректно");
-    }
-
-    try {
-      const response = await fetch("http://localhost:3001/api/feedback", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        setStatus("Сообщение успешно отправлено!");
-        animateSubmit();
-        setFormData({ name: "", phone: "", email: "", topic: "", message: "" }); // Очистить форму
-      } else {
-        setStatus(`Ошибка: ${data.message}`);
-        throw new Error("Не получилось отправить сообщение");
-      }
-    } catch (error) {
-      console.error("Ошибка при отправке:", error);
-      setStatus("Произошла ошибка отсылки заявки");
-    }
-  };
-  */
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (!isValidPhone || !isValidEmail) return;
+    setStatus("Отправка...");
+    if (!checkBeforeSending) {
+      throw new Error("Не все данные заполнены корректно");
+    }
 
     try {
       const response = await fetch("http://localhost:5000/send-message", {
@@ -225,7 +204,9 @@ export function Form() {
           email: "",
           messageTopic: "Запись на прием",
           message: "",
+          order: "",
         });
+        animateSubmit();
       } else {
         setStatus("Ошибка при отправке.");
       }
@@ -320,17 +301,33 @@ export function Form() {
         onChange={handleChange}
         required
       />
+      <input
+        id="order" //хани поттер и тайное поле
+        type="text"
+        name="order"
+        onChange={handleChange}
+        value={formData.order}
+        class="order"
+      ></input>
       <small>
         <span className="asterisk">*</span>Поля, обязательные к заполнению
       </small>
       <small className="disclaimer">
         Нажимая кнопку, я подтверждаю, что ознакомлен(а) и принимаю условия
-        <a href="#" style={{ color: "royalblue" }}>
+        <a
+          href="#"
+          style={{ color: "royalblue" }}
+          title="Политика конфиденциальности"
+        >
           {" "}
           Политики Конфиденциальности
         </a>{" "}
         и соглашаюсь на{" "}
-        <a href="#" style={{ color: "royalblue" }}>
+        <a
+          href="#"
+          style={{ color: "royalblue" }}
+          title="Обработка персональных данных"
+        >
           обработку персональных данных
         </a>
         .
