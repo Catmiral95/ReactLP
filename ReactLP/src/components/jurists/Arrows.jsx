@@ -1,5 +1,6 @@
 import "./arrows.css";
 import Dots from "./Dots";
+import SwipeComponent from "./swipeHook";
 
 export default function Arrows({
   props,
@@ -30,7 +31,8 @@ export default function Arrows({
   };
 
   return (
-    <div className="row chevronContainer">
+    <div className="row chevronBothContainer">
+      <div className="chevronLeftContainer"></div>
       <img
         role="button"
         alt="предыдущий"
@@ -39,9 +41,14 @@ export default function Arrows({
         className="chevronPrev arrowsButton"
         onClick={slidePrev}
       />
+      <SwipeComponent
+        className="chevronLeftContainer col"
+        onSwipeRight={slideNext}
+      ></SwipeComponent>
 
       <Dots dataJurists={dataJurists} currentSlides={currentSlides} />
 
+      <div className="chevronRightContainer"> </div>
       <img
         role="button"
         alt="следующий"
@@ -50,6 +57,7 @@ export default function Arrows({
         className="chevronNext arrowsButton"
         onClick={slideNext}
       />
+      <SwipeComponent onSwipeLeft={slidePrev}></SwipeComponent>
     </div>
   );
 }

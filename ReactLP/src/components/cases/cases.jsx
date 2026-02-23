@@ -64,6 +64,7 @@ function CaseCard({ props, windowWidth }) {
                 ))}
               </ul>
             </div>
+            {isMobile && <br />}
             <div className="col">
               <h3>Правовое основание иска</h3>
               <p className="align-left-mobile">{props.text?.legalBasis}</p>

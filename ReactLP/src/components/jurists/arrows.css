@@ -1,3 +1,34 @@
+.chevronLeftContainer,
+.chevronRightContainer {
+  background-color: transparent;
+  position: absolute;
+  width: 50%;
+  height: 105%;
+  top: -0.75lh;
+  margin: 0;
+
+  @media (max-width: 1200px) {
+    top: -0.4lh;
+    height: 103%;
+  }
+}
+
+.chevronLeftContainer {
+  left: 0;
+  margin-left: 0%;
+
+  @media (min-width: 1200px) {
+    margin-left: 10%;
+  }
+}
+
+.chevronRightContainer {
+  right: 0;
+  @media (min-width: 1200px) {
+    margin-right: 10%;
+  }
+}
+
 .chevronPrev {
   transform: rotate(-180deg);
 }
@@ -10,10 +41,8 @@
   background: none;
   border: none;
   transition-duration: 0.3s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  width: fit-content;
+  height: fit-content;
 }
 
 .arrowsButton:hover {
