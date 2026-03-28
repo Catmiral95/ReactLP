@@ -6,6 +6,7 @@
   height: 105%;
   top: -0.75lh;
   margin: 0;
+  z-index: 1;
 
   @media (max-width: 1200px) {
     top: -0.4lh;
@@ -43,24 +44,25 @@
   transition-duration: 0.3s;
   width: fit-content;
   height: fit-content;
+  z-index: 2;
 }
 
 .arrowsButton:hover {
   transition-duration: 0.3s;
   cursor: pointer;
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .chevronPrev:hover {
-  transform: scale(1.2) rotate(-180deg);
+  transform: scale(1.1) rotate(-180deg);
 }
 
 .arrowsButton:active {
-  transform: scale(0.8);
+  transform: scale(0.9);
 }
 
 .chevronPrev:active {
-  transform: scale(0.8) rotate(-180deg);
+  transform: scale(0.9) rotate(-180deg);
 }
 
 /*Animation*/
@@ -202,4 +204,18 @@
   100% {
     opacity: 1;
   }
+}
+
+
+/*New arrows*/
+
+.arrows_container {
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.arrowsButton {
+  background-color: #775353;
+  padding: 0.6rem 1.2rem;
+  border-radius: 2px;
 }

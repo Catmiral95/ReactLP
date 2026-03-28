@@ -31,9 +31,8 @@ export default function Arrows({
   };
 
   return (
-    <div className="row chevron_both_container">
+    <div className="row chevronBothContainer">
       <div className="chevronLeftContainer"></div>
-      <div className="arrows_container row">
       <img
         role="button"
         alt="предыдущий"
@@ -42,6 +41,14 @@ export default function Arrows({
         className="chevronPrev arrowsButton"
         onClick={slidePrev}
       />
+      <SwipeComponent
+        className="chevronLeftContainer col"
+        onSwipeRight={slideNext}
+      ></SwipeComponent>
+
+      <Dots dataJurists={dataJurists} currentSlides={currentSlides} />
+
+      <div className="chevronRightContainer"></div>
       <img
         role="button"
         alt="следующий"
@@ -49,14 +56,7 @@ export default function Arrows({
         src={process.env.PUBLIC_URL + "/images/chevron.svg"}
         className="chevronNext arrowsButton"
         onClick={slideNext}
-      /></div>
-      <SwipeComponent
-        className="chevronLeftContainer col"
-        onSwipeRight={slideNext}
-      ></SwipeComponent>
-
-      <div className="chevronRightContainer"></div>
-      
+      />
       <SwipeComponent className="chevronRightContainer col" onSwipeLeft={slidePrev}></SwipeComponent>
     </div>
   );
