@@ -1,65 +1,95 @@
-require("dotenv").config(); // Загружаем переменные окружения из .env
+require("dotenv").config();
 const express = require("express");
-const bodyParser = require("body-parser");
-const TelegramBot = require("node-telegram-bot-api");
 const cors = require("cors");
+const axios = require("axios");
 
 const app = express();
-const port = 3001; // Порт для вашего бэкенда
 
-// Инициализация Telegram бота
-const token = process.env.TELEGRAM_BOT_TOKEN;
-const chatId = process.env.TELEGRAM_CHAT_ID;
+app.use(cors());
+app.use(express.json());
 
-if (!token || !chatId) {
-  console.error(
-    "Ошибка: TELEGRAM_BOT_TOKEN или TELEGRAM_CHAT_ID не установлен в .env"
-  );
-  process.exit(1);
+const TOKEN = process.env.BOT_TOKEN;
+const CHAT_ID = process.env.CHAT_ID;
+
+// ===== 🚫 Запрещённые слова =====
+const bannedWords = [
+  "viagra",
+  "casino",
+  "crypto",
+  "bitcoin",
+  "loan",
+  "earn money",
+];
+
+// ===== 🚫 Проверка ссылок =====
+const linkPattern = /(https?:\/\/[^\s]+|www\.[^\s]+)/i;
+
+// ===== 🔍 Проверка на спам =====
+function containsSpam(text = "") {
+  const lowerText = text.toLowerCase();
+
+  // Проверка ключевых слов
+  if (bannedWords.some((word) => lowerText.includes(word))) {
+    return true;
+  }
+
+  // Проверка ссылок
+  if (linkPattern.test(text)) {
+    return true;
+  }
+
+  return false;
 }
 
-const bot = new TelegramBot(token, { polling: false }); // polling: false, т.к. мы только отправляем сообщения
-
-// Middleware
-app.use(cors()); // Разрешаем CORS для всех доменов
-app.use(bodyParser.json()); // Для парсинга JSON-запросов
-
-// Маршрут для обработки отправки формы
-app.post("/api/feedback", async (req, res) => {
-  const { name, phone, email, topic, message } = req.body;
-
-  if (!name || !phone || !email || !topic || !message) {
-    return res
-      .status(400)
-      .json({ success: false, message: "Все поля должны быть заполнены." });
-  }
-
-  const telegramMessage = `
-    Новое сообщение из формы обратной связи:
-    Имя: ${name}
-    Телефон: ${phone}
-    Email: ${email}
-    Тема обращения: ${topic}
-    Сообщение: ${message}
-  `;
-
+// ===== 📩 Роут отправки =====
+app.post("/send-message", async (req, res) => {
   try {
-    await bot.sendMessage(chatId, telegramMessage, { parse_mode: "HTML" });
-    res
-      .status(200)
-      .json({ success: true, message: "Сообщение успешно отправлено!" });
+    const { name, phone, email, messageTopic, message, order  } = req.body;
+
+    // ===== 🍯 HONEYPOT =====
+    if (order && order.trim() !== "") {
+      console.log("🍯 Honeypot triggered");
+      return res.status(200).json({ success: true }); // тихий отказ
+    }
+
+    if (!name || !phone || !message) {
+      return res.status(400).json({ success: false });
+    }
+
+    // ===== Проверка на спам =====
+    if (containsSpam(message)) {
+      console.log("🚫 Spam blocked:", message);
+      // Тихий отказ (чтобы бот не понял)
+      return res.status(200).json({ success: true });
+    }
+
+    const text = `
+📌 Новая заявка с сайта
+
+👤 ФИО: ${name}
+📞 Телефон: ${phone}
+📧 Email: ${email || "Не указан"}
+📝 Тема: ${messageTopic}
+💬 Сообщение: ${message}
+`;
+
+    await axios.post(
+      `https://api.telegram.org/bot${TOKEN}/sendMessage`,
+      {
+        chat_id: CHAT_ID,
+        text: text,
+      }
+    );
+
+    res.status(200).json({ success: true });
+
   } catch (error) {
-    console.error("Ошибка при отправке сообщения в Telegram:", error);
-    res
-      .status(500)
-      .json({
-        success: false,
-        message: "Не удалось отправить сообщение. Попробуйте еще раз.",
-      });
+    console.error("Server error:", error.message);
+    res.status(500).json({ success: false });
   }
 });
 
-// Запускаем сервер
-app.listen(port, () => {
-  console.log(`Node.js приложение запущено на http://localhost:${port}`);
-});
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, "0.0.0.0", () =>
+  console.log(`Server started on port ${PORT}`)
+);
