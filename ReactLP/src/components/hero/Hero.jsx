@@ -39,8 +39,8 @@ export default function Hero({ windowWidth }) {
     <div className="hero col" id="heroPage">
       <div className="hero-content col">
         <div className="col title-container">
-          <h1 className="title">Лидер права</h1>
-          <h2 className="undertitle">юридическая компания</h2>
+          <h1 className="title fn org">Лидер права</h1>
+          <h2 className="undertitle category">юридическая компания</h2>
         </div>
         <br />
         <q className="cath-phrase">
@@ -55,7 +55,9 @@ export default function Hero({ windowWidth }) {
           <img src={process.env.PUBLIC_URL + "/images/arrow.svg"} alt="arrow" />
         </button>
         <div className="row icons-container">
-          {contanctsHero.map((item) => (
+          {contanctsHero.map((item) => {
+            if (item.name === "WhatsApp") return // удалить в лучшие времена
+            return (
             <a href={item.link} key={item.name} title={item.name}>
               <img
                 className="icon"
@@ -63,7 +65,7 @@ export default function Hero({ windowWidth }) {
                 alt={item.name}
               />
             </a>
-          ))}
+          )})}
         </div>
       </div>
       <FormPopup ref={dialogForm} />

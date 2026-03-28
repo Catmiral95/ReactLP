@@ -1,27 +1,27 @@
 [
   {
-    "name": "Имя 1",
+    "name": "Артемьев Артем",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     "picture": "/images/LiderPravaPhotos/lawyer1.jpg",
     "id": 1
   },
 
   {
-    "name": "Имя 2",
+    "name": "Морозова Яна",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     "picture": "/images/LiderPravaPhotos/lawyer2.jpg",
     "id": 2
   },
 
   {
-    "name": "Имя 3",
+    "name": "Мамаев Мурад",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     "picture": "/images/LiderPravaPhotos/lawyer3.jpg",
     "id": 3
   },
 
   {
-    "name": "Имя 4",
+    "name": "Моисеева Виктория",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     "picture": "/images/LiderPravaPhotos/lawyer4.jpg",
     "id": 4
