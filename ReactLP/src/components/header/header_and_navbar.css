@@ -51,10 +51,10 @@ header a,
 }
 
 header img {
-  transform: scale(1.5);
+  transform: scale(0.2);
 
   @media (max-width: 1200px) {
-    transform: scale(1);
+    transform: scale(1.5);
   }
 }
 

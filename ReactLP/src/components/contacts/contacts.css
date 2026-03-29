@@ -211,6 +211,10 @@ small {
   }
 }
 
+.links {
+  color: royalblue;
+}
+
 .disclaimer {
   margin-top: 0.5rem;
 }

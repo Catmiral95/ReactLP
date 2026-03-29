@@ -1,5 +1,6 @@
 import "./contacts.css";
 import { useState } from "react";
+import { Link } from "react-router";
 
 export default function Contacts({ windowWidth }) {
   const isMobile = windowWidth <= 1200;
@@ -32,7 +33,10 @@ export default function Contacts({ windowWidth }) {
           )}
           <br />
 
-          <div className="col" style={{alignItems: "flex-start", gap: "0.1lh"}}>
+          <div
+            className="col"
+            style={{ alignItems: "flex-start", gap: "0.1lh" }}
+          >
             <div className="row">
               <img
                 src={process.env.PUBLIC_URL + "/images/address.svg"}
@@ -47,7 +51,9 @@ export default function Contacts({ windowWidth }) {
                 <span className="postal-code">428003</span>
                 <span className="region">Чувашская Республика</span>
                 <span className="locality"> г. Чебоксары </span>
-                <span className="street-address">ул. Афанасьева, д. 2, оф. 56.</span>
+                <span className="street-address">
+                  ул. Афанасьева, д. 2, оф. 56.
+                </span>
               </p>
             </div>
             <div className="row">
@@ -317,22 +323,14 @@ export function Form() {
       </small>
       <small className="disclaimer">
         Нажимая кнопку, я подтверждаю, что ознакомлен(а) и принимаю условия
-        <a
-          href="#"
-          style={{ color: "royalblue" }}
-          title="Политика конфиденциальности"
-        >
+        <Link to="/privacy_policy" className="links">
           {" "}
           Политики Конфиденциальности
-        </a>{" "}
+        </Link>{" "}
         и соглашаюсь на{" "}
-        <a
-          href="#"
-          style={{ color: "royalblue" }}
-          title="Обработка персональных данных"
-        >
+        <Link to="/consent" className="links">
           обработку персональных данных
-        </a>
+        </Link>
         .
       </small>
       <button type="submit" name="submit" className="buttonGen submitButton">

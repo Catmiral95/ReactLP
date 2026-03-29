@@ -43,9 +43,7 @@ export default function Hero({ windowWidth }) {
           <h2 className="undertitle category">юридическая компания</h2>
         </div>
         <br />
-        <q className="cath-phrase">
-          Qui jure suo utĭtur, nemĭni facit injuriam.
-        </q>
+        <span className="cath-phrase">Команда опытных профессионалов.</span>
         <br />
         <button
           className="buttonGen contact-hero-button row"
@@ -56,16 +54,17 @@ export default function Hero({ windowWidth }) {
         </button>
         <div className="row icons-container">
           {contanctsHero.map((item) => {
-            if (item.name === "WhatsApp") return // удалить в лучшие времена
+            if (item.name === "WhatsApp") return; // удалить в лучшие времена
             return (
-            <a href={item.link} key={item.name} title={item.name}>
-              <img
-                className="icon"
-                src={process.env.PUBLIC_URL + item.image}
-                alt={item.name}
-              />
-            </a>
-          )})}
+              <a href={item.link} key={item.name} title={item.name}>
+                <img
+                  className="icon"
+                  src={process.env.PUBLIC_URL + item.image}
+                  alt={item.name}
+                />
+              </a>
+            );
+          })}
         </div>
       </div>
       <FormPopup ref={dialogForm} />

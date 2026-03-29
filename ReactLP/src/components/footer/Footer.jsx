@@ -1,7 +1,35 @@
 import "./footer.css";
-import dataNavbar from "../../data/dataNavbar.json";
+import { Link } from "react-router";
+import { HashLink } from "react-router-hash-link";
 
 export default function Footer() {
+  const menu = [
+    {
+      name: "Главная",
+      link: "#heroPage",
+      id: 1,
+    },
+    {
+      name: "О нас",
+      link: "#about",
+      id: 2,
+    },
+    {
+      name: "Услуги",
+      link: "#legalFees",
+      id: 3,
+    },
+    {
+      name: "Кейсы",
+      link: "#cases",
+      id: 4,
+    },
+    {
+      name: "Контакты",
+      link: "#contacts",
+      id: 5,
+    },
+  ];
   return (
     <footer>
       <h3>
@@ -10,9 +38,9 @@ export default function Footer() {
       <div className="footerContainer">
         <hr />
         <nav>
-          {dataNavbar.map((item, index) => (
+          {menu.map((item, index) => (
             <div key={index}>
-              <a href={item.link}>{item.name}</a>
+              <HashLink to={item.link}>{item.name}</HashLink>
             </div>
           ))}
         </nav>
@@ -102,12 +130,8 @@ export default function Footer() {
         </div>
         <hr />
         <div className="col footerDiv">
-          <a href="#" title="Соглашение об обработке данных">
-            Соглашение об обработке данных
-          </a>
-          <a href="#" title="Политика конфиденциальности">
-            Политика конфиденциальности
-          </a>
+          <Link to="/consent">Соглашение об обработке данных</Link>
+          <Link to="/privacy_policy">Политика конфиденциальности</Link>
         </div>
         <hr />
       </div>

@@ -18,24 +18,22 @@
   min-width: 350px;
   width: 20%;
   margin: 0;
+  height: 600px;
 
   @media (max-width: 1200px) {
     width: 50%;
     max-width: 350px;
     min-width: 300px;
+    height: 500px;
   }
 }
 
-.staffCard p,
-.staffCard h4 {
+.staffCard .desc,
+.staffCard .name_and_pos {
   background-color: var(--main);
   padding: 1rem;
   width: 100%;
   position: inherit;
-
-  @media (min-width: 1200px) {
-    width: 105%;
-  }
 }
 
 .staffCard img {
@@ -44,7 +42,6 @@
   height: 350px;
 
   border-radius: 2%;
-  margin-bottom: 0.5lh;
 
   @media (max-width: 1200px) {
     width: 250px;
@@ -52,16 +49,36 @@
   }
 }
 
-.staffCard p {
+.staffCard .desc {
   padding: 1rem 1.5rem;
-  margin-top: -60px;
+
+  @media (min-width: 1600px) {
+    font-size: 0.85rem;
+  }
 }
 
-.staffCard h4 {
-  top: -3.5lh;
+.staffCard .name_and_pos {
+  padding: 0.35lh;
+  position: absolute;
+  top: 45%;
+
+  @media (max-width: 1200px) {
+    top: 51%;
+  }
 }
 
-.staffCard p::before {
+@media (min-width: 1505px) {
+  .staffCard .name_and_pos {
+    top: 47%;
+  }
+}
+
+.pos {
+  margin-top: -0.25lh;
+  text-align: center;
+}
+
+.staffCard .desc::before {
   content: "";
   width: 2rem;
   height: 2rem;
@@ -73,7 +90,7 @@
   left: 0.5rem;
 }
 
-.staffCard p::after {
+.staffCard .desc::after {
   content: "";
   width: 2rem;
   height: 2rem;
