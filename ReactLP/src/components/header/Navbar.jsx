@@ -1,5 +1,4 @@
-import menu from "../../data/dataNavbar.json";
-
+/*
 export default function Navbar({ onLinkClick }) {
   return (
     <nav className="container">
@@ -41,5 +40,47 @@ function MenuItem(props) {
       </a>
       {props.id !== props.length && <hr />}
     </div>
+  );
+}
+*/
+import { HashLink } from "react-router-hash-link";
+
+export default function Navbar() {
+  const menu = [
+    {
+      name: "Главная",
+      link: "#heroPage",
+      id: 1,
+    },
+    {
+      name: "О нас",
+      link: "#about",
+      id: 2,
+    },
+    {
+      name: "Услуги",
+      link: "#legalFees",
+      id: 3,
+    },
+    {
+      name: "Кейсы",
+      link: "#cases",
+      id: 4,
+    },
+    {
+      name: "Контакты",
+      link: "#contacts",
+      id: 5,
+    },
+  ];
+
+  return (
+    <nav>
+      {menu.map((item) => (
+        <HashLink to={item.link} key={item.id} smooth>
+          {item.name}
+        </HashLink>
+      ))}
+    </nav>
   );
 }

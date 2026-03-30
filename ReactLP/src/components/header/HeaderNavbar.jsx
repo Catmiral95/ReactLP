@@ -1,5 +1,5 @@
 import "./header_and_navbar.css";
-import Navbar from "./Navbar";
+import Navbar from "./Navbar.jsx";
 import { useRef, useEffect, useState } from "react";
 
 export default function Header({ windowWidth }) {
@@ -35,7 +35,7 @@ export default function Header({ windowWidth }) {
       {!isMobile ? (
         <>
           <img
-            src={process.env.PUBLIC_URL + "/images/logo.svg"}
+            src={process.env.PUBLIC_URL + "/images/logo0.png"}
             alt="лого Лидер Права"
           />
           <div
@@ -70,7 +70,7 @@ export default function Header({ windowWidth }) {
               src={process.env.PUBLIC_URL + "/images/logo.svg"}
               alt="Лого Лидер Права"
             />
-            <Navbar onLinkClick={() => dialogRef.current?.close()} />
+            <Navbar />
           </dialog>
         </>
       )}

@@ -1,6 +1,7 @@
 import "./legalFees.css";
 import feesList from "../../data/dataFees.json";
 import { useState } from "react";
+import { HashLink } from "react-router-hash-link";
 
 // Компонент для отдельной карточки услуги
 function ServiceCard({ service }) {
@@ -54,9 +55,19 @@ export default function LegalFees() {
     <section id="legalFees" className="col">
       <h1>Услуги</h1>
       <p>
-        Мы оказываем полный спектр юридических услуг.
-        <br />
-        <b>Консультация бесплатна.</b>
+        Мы оказываем полный спектр юридических услуг. Ниже представлены ведущие
+        направления нашей деятельности.
+        <b> Консультация бесплатна.</b>
+        <p>
+          Если вас интересуют вопросы или услуги, не представленные в указанном
+          списке,{" "}
+          <b>
+            <HashLink to="#contacts" className="consult_link">
+              напишите нам для консультации
+            </HashLink>
+            .
+          </b>
+        </p>
       </p>
 
       {
@@ -66,6 +77,8 @@ export default function LegalFees() {
           ))}
         </div>
       }
+      <br />
+
       <br />
     </section>
   );

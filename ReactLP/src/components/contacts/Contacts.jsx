@@ -1,5 +1,6 @@
 import "./contacts.css";
 import { useState } from "react";
+import { Link } from "react-router";
 
 export default function Contacts({ windowWidth }) {
   const isMobile = windowWidth <= 1200;
@@ -12,7 +13,7 @@ export default function Contacts({ windowWidth }) {
       </p>
       <div className="container" id="contactsContainer">
         {/*Содержит левую часть - контакты, карту и "читайте о нас" */}
-        <div className="info col">
+        <div className="info col vcard">
           {!isMobile ? (
             <iframe
               src="https://yandex.ru/map-widget/v1/?um=constructor%3A00541c80d8680d38f16ccd2bcfaa20fe7d0459b926fef3c1252ac0aa7e599697&amp;source=constructor"
@@ -32,7 +33,10 @@ export default function Contacts({ windowWidth }) {
           )}
           <br />
 
-          <div>
+          <div
+            className="col"
+            style={{ alignItems: "flex-start", gap: "0.1lh" }}
+          >
             <div className="row">
               <img
                 src={process.env.PUBLIC_URL + "/images/address.svg"}
@@ -40,13 +44,16 @@ export default function Contacts({ windowWidth }) {
               />
               <p
                 style={{
-                  display: "flex",
-                  flexDirection: "column",
                   alignItems: "flex-start",
                 }}
+                className="adr col"
               >
-                428003, Чувашская Республика, <br /> г. Чебоксары, ул.
-                Афанасьева, д. 2, оф. 56.
+                <span className="postal-code">428003</span>
+                <span className="region">Чувашская Республика</span>
+                <span className="locality"> г. Чебоксары </span>
+                <span className="street-address">
+                  ул. Афанасьева, д. 2, оф. 56.
+                </span>
               </p>
             </div>
             <div className="row">
@@ -54,7 +61,7 @@ export default function Contacts({ windowWidth }) {
                 src={process.env.PUBLIC_URL + "/images/workingHours.svg"}
                 alt="часы работы"
               />
-              <p>пн-пт 9:00-18:00</p>
+              <p className="workhours">пн-пт 9:00-18:00</p>
             </div>
             <div className="row phone-info">
               <img
@@ -65,6 +72,7 @@ export default function Contacts({ windowWidth }) {
                 href="tel:+79613467077"
                 style={{ textDecoration: "none" }}
                 title="Телефон для связи"
+                className="tel"
               >
                 +7(961)346-70-77
               </a>
@@ -78,6 +86,7 @@ export default function Contacts({ windowWidth }) {
                 href="mailto:liderprava@ya.ru"
                 style={{ textDecoration: "none" }}
                 title="Почта для связи"
+                className="email"
               >
                 liderprava21@ya.ru
               </a>
@@ -314,22 +323,14 @@ export function Form() {
       </small>
       <small className="disclaimer">
         Нажимая кнопку, я подтверждаю, что ознакомлен(а) и принимаю условия
-        <a
-          href="#"
-          style={{ color: "royalblue" }}
-          title="Политика конфиденциальности"
-        >
+        <Link to="/privacy_policy" className="links">
           {" "}
           Политики Конфиденциальности
-        </a>{" "}
+        </Link>{" "}
         и соглашаюсь на{" "}
-        <a
-          href="#"
-          style={{ color: "royalblue" }}
-          title="Обработка персональных данных"
-        >
+        <Link to="/consent" className="links">
           обработку персональных данных
-        </a>
+        </Link>
         .
       </small>
       <button type="submit" name="submit" className="buttonGen submitButton">

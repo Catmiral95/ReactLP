@@ -36,6 +36,7 @@ export default function Jurists() {
           <Staff
             picture={item.picture}
             name={item.name}
+            position={item.position}
             description={item.description}
             key={item.id}
             isFirst={currentSlides[0].id === item.id}
@@ -63,8 +64,11 @@ function Staff(props) {
         alt={props.name}
         load="lazy"
       ></img>
-      <h4>{props.name}</h4>
-      <p>{props.description}</p>
+      <div className="name_and_pos col">
+        <h4 className="j_name">{props.name}</h4>
+        <small className="pos">{props.position}</small>
+      </div>
+      <p className="desc">{props.description}</p>
     </div>
   );
 }

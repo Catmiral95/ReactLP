@@ -1,5 +1,6 @@
 import "./Consent.css";
 import { useState, useEffect } from "react";
+import { Link } from "react-router";
 
 export default function Consent() {
   const [showModal, setShowModal] = useState(false);
@@ -43,9 +44,13 @@ export default function Consent() {
             <button id="acceptButton" onClick={handleAccept}>
               ОК
             </button>
-            <button id="privpolicy" target="_blank" href="#">
-              СОГЛАШЕНИЕ
-            </button>
+            <Link
+              to="/consent"
+              id="privpolicy"
+              style={{ textDecoration: "none" }}
+            >
+              Соглашение
+            </Link>
           </div>
         </div>
         <button className="closeCross cns-cross" onClick={handleClose}>
