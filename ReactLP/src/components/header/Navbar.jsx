@@ -75,11 +75,11 @@ export default function Navbar() {
   ];
 
   return (
-    <nav>
-      {menu.map((item) => (
-        <HashLink to={item.link} key={item.id} smooth>
+    <nav className="container">
+      {menu.map((item) => (<>
+        <HashLink to={`/` + item.link} key={item.id} smooth>
           {item.name}
-        </HashLink>
+        </HashLink> {item.id !== 5 && <hr />}</>
       ))}
     </nav>
   );

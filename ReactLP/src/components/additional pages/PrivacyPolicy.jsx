@@ -3,11 +3,11 @@ import Header from "../header/HeaderNavbar";
 import Footer from "../footer/Footer";
 import ScrollUp from "../scroll up/ScrollUpBtn";
 
-export default function PrivacyPolicy() {
+export default function PrivacyPolicy({ windowWidth }) {
   return (
     <>
-      <Header />
-      <ScrollUp />
+      <Header windowWidth={windowWidth}/>
+      {windowWidth > 1200 && <ScrollUp />}
       <div className="mainText col">
         <h1>ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</h1>
         <hr />

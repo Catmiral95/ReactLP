@@ -134,7 +134,7 @@
   */
 
 .carousel {
-  height: auto;
+  height: 100%;
   width: 100dvw;
   max-width: 1500px;
   overflow: hidden;
