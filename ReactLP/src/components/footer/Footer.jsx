@@ -40,7 +40,7 @@ export default function Footer() {
         <nav>
           {menu.map((item, index) => (
             <div key={index}>
-              <HashLink to={item.link}>{item.name}</HashLink>
+              <HashLink to={`/` + item.link} smooth>{item.name}</HashLink>
             </div>
           ))}
         </nav>

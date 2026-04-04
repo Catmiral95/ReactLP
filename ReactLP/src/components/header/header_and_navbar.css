@@ -24,7 +24,7 @@ header nav hr {
   @media (min-width: 1200px) {
     margin: 0 2vw;
     height: clamp(1lh, 7vh, 3.5rem);
-    width: 2px;
+    width: 1px;
     border-left: 1px solid #9a9494;
   }
 

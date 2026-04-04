@@ -23,6 +23,8 @@ function App() {
     };
   }, []);
 
+
+
   return (
     <>
       <Header windowWidth={windowWidth} />
@@ -56,7 +58,7 @@ import ScrollUp from "./components/scroll up/ScrollUpBtn.jsx";
 import PrivacyPolicy from "./components/additional pages/PrivacyPolicy.jsx";
 import ConsentText from "./components/additional pages/ConsentText.jsx";
 import { useState, useEffect } from "react";
-import { HashRouter, Route, Routes } from "react-router";
+import { BrowserRouter, HashRouter, Route, Routes } from "react-router";
 
 function App() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -74,8 +76,8 @@ function App() {
     <HashRouter>
       <Routes>
         <Route path="/" element={<Main windowWidth={windowWidth} />} />
-        <Route path="/privacy_policy" element={<PrivacyPolicy />} />
-        <Route path="/consent" element={<ConsentText />} />
+        <Route path="/privacy_policy" element={<PrivacyPolicy windowWidth={windowWidth} />} />
+        <Route path="/consent" element={<ConsentText windowWidth={windowWidth} />} />
       </Routes>
     </HashRouter>
   );
