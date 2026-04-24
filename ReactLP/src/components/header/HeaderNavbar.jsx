@@ -8,11 +8,12 @@ export default function Header({ windowWidth }) {
   const [position, setPosition] = useState(window.pageYOffset);
   const [visible, setVisible] = useState(true);
 
-  const handleDialogClick = (e) => {
-    if (e.target === dialogRef.current) {
+  const handleDialogClick = () => {
+    setTimeout(() => {
       dialogRef.current.close();
-    }
+    }, 200);
   };
+
   const openDialog = () => dialogRef.current.showModal();
 
   useEffect(() => {
@@ -28,6 +29,7 @@ export default function Header({ windowWidth }) {
       window.removeEventListener("scroll", handleScroll);
     };
   });
+
   const cls = visible ? "visibleBtn" : "hiddenBtn";
 
   return (
@@ -38,11 +40,8 @@ export default function Header({ windowWidth }) {
             src={process.env.PUBLIC_URL + "/images/logo0.png"}
             alt="лого Лидер Права"
           />
-          <div
-            className={"row"}
-            style={{ flexGrow: "0.5", justifyContent: "space-between" }}
-          >
-            <Navbar />
+          <div className={"row navbar_container"}>
+            <Navbar onClick={handleDialogClick} />
             <div className="hours-and-phone-container col">
               <p id="working-hours">пн-пт 9:00 - 18: 00</p>
               <p>
@@ -56,15 +55,23 @@ export default function Header({ windowWidth }) {
       ) : (
         <>
           <div className="burger-container row">
-            <button name="burger-menu" type="button" onClick={openDialog}>
-              <img src={process.env.PUBLIC_URL + "/images/burger_menu.svg"} />
+            <button
+              name="burger-menu"
+              id="menu-mobile"
+              aria-label="menu"
+              type="button"
+              onClick={openDialog}
+            >
+              <img
+                src={process.env.PUBLIC_URL + "/images/burger_menu.svg"}
+                alt="menu"
+              />
             </button>
           </div>
           <dialog
             className="col menu-dialog"
             ref={dialogRef}
             onClick={handleDialogClick}
-            closedby="any"
           >
             <img
               src={process.env.PUBLIC_URL + "/images/logo.svg"}

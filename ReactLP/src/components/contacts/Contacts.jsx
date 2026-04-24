@@ -7,7 +7,7 @@ export default function Contacts({ windowWidth }) {
   return (
     <section id="contacts" className="col">
       <h1>Контакты</h1>
-      <p>
+      <p style={{ textIndent: "0" }}>
         Заполните форму, чтобы записаться на бесплатную консультацию или задать
         вопрос.
       </p>
@@ -45,6 +45,7 @@ export default function Contacts({ windowWidth }) {
               <p
                 style={{
                   alignItems: "flex-start",
+                  textIndent: "0",
                 }}
                 className="adr col"
               >
@@ -61,7 +62,9 @@ export default function Contacts({ windowWidth }) {
                 src={process.env.PUBLIC_URL + "/images/workingHours.svg"}
                 alt="часы работы"
               />
-              <p className="workhours">пн-пт 9:00-18:00</p>
+              <p className="workhours" style={{ textIndent: "0" }}>
+                пн-пт 9:00-18:00
+              </p>
             </div>
             <div className="row phone-info">
               <img
@@ -96,7 +99,7 @@ export default function Contacts({ windowWidth }) {
                 src={process.env.PUBLIC_URL + "/images/owner.svg"}
                 alt="владелец"
               />
-              <p>ИП Артемьев Артём Сергеевич</p>
+              <p style={{ textIndent: "0" }}>ИП Артемьев Артём Сергеевич</p>
             </div>
           </div>
           <br />
@@ -233,6 +236,7 @@ export function Form() {
       <input
         id="name"
         name="name"
+        autocomplete="name"
         value={formData.name}
         onChange={handleChange}
         type="text"
@@ -248,6 +252,7 @@ export function Form() {
         id="phone"
         name="phone"
         type="tel"
+        autocomplete="tel"
         pattern="^(\+7|7|8)[\s\-]?\(?\d{3}\)?[\s\-]?\d{3}[\s\-]?\d{2}[\s\-]?\d{2}$"
         placeholder="+7(900)123-45-67 или 89001234567"
         value={formData.phone}
@@ -267,6 +272,7 @@ export function Form() {
         id="email"
         name="email"
         type="email"
+        autocomplete="email"
         placeholder="ivanovii@mail.com"
         value={formData.email}
         onChange={handleChange}
@@ -317,6 +323,8 @@ export function Form() {
         onChange={handleChange}
         value={formData.order}
         class="order"
+        aria-hidden="true"
+        tabIndex="-1"
       ></input>
       <small>
         <span className="asterisk">*</span>Поля, обязательные к заполнению

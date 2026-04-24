@@ -1,5 +1,4 @@
 import "./arrows.css";
-import Dots from "./Dots";
 import SwipeComponent from "./swipeHook";
 
 export default function Arrows({
@@ -34,30 +33,34 @@ export default function Arrows({
     <div className="row chevron_both_container">
       <div className="chevronLeftContainer"></div>
       <div className="arrows_container row">
-      <img
-        role="button"
-        alt="предыдущий"
-        id="arrowPrev"
-        src={process.env.PUBLIC_URL + "/images/chevron.svg"}
-        className="chevronPrev arrowsButton"
-        onClick={slidePrev}
-      />
-      <img
-        role="button"
-        alt="следующий"
-        id="arrowNext"
-        src={process.env.PUBLIC_URL + "/images/chevron.svg"}
-        className="chevronNext arrowsButton"
-        onClick={slideNext}
-      /></div>
+        <img
+          role="button"
+          alt="предыдущий"
+          id="arrowPrev"
+          src={process.env.PUBLIC_URL + "/images/chevron.svg"}
+          className="chevronPrev arrowsButton"
+          onClick={slidePrev}
+        />
+        <img
+          role="button"
+          alt="следующий"
+          id="arrowNext"
+          src={process.env.PUBLIC_URL + "/images/chevron.svg"}
+          className="chevronNext arrowsButton"
+          onClick={slideNext}
+        />
+      </div>
       <SwipeComponent
         className="chevronLeftContainer col"
         onSwipeRight={slideNext}
       ></SwipeComponent>
 
       <div className="chevronRightContainer"></div>
-      
-      <SwipeComponent className="chevronRightContainer col" onSwipeLeft={slidePrev}></SwipeComponent>
+
+      <SwipeComponent
+        className="chevronRightContainer col"
+        onSwipeLeft={slidePrev}
+      ></SwipeComponent>
     </div>
   );
 }

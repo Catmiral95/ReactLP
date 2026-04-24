@@ -105,30 +105,31 @@
   border-right: 3px solid #775e5c;
   font-weight: 300;
   box-shadow: none;
-  padding: min(1rem, 4vw); /* Исправил на vw вместо % */
+  padding: min(1rem, 4vw);
   align-items: center;
   justify-content: center;
   gap: 1rem;
   width: fit-content;
-  display: flex; /* Добавьте это если используете flex-свойства */
+  display: flex;
 }
 
 @media (max-width: 450px) {
   .contact-hero-button {
-    padding: max(0.5rem, 2vw); /* Увеличил процент для мобильных */
+    padding: max(0.5rem, 2vw);
   }
 }
 
 .contact-hero-button p {
   color: var(--main);
   width: min-content;
-  font-size: clamp(1rem, 2.5vw, 1.5rem); /* Исправленные значения */
-  margin: 0; /* Добавьте чтобы убрать стандартные отступы */
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  margin: 0;
+  text-indent: 0;
 }
 
 @media (max-width: 650px) {
   .contact-hero-button p {
-    font-size: max(1rem, 1vh); /* Исправленные значения */
+    font-size: max(1rem, 1vh);
   }
 
   .hero-content br {

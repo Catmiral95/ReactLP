@@ -1,5 +1,6 @@
 #legalFees p {
-  text-align: left;
+  text-align: justify;
+  text-indent: 3rem;
   width: 75dvw;
   min-width: 320px;
   max-width: 1500px;
