@@ -40,7 +40,7 @@ function CaseCard({ props, windowWidth }) {
 
           <div className="col text-preview-container col">
             <h3>Суть происшествия</h3>
-            <p className="align-left-mobile">{props.text.case}</p>
+            <p className="crux">{props.text.case}</p>
             <br />
             <button
               type="button"
@@ -53,7 +53,7 @@ function CaseCard({ props, windowWidth }) {
         </div>
 
         <div
-          className={`more-details-container ${caseState == "Читать далее" ? "hidden" : ""}`}
+          className={`more-details-container ${caseState == "Читать далее" ? "hidden" : "details_shown"}`}
         >
           <div className="container up">
             <div className="col">
@@ -131,7 +131,7 @@ export default function Cases({ windowWidth }) {
       <h1>Кейсы</h1>
       <br />
       <div className="textContainer">
-        <p className="whiteText align-left-mobile">
+        <p className="whiteText">
           Самое лучшее доказательство нашего профессионализма — реальные дела и
           судебные решения. В этом разделе вы можете ознакомиться с примерами
           дел из нашей практики, которые мы успешно закрыли. Изучите, как мы
@@ -144,6 +144,8 @@ export default function Cases({ windowWidth }) {
             <li>Взыскания компенсации морального ущерба</li>
             <li>Поддержки при подачи аппеляции</li>
           </ul>
+        </p>
+        <p className="whiteText">
           Эти реальные истории показывают наш системный подход, глубокое знание
           законов и нацеленность на результат. Узнайте, как мы можем помочь в
           вашей ситуации.

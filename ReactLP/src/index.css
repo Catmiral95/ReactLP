@@ -41,7 +41,6 @@ body {
 
 html body p {
   font-weight: 400;
-  text-align: justify;
 }
 
 h1 {
@@ -133,7 +132,8 @@ h1::before {
 }
 
 .asterisk {
-  color: red;
+  color: rgb(221, 151, 65);
+  margin-right: 0.5rem;
 }
 
 .additionalPageshr {
@@ -146,14 +146,6 @@ h1::before {
   @media only screen and (min-width: 1280px) {
     width: 30vw;
   }
-}
-
-.additionalPageshr::after {
-  background: var(--main);
-  content: url("../public/images/diamondDecoration.svg");
-  position: relative;
-  top: -11px;
-  padding: 0 1rem;
 }
 
 dialog {
@@ -169,16 +161,16 @@ dialog {
 }
 
 .closeCross {
-  background-color: transparent; /* Makes the background fully transparent */
-  border: none; /* Removes the default border */
-  padding: 0; /* Removes default padding */
-  margin: 0; /* Removes default margin */
-  font: inherit; /* Inherits font styles from its parent element */
-  color: inherit; /* Inherits text color from its parent element */
-  cursor: pointer; /* Ensures the cursor changes to a pointer on hover */
-  outline: none; /* Removes the outline that appears on focus in some browsers */
-  appearance: none; /* Resets platform-native styling for UI widgets */
-  -webkit-appearance: none; /* For WebKit browsers */
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
   -moz-appearance: none;
 }
 
@@ -202,11 +194,15 @@ li {
 }
 
 img[data-img-loading-error] {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
 }
 
 .align-left-mobile {
   @media (max-width: 1200px) {
     text-align: left;
   }
+}
+
+* p {
+  text-align: left;
 }

@@ -30,6 +30,8 @@
   margin: 0 clamp(1.5rem, 5%, 4rem);
   max-width: 1400px;
   font-size: 1.1rem;
+  text-align: justify;
+  text-indent: 3rem;
 }
 
 .whiteText ul {
@@ -122,6 +124,10 @@
 
 .text-preview-container {
   width: 100%;
+}
+
+.crux {
+  text-align: justify;
 }
 
 .read-more-btn {

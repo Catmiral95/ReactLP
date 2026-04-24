@@ -30,8 +30,14 @@ function App() {
     <HashRouter>
       <Routes>
         <Route path="/" element={<Main windowWidth={windowWidth} />} />
-        <Route path="/privacy_policy" element={<PrivacyPolicy windowWidth={windowWidth} />} />
-        <Route path="/consent" element={<ConsentText windowWidth={windowWidth} />} />
+        <Route
+          path="/privacy_policy"
+          element={<PrivacyPolicy windowWidth={windowWidth} />}
+        />
+        <Route
+          path="/consent"
+          element={<ConsentText windowWidth={windowWidth} />}
+        />
       </Routes>
     </HashRouter>
   );

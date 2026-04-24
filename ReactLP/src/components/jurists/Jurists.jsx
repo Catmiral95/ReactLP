@@ -1,74 +1,55 @@
-import dataJurists from "../../data/dataJurists.json";
-import "./juristsCard.css";
-import { useState } from "react";
-import Arrows from "./Arrows";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Pagination, Navigation, A11y } from "swiper/modules";
+import "swiper/css";
+import data from "../../data/dataJurists.json";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "./new_css.css";
 
 export default function Jurists() {
-  const [index, setIndex] = useState(0);
-  const [animation, setAnimation] = useState("");
-  const [rightSlideAnimation, setRightSlideAnimation] = useState("");
-  const [leftSlideAnimation, setLeftSlideAnimation] = useState("");
-
-  const test = window.matchMedia("(max-width: 1200px)").matches ? true : false;
-  const currentSlides = test
-    ? [dataJurists[index]]
-    : [
-        dataJurists[index],
-        dataJurists[(index + 1) % dataJurists.length],
-        dataJurists[(index + 2) % dataJurists.length],
-      ];
-
+  const swiper = useSwiper();
   return (
-    <div className="col" style={{ position: "relative" }}>
-      <Arrows
-        props={dataJurists}
-        currentIndex={index}
-        setIndex={setIndex}
-        setAnimation={setAnimation}
-        setRightSlideAnimation={setRightSlideAnimation}
-        setLeftSlideAnimation={setLeftSlideAnimation}
-        dataJurists={dataJurists}
-        currentSlides={currentSlides}
-      />
-      <br />
-      <div className={`row slider ${animation} `}>
-        {currentSlides.map((item) => (
-          <Staff
-            picture={item.picture}
-            name={item.name}
-            position={item.position}
-            description={item.description}
-            key={item.id}
-            isFirst={currentSlides[0].id === item.id}
-            isLast={currentSlides[currentSlides.length - 1].id === item.id}
-            rightSlideAnimation={rightSlideAnimation}
-            leftSlideAnimation={leftSlideAnimation}
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function Staff(props) {
-  return (
-    <div
-      className={`staffCard col 
-                            ${props.isFirst && "first-slide"}
-                            ${props.isLast && "last-slide"}
-                            ${props.isFirst ? props.rightSlideAnimation : ""}
-                            ${props.isLast ? props.leftSlideAnimation : ""}`}
-    >
-      <img
-        src={process.env.PUBLIC_URL + props.picture}
-        alt={props.name}
-        load="lazy"
-      ></img>
-      <div className="name_and_pos col">
-        <h4 className="j_name">{props.name}</h4>
-        <small className="pos">{props.position}</small>
-      </div>
-      <p className="desc">{props.description}</p>
-    </div>
+    <main className="main-jurists">
+      <Swiper
+        modules={[Navigation, Pagination, A11y]}
+        grabCursor
+        scrollbar={{ draggable: true }}
+        initialSlide={0}
+        centeredSlides={false}
+        slidesPerView={"auto"}
+        speed={1200}
+        slideToClickedSlide={true}
+        spaceBetween={"10"}
+        pagination={{ clickable: true }}
+        navigation
+        className="swiper"
+      >
+        <div className="slider-container">
+          {data.map((slide) => (
+            <SwiperSlide
+              key={slide.id}
+              className="col swiper-slide"
+              lazy="true"
+            >
+              <div className="swiper-slide-container">
+                <img
+                  src={process.env.PUBLIC_URL + slide.picture}
+                  alt={slide.name}
+                  load="lazy"
+                  className="img-jurists"
+                ></img>
+                <div className="col captions">
+                  <div className="title-jurists">
+                    <h4 className="col">{slide.name}</h4>
+                    <small className="pos">{slide.position}</small>
+                  </div>
+                  <p className="desc">{slide.description}</p>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </div>
+      </Swiper>
+    </main>
   );
 }

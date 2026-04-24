@@ -51,10 +51,10 @@ header a,
 }
 
 header img {
-  transform: scale(0.2);
+  transform: scale(0.17);
 
   @media (max-width: 1200px) {
-    transform: scale(1.5);
+    transform: scale(1);
   }
 }
 
@@ -92,6 +92,11 @@ button[name="burger-menu"] {
   right: 1dvh;
 }
 
+.navbar_container {
+  flex-grow: 0.5;
+  justify-content: space-between;
+}
+
 .menu-dialog:not([open]) {
   display: none !important;
 }
@@ -117,6 +122,10 @@ button[name="burger-menu"] {
   z-index: 998;
 }
 
+.menu-dialog-closing {
+  animation: slideOut 0.3s ease-in-out;
+}
+
 @keyframes slideIn {
   /*ВЖУХ слева*/
   from {
@@ -138,13 +147,11 @@ button[name="burger-menu"] {
 }
 
 .visibleBtn {
-  /* display: flex; */
   top: 0;
   transition: top 0.4s ease-out;
 }
 
 .hiddenBtn {
-  /* display: none; */
   top: -200px;
   transition: top 1.5s ease-out;
 }

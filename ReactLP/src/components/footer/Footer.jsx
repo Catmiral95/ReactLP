@@ -40,7 +40,9 @@ export default function Footer() {
         <nav>
           {menu.map((item, index) => (
             <div key={index}>
-              <HashLink to={`/` + item.link} smooth>{item.name}</HashLink>
+              <HashLink to={`/` + item.link} smooth>
+                {item.name}
+              </HashLink>
             </div>
           ))}
         </nav>
@@ -52,7 +54,7 @@ export default function Footer() {
               src={process.env.PUBLIC_URL + "/images/addressW.svg"}
               alt="адрес"
             />
-            <p>
+            <p style={{ textIndent: "0" }}>
               428003, Чувашская Республика, <br />
               г. Чебоксары, ул. Афанасьева, д. 2, оф. 56.
             </p>
