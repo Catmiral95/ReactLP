@@ -1,3 +1,4 @@
+
 import "./App.css";
 import Header from "./components/header/HeaderNavbar.jsx";
 import About from "./components/about/About.jsx";
@@ -11,7 +12,7 @@ import ScrollUp from "./components/scroll up/ScrollUpBtn.jsx";
 import PrivacyPolicy from "./components/additional pages/PrivacyPolicy.jsx";
 import ConsentText from "./components/additional pages/ConsentText.jsx";
 import { useState, useEffect } from "react";
-import { BrowserRouter, HashRouter, Route, Routes } from "react-router";
+import { HashRouter, Route, Routes } from "react-router";
 
 function App() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);

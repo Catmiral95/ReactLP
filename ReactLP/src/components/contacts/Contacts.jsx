@@ -16,21 +16,24 @@ export default function Contacts({ windowWidth }) {
         <div className="info col vcard">
           {!isMobile ? (
             <iframe
-              src="https://yandex.ru/map-widget/v1/?um=constructor%3A00541c80d8680d38f16ccd2bcfaa20fe7d0459b926fef3c1252ac0aa7e599697&amp;source=constructor"
+              src="https://yandex.ru/map-widget/v1/org/lider_prava/34845163518/?from=mapframe&ll=47.260332%2C56.145045&z=13.84"
+              frameborder="1"
               width="500"
-              height="240"
-              frameborder="0"
-              title="Адрес на карте Яндекс"
+              height="400"
+              allowfullscreen="false"
+              style={{ position: "relative", width: "100%" }}
             ></iframe>
           ) : (
             <iframe
-              src="https://yandex.ru/map-widget/v1/?um=constructor%3A00541c80d8680d38f16ccd2bcfaa20fe7d0459b926fef3c1252ac0aa7e599697&amp;source=constructor"
-              width="300"
-              height="200"
-              frameborder="0"
-              title="Адрес на карте Яндекс"
+              src="https://yandex.ru/map-widget/v1/org/lider_prava/34845163518/?from=mapframe&ll=47.260332%2C56.145045&z=13.84"
+              frameborder="1"
+              width="250"
+              height="250"
+              allowfullscreen="false"
+              style={{ position: "relative", width: "90%" }}
             ></iframe>
           )}
+
           <br />
 
           <div
@@ -290,7 +293,7 @@ export function Form() {
         id="messageTopic"
         name="messageTopic"
         type="topic"
-        value={formData.topic}
+        value={formData.messageTopic}
         onChange={handleChange}
       >
         <option value="Запись на прием">Запись на прием</option>
@@ -322,9 +325,7 @@ export function Form() {
         name="order"
         onChange={handleChange}
         value={formData.order}
-        class="order"
-        aria-hidden="true"
-        tabIndex="-1"
+        className="order"
       ></input>
       <small>
         <span className="asterisk">*</span>Поля, обязательные к заполнению

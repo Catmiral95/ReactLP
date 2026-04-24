@@ -76,7 +76,9 @@ export default function Header({ windowWidth }) {
             <img
               src={process.env.PUBLIC_URL + "/images/logo.svg"}
               alt="Лого Лидер Права"
+              style={{ marginBottom: "2lh" }}
             />
+
             <Navbar />
           </dialog>
         </>
