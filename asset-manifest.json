@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/ReactLP/static/css/main.a43730c2.css",
+    "main.css": "/ReactLP/static/css/main.6cf7e215.css",
     "main.js": "/ReactLP/static/js/main.9d26b62d.js",
     "static/js/453.a0dc00ab.chunk.js": "/ReactLP/static/js/453.a0dc00ab.chunk.js",
     "static/media/group-photo-2.jpg": "/ReactLP/static/media/group-photo-2.692a3930535a4033bb1e.jpg",
@@ -11,12 +11,12 @@
     "static/media/justice_backs.webp": "/ReactLP/static/media/justice_backs.a122dee6c89a234afeeb.webp",
     "index.html": "/ReactLP/index.html",
     "static/media/chevron.svg": "/ReactLP/static/media/chevron.08eb4db5f133d0b8afe0.svg",
-    "main.a43730c2.css.map": "/ReactLP/static/css/main.a43730c2.css.map",
+    "main.6cf7e215.css.map": "/ReactLP/static/css/main.6cf7e215.css.map",
     "main.9d26b62d.js.map": "/ReactLP/static/js/main.9d26b62d.js.map",
     "453.a0dc00ab.chunk.js.map": "/ReactLP/static/js/453.a0dc00ab.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a43730c2.css",
+    "static/css/main.6cf7e215.css",
     "static/js/main.9d26b62d.js"
   ]
 }
