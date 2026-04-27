@@ -193,7 +193,7 @@ export function Form() {
       return false;
     }
   };
-  const handleSubmit = async (e) => {
+ /* const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("Отправка...");
     if (!checkBeforeSending) {
@@ -229,6 +229,55 @@ export function Form() {
       setStatus("Ошибка соединения с сервером.");
     }
   };
+*/
+// Добавьте эту функцию в ваш React компонент
+const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    // Устанавливаем статус загрузки
+    setStatus('Отправка...');
+    
+    try {
+        const response = await fetch('http://localhost:5000/api/send-message', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: formData.name,
+                phone: formData.phone,
+                email: formData.email || '',
+                messageTopic: formData.messageTopic,
+                message: formData.message,
+                order: formData.order // скрытое поле для защиты от ботов
+            })
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            setStatus('✓ Сообщение успешно отправлено!');
+            // Очищаем форму
+            setFormData({
+                name: '',
+                phone: '',
+                email: '',
+                messageTopic: 'Запись на прием',
+                message: '',
+                order: ''
+            });
+            // Через 5 секунд убираем сообщение
+            setTimeout(() => setStatus(''), 5000);
+        } else {
+            setStatus(`✗ ${data.error}`);
+            setTimeout(() => setStatus(''), 5000);
+        }
+    } catch (error) {
+        console.error('Ошибка:', error);
+        setStatus('✗ Ошибка соединения. Попробуйте позже.');
+        setTimeout(() => setStatus(''), 5000);
+    }
+};
 
   return (
     <form onSubmit={handleSubmit} className="col" method="post">

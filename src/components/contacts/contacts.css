@@ -200,6 +200,12 @@ small,
   transform: scale(0.95);
 }
 
+@media (max-width: 1200px) {
+  .submit-status {
+    font-size: medium;
+  }
+}
+
 small {
   font-size: medium;
   text-align: left;
