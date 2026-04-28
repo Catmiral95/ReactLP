@@ -122,10 +122,6 @@ button[name="burger-menu"] {
   z-index: 998;
 }
 
-.menu-dialog-closing {
-  animation: slideOut 0.3s ease-in-out;
-}
-
 @keyframes slideIn {
   /*ВЖУХ слева*/
   from {
