@@ -13,7 +13,7 @@ header {
   }
 }
 
-header nav hr {
+header nav ul hr {
   text-align: center;
   margin: 1rem 1rem;
   height: 2px;
@@ -58,11 +58,30 @@ header img {
   }
 }
 
+@media (max-width: 1200px) {
+  nav {
+    margin-right: 0.6lh;
+  }
+}
+
 nav a:hover {
   border-bottom: 0.2rem solid royalblue;
   margin-bottom: -0.2rem;
   color: royalblue;
   transition: 0.1s ease-in-out;
+}
+
+nav ul li::marker {
+  content: "";
+}
+
+nav ul li hr {
+  margin: 0;
+  margin-left: 25px;
+
+  @media (max-width: 1200px) {
+    margin: 0.75lh 0;
+  }
 }
 
 button[name="burger-menu"] {
@@ -120,10 +139,6 @@ button[name="burger-menu"] {
 .menu-dialog[open]::backdrop {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 998;
-}
-
-.menu-dialog-closing {
-  animation: slideOut 0.3s ease-in-out;
 }
 
 @keyframes slideIn {

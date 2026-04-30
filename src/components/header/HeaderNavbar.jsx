@@ -7,11 +7,12 @@ export default function Header({ windowWidth }) {
   const isMobile = windowWidth <= 1200;
   const [position, setPosition] = useState(window.pageYOffset);
   const [visible, setVisible] = useState(true);
+  const [isClosing, setIsClosing] = useState(false);
 
   const handleDialogClick = () => {
     setTimeout(() => {
       dialogRef.current.close();
-    }, 200);
+    }, 500);
   };
 
   const openDialog = () => dialogRef.current.showModal();
@@ -33,7 +34,7 @@ export default function Header({ windowWidth }) {
   const cls = visible ? "visibleBtn" : "hiddenBtn";
 
   return (
-    <header className={`row ${isMobile && `mobile-header ${cls}`}`}>
+    <header className={`row ${isMobile && `mobile-header ${cls}`} `}>
       {!isMobile ? (
         <>
           <img
@@ -54,7 +55,7 @@ export default function Header({ windowWidth }) {
         </>
       ) : (
         <>
-          <div className="burger-container row">
+          <div className={`burger-container row`}>
             <button
               name="burger-menu"
               id="menu-mobile"
@@ -69,14 +70,13 @@ export default function Header({ windowWidth }) {
             </button>
           </div>
           <dialog
-            className="col menu-dialog"
+            className={`col menu-dialog `}
             ref={dialogRef}
             onClick={handleDialogClick}
           >
             <img
               src={process.env.PUBLIC_URL + "/images/logo.svg"}
               alt="Лого Лидер Права"
-              style={{ marginBottom: "2lh" }}
             />
 
             <Navbar />

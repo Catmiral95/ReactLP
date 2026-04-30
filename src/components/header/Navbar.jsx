@@ -31,19 +31,16 @@ export default function Navbar({ handleDialogClick }) {
 
   return (
     <nav className="container">
-      {menu.map((item) => (
-        <>
-          <HashLink
-            to={`/` + item.link}
-            key={item.id}
-            smooth
-            onClick={handleDialogClick}
-          >
-            {item.name}
-          </HashLink>
-          {item.id !== 5 && <hr />}
-        </>
-      ))}
+      <ul className="container">
+        {menu.map((item) => (
+          <li className="container" key={item.id}>
+            <HashLink to={`/` + item.link} smooth onClick={handleDialogClick}>
+              {item.name}
+            </HashLink>
+            {item.id !== 5 && <hr />}
+          </li>
+        ))}
+      </ul>
     </nav>
   );
 }
