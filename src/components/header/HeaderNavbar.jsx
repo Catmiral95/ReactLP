@@ -55,7 +55,7 @@ export default function Header({ windowWidth }) {
         </>
       ) : (
         <>
-          <div className={`burger-container row `}>
+          <div className={`burger-container row`}>
             <button
               name="burger-menu"
               id="menu-mobile"
@@ -77,7 +77,6 @@ export default function Header({ windowWidth }) {
             <img
               src={process.env.PUBLIC_URL + "/images/logo.svg"}
               alt="Лого Лидер Права"
-              style={{ marginBottom: "2lh" }}
             />
 
             <Navbar />

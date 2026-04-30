@@ -90,7 +90,7 @@ function CaseCard({ props, windowWidth }) {
                   <td className="victim-td">{item[0]}</td>
                   <td>
                     {item[1]?.map((penalty) => (
-                      <ul style={{ listStyleType: "none" }}>
+                      <ul style={{ listStyleType: "none" }} key={penalty}>
                         <li className="no-marker">
                           <tr className={isMobile && "col"}>
                             <td className="penalty-sum">
@@ -136,15 +136,16 @@ export default function Cases({ windowWidth }) {
           судебные решения. В этом разделе вы можете ознакомиться с примерами
           дел из нашей практики, которые мы успешно закрыли. Изучите, как мы
           добивались:
-          <ul>
-            <li>
-              Защиты прав клиента при несоблюдении удовлетворения требований и
-              нарушении сроков сдачи проекта
-            </li>
-            <li>Взыскания компенсации морального ущерба</li>
-            <li>Поддержки при подачи аппеляции</li>
-          </ul>
         </p>
+        <ul className="whiteText">
+          <li className="whiteText">
+            Защиты прав клиента при несоблюдении удовлетворения требований и
+            нарушении сроков сдачи проекта
+          </li>
+          <li className="whiteText">Взыскания компенсации морального ущерба</li>
+          <li className="whiteText">Поддержки при подачи аппеляции</li>
+        </ul>
+
         <p className="whiteText">
           Эти реальные истории показывают наш системный подход, глубокое знание
           законов и нацеленность на результат. Узнайте, как мы можем помочь в
