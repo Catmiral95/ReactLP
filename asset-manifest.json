@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/ReactLP/static/css/main.6cf7e215.css",
-    "main.js": "/ReactLP/static/js/main.9d26b62d.js",
-    "static/js/453.a0dc00ab.chunk.js": "/ReactLP/static/js/453.a0dc00ab.chunk.js",
+    "main.css": "/ReactLP/static/css/main.1697e419.css",
+    "main.js": "/ReactLP/static/js/main.2a09711f.js",
+    "static/js/453.d222453a.chunk.js": "/ReactLP/static/js/453.d222453a.chunk.js",
     "static/media/group-photo-2.jpg": "/ReactLP/static/media/group-photo-2.692a3930535a4033bb1e.jpg",
     "static/media/jurists-backs.jpg": "/ReactLP/static/media/jurists-backs.61774a12ac067cac7a93.jpg",
     "static/media/group-photo-3.jpg": "/ReactLP/static/media/group-photo-3.57e276e451935b95ca99.jpg",
@@ -11,12 +11,12 @@
     "static/media/justice_backs.webp": "/ReactLP/static/media/justice_backs.a122dee6c89a234afeeb.webp",
     "index.html": "/ReactLP/index.html",
     "static/media/chevron.svg": "/ReactLP/static/media/chevron.08eb4db5f133d0b8afe0.svg",
-    "main.6cf7e215.css.map": "/ReactLP/static/css/main.6cf7e215.css.map",
-    "main.9d26b62d.js.map": "/ReactLP/static/js/main.9d26b62d.js.map",
-    "453.a0dc00ab.chunk.js.map": "/ReactLP/static/js/453.a0dc00ab.chunk.js.map"
+    "main.1697e419.css.map": "/ReactLP/static/css/main.1697e419.css.map",
+    "main.2a09711f.js.map": "/ReactLP/static/js/main.2a09711f.js.map",
+    "453.d222453a.chunk.js.map": "/ReactLP/static/js/453.d222453a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6cf7e215.css",
-    "static/js/main.9d26b62d.js"
+    "static/css/main.1697e419.css",
+    "static/js/main.2a09711f.js"
   ]
 }
