@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/ReactLP/static/css/main.1697e419.css",
-    "main.js": "/ReactLP/static/js/main.2a09711f.js",
-    "static/js/453.d222453a.chunk.js": "/ReactLP/static/js/453.d222453a.chunk.js",
-    "static/media/group-photo-2.jpg": "/ReactLP/static/media/group-photo-2.692a3930535a4033bb1e.jpg",
-    "static/media/jurists-backs.jpg": "/ReactLP/static/media/jurists-backs.61774a12ac067cac7a93.jpg",
-    "static/media/group-photo-3.jpg": "/ReactLP/static/media/group-photo-3.57e276e451935b95ca99.jpg",
-    "static/media/group-photo-1.jpg": "/ReactLP/static/media/group-photo-1.5f35ade8857512b59923.jpg",
-    "static/media/ceilingPhoto.webp": "/ReactLP/static/media/ceilingPhoto.71b297d816061909b743.webp",
-    "static/media/justice_backs.webp": "/ReactLP/static/media/justice_backs.a122dee6c89a234afeeb.webp",
-    "index.html": "/ReactLP/index.html",
-    "static/media/chevron.svg": "/ReactLP/static/media/chevron.08eb4db5f133d0b8afe0.svg",
-    "main.1697e419.css.map": "/ReactLP/static/css/main.1697e419.css.map",
-    "main.2a09711f.js.map": "/ReactLP/static/js/main.2a09711f.js.map",
-    "453.d222453a.chunk.js.map": "/ReactLP/static/js/453.d222453a.chunk.js.map"
+    "main.css": "./static/css/main.b7eb8c48.css",
+    "main.js": "./static/js/main.c57ff8a4.js",
+    "static/js/453.ad798e09.chunk.js": "./static/js/453.ad798e09.chunk.js",
+    "static/media/group-photo-2.jpg": "./static/media/group-photo-2.692a3930535a4033bb1e.jpg",
+    "static/media/jurists-backs.jpg": "./static/media/jurists-backs.61774a12ac067cac7a93.jpg",
+    "static/media/group-photo-3.jpg": "./static/media/group-photo-3.57e276e451935b95ca99.jpg",
+    "static/media/group-photo-1.jpg": "./static/media/group-photo-1.5f35ade8857512b59923.jpg",
+    "static/media/ceilingPhoto.webp": "./static/media/ceilingPhoto.71b297d816061909b743.webp",
+    "static/media/justice_backs.webp": "./static/media/justice_backs.a122dee6c89a234afeeb.webp",
+    "index.html": "./index.html",
+    "static/media/chevron.svg": "./static/media/chevron.08eb4db5f133d0b8afe0.svg",
+    "main.b7eb8c48.css.map": "./static/css/main.b7eb8c48.css.map",
+    "main.c57ff8a4.js.map": "./static/js/main.c57ff8a4.js.map",
+    "453.ad798e09.chunk.js.map": "./static/js/453.ad798e09.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1697e419.css",
-    "static/js/main.2a09711f.js"
+    "static/css/main.b7eb8c48.css",
+    "static/js/main.c57ff8a4.js"
   ]
 }
