@@ -1,0 +1,30 @@
+.scroll-btn {
+  position: fixed;
+  top: 85vh;
+  left: 92vw;
+  height:fit-content;
+  width: fit-content;
+  padding: 1dvw 0rem;
+  z-index: 1000;
+  background: #282427b5;
+  border: none;
+  border-radius: 50%;
+  opacity: 75%;
+  transition: opacity 0.3s ease-in-out;
+  transform: scale(1);
+
+  @media (min-width: 1600px) {
+    transform: scale(1.45);
+  }
+}
+
+.scroll-btn img {
+  transform: rotate(-90deg) scale(0.5);
+}
+
+.scroll-btn:hover {
+  opacity: 100%;
+  background-color: royalblue;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in-out;
+}

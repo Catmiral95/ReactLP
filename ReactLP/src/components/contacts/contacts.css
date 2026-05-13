@@ -1,0 +1,245 @@
+.readFeedback p {
+  color: #dd9859;
+}
+
+#contacts {
+  padding: 1rem;
+}
+
+#contactsContainer {
+  justify-content: center;
+  align-items: flex-start;
+  width: 90%;
+  gap: clamp(2rem, 10%, 5rem);
+
+  @media (max-width: 1200px) {
+    width: 100%;
+    gap: 1lh;
+  }
+}
+
+.phone-info:hover a,
+.mail-info:hover a {
+  color: royalblue;
+  transition: color 0.2s ease-in-out;
+}
+
+.phone-info a,
+.mail-info a {
+  transition: color 0.2s ease-in-out;
+  color: inherit;
+}
+
+.info {
+  width: fit-content;
+  font-size: x-large;
+  text-align: left;
+  @media (max-width: 1200px) {
+    margin-top: 1rem;
+    width: 100%;
+  }
+}
+
+form {
+  font-size: x-large;
+  width: 100%;
+  max-width: 1200px;
+
+  @media (max-width: 1200px) {
+    padding: 0 1rem;
+    max-width: 750px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .formDiv {
+    margin: 0 0 0 -2.5%;
+    width: 50%;
+  }
+}
+
+iframe {
+  margin-top: 0.75lh;
+}
+
+.readFeedback img:hover {
+  transform: scale(1.25);
+  transition: 0.3s ease-in-out;
+}
+
+.readFeedback img {
+  transition: 0.3s ease-in-out;
+}
+
+form {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+
+  @media (min-width: 500px) and (max-width: 1200px) {
+    width: 75%;
+    margin-top: 0.25lh;
+  }
+}
+
+@media (max-width: 1200px) {
+  .formDiv p {
+    width: 80%;
+  }
+  .formDiv h2 {
+    margin-top: 0.5lh;
+  }
+  .info {
+    font-size: large;
+  }
+}
+
+.info div {
+  gap: 1rem;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #112134;
+  height: 1.5lh;
+}
+
+textarea {
+  height: 5lh;
+}
+
+label {
+  width: 100%;
+  text-align: left;
+  padding-left: 1rem;
+  margin: 0.4rem 0;
+}
+
+input,
+textarea,
+select,
+option,
+input::placeholder,
+textarea::placeholder {
+  text-align: left;
+  padding: 0.75rem;
+  font-size: 1rem;
+
+  @media (max-width: 1200px) {
+    font-size: 0.9rem;
+  }
+}
+
+select {
+  padding: 0 0.5rem;
+}
+
+.order {
+  height: 1px;
+  width: 1px;
+  left: -3000px;
+  position: absolute;
+}
+
+small,
+.formDiv p {
+  text-align: left;
+}
+
+.disclaimer a {
+  color: #456d8c;
+  text-decoration: underline;
+  margin: 0 0;
+}
+
+.submitButton {
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+  padding: 1em;
+  padding-left: 0.9em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1lh 0;
+
+  width: clamp(200px, 50%, 400px);
+  @media (max-width: 1200px) {
+    margin: 0.4lh 0;
+  }
+}
+
+.submitButton span {
+  color: white;
+  display: block;
+  margin: 0 0.7rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.submitButton svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.submitButton:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+.submitButton:hover .svg-wrapper {
+  animation: hop 0.6s ease-in-out infinite alternate;
+}
+
+.submitButton:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 1200px) {
+  .submit-status {
+    font-size: medium;
+  }
+}
+
+small {
+  font-size: medium;
+  text-align: left;
+  width: 100%;
+  margin-top: 0.75rem;
+
+  @media (max-width: 1200px) {
+    width: 100%;
+  }
+}
+
+.links {
+  color: royalblue;
+}
+
+.disclaimer {
+  margin-top: 0.5rem;
+}
+
+@keyframes fly {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(20em);
+  }
+}
+
+@keyframes hop {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
+  }
+}
