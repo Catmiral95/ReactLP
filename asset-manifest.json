@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.89525ff6.css",
-    "main.js": "./static/js/main.2437ed0c.js",
+    "main.css": "./static/css/main.427c70a5.css",
+    "main.js": "./static/js/main.373f09a8.js",
     "static/js/453.ad798e09.chunk.js": "./static/js/453.ad798e09.chunk.js",
     "static/media/group-photo-2.jpg": "./static/media/group-photo-2.692a3930535a4033bb1e.jpg",
     "static/media/jurists-backs.jpg": "./static/media/jurists-backs.61774a12ac067cac7a93.jpg",
@@ -11,12 +11,12 @@
     "static/media/justice_backs.webp": "./static/media/justice_backs.a122dee6c89a234afeeb.webp",
     "index.html": "./index.html",
     "static/media/chevron.svg": "./static/media/chevron.08eb4db5f133d0b8afe0.svg",
-    "main.89525ff6.css.map": "./static/css/main.89525ff6.css.map",
-    "main.2437ed0c.js.map": "./static/js/main.2437ed0c.js.map",
+    "main.427c70a5.css.map": "./static/css/main.427c70a5.css.map",
+    "main.373f09a8.js.map": "./static/js/main.373f09a8.js.map",
     "453.ad798e09.chunk.js.map": "./static/js/453.ad798e09.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.89525ff6.css",
-    "static/js/main.2437ed0c.js"
+    "static/css/main.427c70a5.css",
+    "static/js/main.373f09a8.js"
   ]
 }
