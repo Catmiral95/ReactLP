@@ -131,7 +131,6 @@ button[name="burger-menu"] {
   justify-content: center;
   height: 100dvh;
   max-height: none;
-  top: -1.5lh;
   left: 0;
   gap: 1rem;
   background-color: var(--secondary);

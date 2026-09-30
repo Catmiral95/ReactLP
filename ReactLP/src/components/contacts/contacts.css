@@ -109,6 +109,19 @@ form {
   gap: 1rem;
 }
 
+.nota_bene {
+  font-size: 0.9rem;
+  width: 100%;
+  text-align: justify;
+  margin: 1lh 0 0.25lh 0;
+  text-wrap: stable;
+
+  @media (max-width: 1200px) {
+    margin: 0 0 0.25lh 0;
+    width: 100% !important;
+  }
+}
+
 input,
 textarea,
 select {
@@ -118,8 +131,14 @@ select {
   height: 1.5lh;
 }
 
+input:focus::placeholder,
+textarea:focus::placeholder {
+  color: transparent;
+}
+
 textarea {
-  height: 5lh;
+  height: 20dvh;
+  resize: vertical;
 }
 
 label {
@@ -136,8 +155,8 @@ option,
 input::placeholder,
 textarea::placeholder {
   text-align: left;
-  padding: 0.75rem;
-  font-size: 1rem;
+  padding: 0.25rem;
+  font-size: 0.8rem;
 
   @media (max-width: 1200px) {
     font-size: 0.9rem;

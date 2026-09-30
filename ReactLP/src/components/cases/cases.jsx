@@ -87,7 +87,9 @@ function CaseCard({ props, windowWidth }) {
                       : ""
                   }`}
                 >
-                  <td className="victim-td">{item[0]}</td>
+                  <td className="victim-td">
+                    <b>{item[0]}</b>
+                  </td>
                   <td>
                     {item[1]?.map((penalty) => (
                       <ul style={{ listStyleType: "none" }} key={penalty}>
@@ -132,18 +134,18 @@ export default function Cases({ windowWidth }) {
       <br />
       <div className="textContainer">
         <p className="whiteText">
-          Самое лучшее доказательство профессионализма — реальные дела и
+          Наилучшее доказательство профессионализма — реальные дела и
           судебные решения. В этом разделе вы можете ознакомиться с примерами
           дел из нашей практики, которые мы успешно закрыли. Изучите, как мы
           добивались:
         </p>
         <ul className="whiteText">
           <li className="whiteText">
-            Защиты прав клиента при несоблюдении удовлетворения требований и
+            Защиты законных прав клиента при несоблюдении удовлетворения требований и
             нарушении сроков сдачи проекта;
           </li>
           <li className="whiteText">
-            Взыскания компенсации за причинение морального ущерба;
+            Полного взыскания справедливой компенсации за причинение морального ущерба;
           </li>
           <li className="whiteText">Поддержки при подаче апелляции.</li>
         </ul>

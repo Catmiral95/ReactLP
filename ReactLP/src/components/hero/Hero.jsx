@@ -15,7 +15,7 @@ export default function Hero({ windowWidth }) {
     },
     {
       image: "/images/phoneW.svg",
-      link: "tel:+7 961 346 70 77",
+      link: "tel:+7 960 312 84 06",
       name: "телефон",
     },
     {
@@ -25,12 +25,12 @@ export default function Hero({ windowWidth }) {
     },
     {
       image: "/images/vkW.svg",
-      link: "https://vk.com/liderpravapfo",
+      link: "https://vk.ru/im?sel=-239191554",
       name: "ВКонтакте",
     },
     {
       image: "/images/tgW.svg",
-      link: "https://t.me/liderpravapfo",
+      link: "https://t.me/liderpravapfo?direct",
       name: "Телеграм",
     },
     {

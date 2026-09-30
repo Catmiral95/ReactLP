@@ -182,6 +182,11 @@ td {
   width: 100%;
 }
 
+.case-result h3 {
+  font-size: 30px;
+  margin-bottom: 0.25lh;
+}
+
 .textCase p,
 td pre,
 .textCase li {

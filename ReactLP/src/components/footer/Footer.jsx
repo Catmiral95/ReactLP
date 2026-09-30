@@ -65,11 +65,11 @@ export default function Footer() {
               alt="телефон"
             />
             <a
-              href="tel:+79613467077"
+              href="tel:+79603128406"
               style={{ textDecoration: "none" }}
               title="Телефон для связи"
             >
-              +7(961)346-70-77
+              +7(960)312-84-06
             </a>
           </div>
           <div className="row">

@@ -134,8 +134,15 @@ h1 {
 dialog {
   border: none;
   box-shadow: 0px 4px 4px rgba(76, 75, 75, 0.6);
-  margin-top: 1.5lh;
   align-self: start;
+}
+
+.dialog-form {
+  margin-top: -7%;
+
+  @media (max-width: 600px) {
+    margin-top: 10%;
+  }
 }
 
 dialog::backdrop {

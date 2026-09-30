@@ -75,12 +75,12 @@ export default function Contacts({ windowWidth }) {
                 alt="телефон"
               />
               <a
-                href="tel:+79613467077"
+                href="tel:+79603128406"
                 style={{ textDecoration: "none" }}
                 title="Телефон для связи"
                 className="tel"
               >
-                +7(961)346-70-77
+                +7(960)312-84-06
               </a>
             </div>
             <div className="row mail-info">
@@ -145,31 +145,24 @@ export default function Contacts({ windowWidth }) {
 
 export function Form() {
   const [isValidPhone, setIsValidPhone] = useState(true);
-  const [isValidEmail, setIsValidEmail] = useState(true);
   const [status, setStatus] = useState("");
   const [submitAnimation, setSubmitAnimation] = useState({});
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    email: "",
     messageTopic: "Запись на прием",
     message: "",
     order: "",
   });
 
   const validatePhone = (event) => {
-    let phone = event.target;
+    const phone = event.target;
     setIsValidPhone(!phone.checkValidity() ? false : true);
-  };
-
-  const validateEmail = (event) => {
-    let email = event.target;
-    setIsValidEmail(!email.checkValidity() ? false : true);
   };
 
   const animateSubmit = () => {
     setSubmitAnimation({
-      animation: " fly 0.6s ease-in forwards",
+      animation: "fly 0.6s ease-in forwards",
       pointerEvents: "none",
     });
     setTimeout(() => {
@@ -186,12 +179,7 @@ export function Form() {
   };
 
   const checkBeforeSending = () => {
-    if (
-      isValidEmail == true &&
-      isValidPhone == true &&
-      formData.message &&
-      formData.name
-    ) {
+    if (isValidPhone === true) {
       console.log("YES");
       return true;
     } else {
@@ -219,7 +207,7 @@ export function Form() {
           name: formData.name,
           phone: formData.phone,
           email: formData.email,
-          messageTopic: formData.messageTopic,
+          //messageTopic: formData.messageTopic,
           message: formData.message,
           order: formData.order,
         }),
@@ -233,7 +221,7 @@ export function Form() {
           name: "",
           phone: "",
           email: "",
-          messageTopic: "Запись на прием",
+          //messageTopic: "Запись на прием",
           message: "",
           order: "",
         });
@@ -254,10 +242,11 @@ export function Form() {
 
   return (
     <form onSubmit={handleSubmit} className="col" method="post">
-      <label htmlFor="name">
-        Ф.И.О.
-        <span className="asterisk">*</span>
-      </label>
+      <p className="nota_bene">
+        Обратите внимание, что бесплатная консультация направлена на анализ
+        Вашей ситуации и расчет стоимости услуг.
+      </p>
+      <label htmlFor="name">Как к Вам обращаться?</label>
       <input
         id="name"
         name="name"
@@ -265,13 +254,12 @@ export function Form() {
         value={formData.name}
         onChange={handleChange}
         type="text"
-        placeholder="Иванов Иван Иванович"
-        required
+        //placeholder="Иванов Иван Иванович"
+        placeholder="Иван"
+        //required
       />
-
       <label htmlFor="phone">
-        Телефон
-        <span className="asterisk">*</span>
+        Телефон <span className="asterisk">*</span>
       </label>
       <input
         id="phone"
@@ -292,25 +280,7 @@ export function Form() {
         </small>
       )}
 
-      <label htmlFor="email">Адрес электронной почты</label>
-      <input
-        id="email"
-        name="email"
-        type="email"
-        autocomplete="email"
-        placeholder="ivanovii@mail.com"
-        value={formData.email}
-        onChange={handleChange}
-        onBlur={validateEmail}
-        style={{ borderColor: isValidEmail ? "initial" : "red" }} //окрашивает край в красный, только если почта введена и введена некоррентно
-      />
-      {!isValidEmail && (
-        <small style={{ color: "red", fontSize: "14px", margin: "5px 0" }}>
-          Введите корректный email
-        </small>
-      )}
-
-      <label htmlFor="messageTopic">Тема сообщения</label>
+      {/*<label htmlFor="messageTopic">Тема сообщения</label>
       <select
         id="messageTopic"
         name="messageTopic"
@@ -328,18 +298,16 @@ export function Form() {
           Юридическая консультация
         </option>
         <option value="Другое">Другое</option>
-      </select>
+      </select>*/}
 
-      <label htmlFor="message">
-        Сообщение<span className="asterisk">*</span>
-      </label>
+      <label htmlFor="message">Сообщение</label>
       <textarea
         id="message"
         name="message"
-        placeholder="Текст сообщения"
+        placeholder="Здесь Вы можете вкратце описать свою проблему или вопрос, а также оставить дополнительную информацию о связи с Вами"
         value={formData.message}
         onChange={handleChange}
-        required
+        //required
       />
       <input
         id="order" //хани поттер и тайное поле
