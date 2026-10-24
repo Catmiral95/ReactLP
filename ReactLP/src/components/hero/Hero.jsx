@@ -1,67 +1,39 @@
-import "./hero.css";
+import styles from "./hero.module.css";
 import FormPopup from "../form/FormPopup";
 import { useRef } from "react";
+import contanctsHero from "../../data/dataContacts.json";
 
-export default function Hero({ windowWidth }) {
+export default function Hero() {
   const dialogForm = useRef(null);
   const openDialog = () => dialogForm.current.showModal();
-  const isMobile = windowWidth <= 1200;
-
-  const contanctsHero = [
-    {
-      image: "/images/mailW.svg",
-      link: "mailto:liderprava@ya.ru",
-      name: "почта",
-    },
-    {
-      image: "/images/phoneW.svg",
-      link: "tel:+7 960 312 84 06",
-      name: "телефон",
-    },
-    {
-      image: "/images/whatsappW.svg",
-      link: "https://api.whatsapp.com/send/?phone=79603128406&amp;text=Здравствуйте%21%0A%0AПишу+из+приложения+2ГИС.%0A%0A&amp;type=phone_number&amp;app_absent=0",
-      name: "WhatsApp",
-    },
-    {
-      image: "/images/vkW.svg",
-      link: "https://vk.ru/im?sel=-239191554",
-      name: "ВКонтакте",
-    },
-    {
-      image: "/images/tgW.svg",
-      link: "https://t.me/liderpravapfo?direct",
-      name: "Телеграм",
-    },
-    {
-      image: "/images/max.svg",
-      link: "https://max.ru/join/KlnqqnrRDC6nN8p5G22IyKGhOCkcbRs-D830bo4qWQM",
-      name: "Мессенджер Макс",
-    },
-  ];
 
   return (
-    <div className="hero col" id="heroPage">
-      <div className="hero-content col">
-        <div className="col title-container">
-          <h1 className="title fn org">Лидер права</h1>
-          <h2 className="undertitle category">юридическая компания</h2>
+    <section className={`col ${styles.hero}`} id="heroPage">
+      <div className="col">
+        <div className="col">
+          <h1 className={styles.h1}>Лидер права</h1>
+          <h2 className={`${styles.h2} category`}>юридическая компания</h2>
         </div>
         <br />
-        <span className="cath-phrase">Команда опытных профессионалов.</span>
+        <span className={styles.span}>Команда опытных профессионалов.</span>
         <br />
         <button
-          className="buttonGen contact-hero-button row"
+          className={`buttonGen row ${styles.button}`}
           onClick={openDialog}
         >
-          <p>Бесплатная консультация</p>
+          <span>Бесплатная консультация</span>
           <img src={process.env.PUBLIC_URL + "/images/arrow.svg"} alt="arrow" />
         </button>
         <div className="row icons-container">
           {contanctsHero.map((item) => {
             if (item.name === "WhatsApp") return; // удалить в лучшие времена
             return (
-              <a href={item.link} key={item.name} title={item.name}>
+              <a
+                href={item.link}
+                key={item.name}
+                title={item.name}
+                className={styles.a}
+              >
                 <img
                   className="icon"
                   src={process.env.PUBLIC_URL + item.image}
@@ -73,6 +45,6 @@ export default function Hero({ windowWidth }) {
         </div>
       </div>
       <FormPopup ref={dialogForm} />
-    </div>
+    </section>
   );
 }

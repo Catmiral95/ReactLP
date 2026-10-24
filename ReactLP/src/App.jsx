@@ -1,18 +1,13 @@
-
 import "./App.css";
-import Header from "./components/header/HeaderNavbar.jsx";
-import About from "./components/about/About.jsx";
-import LegalFees from "./components/legalFees/LegalFees.jsx";
-import Cases from "./components/cases/cases.jsx";
-import Contacts from "./components/contacts/Contacts.jsx";
-import Footer from "./components/footer/Footer.jsx";
-import Consent from "./components/consent/Consent.jsx";
-import Hero from "./components/hero/Hero.jsx";
-import ScrollUp from "./components/scroll up/ScrollUpBtn.jsx";
-import PrivacyPolicy from "./components/additional pages/PrivacyPolicy.jsx";
-import ConsentText from "./components/additional pages/ConsentText.jsx";
+import Layout from "./pages/Layout.jsx";
+import Main from "./pages/Main.jsx";
+import PrivacyPolicy from "./pages/PrivacyPolicy.jsx";
+import ConsentText from "./pages/ConsentText.jsx";
+import NotFoundScreen from "./pages/NotFoundScreen.jsx";
 import { useState, useEffect } from "react";
 import { HashRouter, Route, Routes } from "react-router";
+import { WindowWidthContext } from "./context/WindowWidth.jsx";
+import ScrollToTop from "./hooks/ScrollToTop.jsx";
 
 function App() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -27,37 +22,19 @@ function App() {
     };
   }, []);
   return (
-    <HashRouter>
-      <Routes>
-        <Route path="/" element={<Main windowWidth={windowWidth} />} />
-        <Route
-          path="/privacy_policy"
-          element={<PrivacyPolicy windowWidth={windowWidth} />}
-        />
-        <Route
-          path="/consent"
-          element={<ConsentText windowWidth={windowWidth} />}
-        />
-      </Routes>
-    </HashRouter>
-  );
-}
-
-function Main({ windowWidth }) {
-  return (
-    <>
-      <Header windowWidth={windowWidth} />
-      {windowWidth > 1200 && <ScrollUp />}
-      <main>
-        <Hero windowWidth={windowWidth} />
-        <About windowWidth={windowWidth} />
-        <Consent />
-        <LegalFees />
-        <Cases windowWidth={windowWidth} />
-        <Contacts windowWidth={windowWidth} />
-      </main>
-      <Footer />
-    </>
+    <WindowWidthContext value={windowWidth}>
+      <HashRouter>
+        <ScrollToTop />
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Main />} />
+            <Route path="/privacy_policy" element={<PrivacyPolicy />} />
+            <Route path="/consent" element={<ConsentText />} />
+            <Route path="/*" element={<NotFoundScreen />} />
+          </Route>
+        </Routes>
+      </HashRouter>
+    </WindowWidthContext>
   );
 }
 

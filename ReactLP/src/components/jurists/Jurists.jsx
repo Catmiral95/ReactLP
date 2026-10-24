@@ -7,7 +7,6 @@ import "swiper/css/pagination";
 import "./new_css.css";
 
 export default function Jurists() {
-  const swiper = useSwiper();
   return (
     <main className="main-jurists">
       <Swiper

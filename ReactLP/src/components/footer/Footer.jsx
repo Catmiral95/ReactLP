@@ -1,54 +1,32 @@
-import "./footer.css";
+import styles from "./footer.module.css";
 import { Link } from "react-router";
 import { HashLink } from "react-router-hash-link";
+import menu from "../../data/dataMenu.json";
 
 export default function Footer() {
-  const menu = [
-    {
-      name: "Главная",
-      link: "#heroPage",
-      id: 1,
-    },
-    {
-      name: "О нас",
-      link: "#about",
-      id: 2,
-    },
-    {
-      name: "Услуги",
-      link: "#legalFees",
-      id: 3,
-    },
-    {
-      name: "Кейсы",
-      link: "#cases",
-      id: 4,
-    },
-    {
-      name: "Контакты",
-      link: "#contacts",
-      id: 5,
-    },
-  ];
   return (
-    <footer>
+    <footer className={styles.footer}>
       <h3>
-        ЛИДЕР <span>ПРАВА</span>
+        ЛИДЕР <span className={styles.span}>ПРАВА</span>
       </h3>
-      <div className="footerContainer">
+
+      <div>
         <hr />
-        <nav>
-          {menu.map((item, index) => (
-            <div key={index}>
-              <HashLink to={`/` + item.link} smooth>
-                {item.name}
-              </HashLink>
-            </div>
-          ))}
-        </nav>
+        <div className="col">
+          <span className={styles.span}>Навигация</span>
+          <nav>
+            {menu.map((item, index) => (
+              <div key={index}>
+                <HashLink to={`/` + item.link} smooth>
+                  {item.name}
+                </HashLink>
+              </div>
+            ))}
+          </nav>
+        </div>
         <hr />
-        <div className="col footerDiv">
-          <span>Связаться с нами: </span>
+        <div className="col">
+          <span className={styles.span}>Связаться с нами: </span>
           <div className="row">
             <img
               src={process.env.PUBLIC_URL + "/images/addressW.svg"}
@@ -64,11 +42,7 @@ export default function Footer() {
               src={process.env.PUBLIC_URL + "/images/phoneW.svg"}
               alt="телефон"
             />
-            <a
-              href="tel:+79603128406"
-              style={{ textDecoration: "none" }}
-              title="Телефон для связи"
-            >
+            <a href="tel:+79603128406" title="Телефон для связи">
               +7(960)312-84-06
             </a>
           </div>
@@ -116,9 +90,9 @@ export default function Footer() {
           </div>
         </div>
         <hr />
-        <div className="col feedback-footer">
-          <span>Читайте отзывы о нас: </span>
-          <div className="row" style={{ marginTop: "1rem" }}>
+        <div className="col">
+          <span className={styles.span}>Читайте отзывы о нас: </span>
+          <div className="row">
             <a
               href="https://yandex.ru/maps/org/lider_prava/34845163518/reviews/?ll=50.123226%2C55.641204&z=7"
               title="Отзывы на Яндексе"
@@ -140,13 +114,14 @@ export default function Footer() {
           </div>
         </div>
         <hr />
-        <div className="col footerDiv">
+        <div className="col">
+          <span className={styles.span}>Навигация</span>
           <Link to="/consent">Соглашение об обработке данных</Link>
           <Link to="/privacy_policy">Политика конфиденциальности</Link>
         </div>
         <hr />
       </div>
-      <p className="url">LIDER-PRAVA.RU</p>
+      <a href="https://lider-prava.ru/">LIDER-PRAVA.RU</a>
     </footer>
   );
 }

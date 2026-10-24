@@ -1,10 +1,11 @@
-import "./additionalPages.css";
+import "./additionalPages.module.css";
+import styles from "./additionalPages.module.css";
 
-export default function ConfidentialityPolicy() {
+export default function PrivacyPolicy() {
   return (
-    <div className="mainText col">
+    <section className={`col ${styles.section}`}>
       <h1>ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</h1>
-      <hr className="additionalPageshr" />
+      <hr />
       <p>
         Настоящая Политика конфиденциальности персональных данных (далее —
         Политика конфиденциальности) действует в отношении всей информации,
@@ -284,6 +285,6 @@ export default function ConfidentialityPolicy() {
         Соглашение об обработке персональных данных, а также договоры,
         заключаемые между Компанией и Пользователем.
       </p>
-    </div>
+    </section>
   );
 }

@@ -1,5 +1,5 @@
 import "./arrows.css";
-import SwipeComponent from "./swipeHook";
+import SwipeComponent from "../../hooks/swipeHook";
 
 export default function Arrows({
   props,
