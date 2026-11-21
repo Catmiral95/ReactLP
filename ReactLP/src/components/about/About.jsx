@@ -33,7 +33,8 @@ export default function About() {
               >
                 <img
                   alt={item.name}
-                  src={process.env.PUBLIC_URL + item.image}
+                  src={`${import.meta.env.BASE_URL}${item.image}`}
+                  className="border-2 border-solid border-white"
                 />
                 {item.id !== "div4" ? (
                   <p className="col">

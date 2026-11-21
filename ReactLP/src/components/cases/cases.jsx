@@ -7,7 +7,6 @@ import { useWindowWidth } from "../../context/WindowWidth";
 export default function Cases() {
   const [currentCaseId, setCurrentCaseId] = useState(4);
   const currentCase = cases.find((caseItem) => caseItem.id === currentCaseId);
-  const windowWidth = useWindowWidth();
 
   const handleCaseClick = (id) => {
     setCurrentCaseId(id);
@@ -56,7 +55,11 @@ export default function Cases() {
           ))}
         </div>
         {currentCase && (
-          <CaseCard props={currentCase} windowWidth={windowWidth} />
+          <CaseCard
+            image={currentCase.image}
+            id={currentCase.id}
+            text={currentCase.text}
+          />
         )}
       </div>
     </section>

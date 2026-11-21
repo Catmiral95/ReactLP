@@ -2,6 +2,7 @@ import styles from "./hero.module.css";
 import FormPopup from "../form/FormPopup";
 import { useRef } from "react";
 import contanctsHero from "../../data/dataContacts.json";
+import arrow from "../../assets/images/arrow.svg";
 
 export default function Hero() {
   const dialogForm = useRef(null);
@@ -22,7 +23,7 @@ export default function Hero() {
           onClick={openDialog}
         >
           <span>Бесплатная консультация</span>
-          <img src={process.env.PUBLIC_URL + "/images/arrow.svg"} alt="arrow" />
+          <img src={arrow} alt="arrow" />
         </button>
         <div className="row icons-container">
           {contanctsHero.map((item) => {
@@ -36,7 +37,7 @@ export default function Hero() {
               >
                 <img
                   className="icon"
-                  src={process.env.PUBLIC_URL + item.image}
+                  src={`${import.meta.env.BASE_URL}${item.image}`}
                   alt={item.name}
                 />
               </a>

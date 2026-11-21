@@ -2,6 +2,9 @@ import "./header_and_navbar.css";
 import Navbar from "./Navbar.jsx";
 import { useRef, useEffect, useState } from "react";
 import { useWindowWidth } from "../../context/WindowWidth.jsx";
+import logo from "../../assets/images/logo.svg";
+import logo0 from "../../assets/images/logo0.png";
+import burgerMenu from "../../assets//images/burger_menu.svg";
 
 export default function Header() {
   const windowWidth = useWindowWidth();
@@ -43,10 +46,7 @@ export default function Header() {
           type="button"
           onClick={openDialog}
         >
-          <img
-            src={process.env.PUBLIC_URL + "/images/burger_menu.svg"}
-            alt="menu"
-          />
+          <img src={burgerMenu} alt="menu" />
         </button>
       </div>
       <dialog
@@ -54,10 +54,7 @@ export default function Header() {
         ref={dialogRef}
         onClick={handleDialogClick}
       >
-        <img
-          src={process.env.PUBLIC_URL + "/images/logo.svg"}
-          alt="Лого Лидер Права"
-        />
+        <img src={logo} alt="Лого Лидер Права" />
 
         <Navbar />
       </dialog>
@@ -65,10 +62,7 @@ export default function Header() {
   );
   const desktop = (
     <>
-      <img
-        src={process.env.PUBLIC_URL + "/images/logo0.png"}
-        alt="лого Лидер Права"
-      />
+      <img src={logo0} alt="лого Лидер Права" />
       <div className={"row navbar_container"}>
         <Navbar onClick={handleDialogClick} />
         <div className="hours-and-phone-container col">

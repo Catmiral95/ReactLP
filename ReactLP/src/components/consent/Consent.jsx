@@ -1,6 +1,7 @@
 import styles from "./consent.module.css";
 import { useState, useEffect } from "react";
 import { Link } from "react-router";
+import closeSign from "../../assets/images/closeSign.svg";
 
 export default function Consent() {
   const [showModal, setShowModal] = useState(false);
@@ -49,10 +50,7 @@ export default function Consent() {
         </div>
       </div>
       <button className={`closeCross ${styles.close}`} onClick={handleClose}>
-        <img
-          src={process.env.PUBLIC_URL + "/images/closeSign.svg"}
-          alt="Закрыть"
-        />
+        <img src={closeSign} alt="Закрыть" />
       </button>
     </div>
   );

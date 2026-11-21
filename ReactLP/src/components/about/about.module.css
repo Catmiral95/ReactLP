@@ -121,19 +121,19 @@
 }
 
 .slide1 {
-  background-image: url("/public/images/LiderPravaPhotos/group-photo-1.jpg");
+  background-image: url("src/assets/images/LiderPravaPhotos/group-photo-1.jpg");
 }
 
 .slide2 {
-  background-image: url("/public/images/LiderPravaPhotos/group-photo-2.jpg");
+  background-image: url("src/assets/images/LiderPravaPhotos/group-photo-2.jpg");
 }
 
 .slide3 {
-  background-image: url("/public/images/LiderPravaPhotos/group-photo-3.jpg");
+  background-image: url("src/assets/images/LiderPravaPhotos/group-photo-3.jpg");
 }
 
 .section > div:last-child {
-  background: url("/public/images/jurists-backs.jpg"), #2b2424;
+  background: url("src/assets/images/jurists-backs.jpg"), #2b2424;
   background-repeat: no-repeat, no-repeat;
   background-size: cover, cover;
   background-blend-mode: multiply;

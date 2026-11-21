@@ -1,14 +1,11 @@
 import { useState, useCallback } from "react";
 import { Link } from "react-router";
 import styles from "./form.module.css";
-import { SmartCaptcha } from "@yandex/smart-captcha";
 
 export default function Form() {
   const [isValidPhone, setIsValidPhone] = useState(true);
   const [status, setStatus] = useState("");
   const [submitAnimation, setSubmitAnimation] = useState({});
-  const [token, setToken] = useState(""); //для капчи
-  const [resetCaptcha, setResetCaptcha] = useState(0);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -187,14 +184,6 @@ export default function Form() {
         </Link>
         .
       </small>
-      <SmartCaptcha
-        sitekey="<ключ_клиента>"
-        onSuccess={setToken}
-        key={resetCaptcha}
-        test={true}
-        language={"ru"}
-        shieldPosition={"center-right"}
-      />
       <button
         type="submit"
         name="submit"

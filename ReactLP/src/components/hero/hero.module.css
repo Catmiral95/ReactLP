@@ -1,5 +1,5 @@
 .hero {
-  background: url("/public/images/justice_backs.webp"), #2b2424;
+  background: url("src/assets/images/justice_backs.webp"), #2b2424;
   background-blend-mode: multiply;
   background-size: cover;
   background-position: center;

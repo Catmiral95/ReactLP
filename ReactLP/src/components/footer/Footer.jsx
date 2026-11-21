@@ -2,6 +2,14 @@ import styles from "./footer.module.css";
 import { Link } from "react-router";
 import { HashLink } from "react-router-hash-link";
 import menu from "../../data/dataMenu.json";
+import address from "../../assets/images/addressW.svg";
+import phone from "../../assets/images/phoneW.svg";
+import mail from "../../assets/images/mailW.svg";
+import yandex from "../../assets/images/yandexW.svg";
+import twoGis from "../../assets/images/2gisW.svg";
+import telegram from "../../assets/images/tgW.svg";
+import vkontakte from "../../assets/images/vkW.svg";
+import max from "../../assets/images/max.svg";
 
 export default function Footer() {
   return (
@@ -28,54 +36,36 @@ export default function Footer() {
         <div className="col">
           <span className={styles.span}>Связаться с нами: </span>
           <div className="row">
-            <img
-              src={process.env.PUBLIC_URL + "/images/addressW.svg"}
-              alt="адрес"
-            />
+            <img src={address} alt="адрес" />
             <p style={{ textIndent: "0" }}>
               428003, Чувашская Республика, <br />
               г. Чебоксары, ул. Афанасьева, д. 2, оф. 56.
             </p>
           </div>
           <div className="row">
-            <img
-              src={process.env.PUBLIC_URL + "/images/phoneW.svg"}
-              alt="телефон"
-            />
+            <img src={phone} alt="телефон" />
             <a href="tel:+79603128406" title="Телефон для связи">
               +7(960)312-84-06
             </a>
           </div>
           <div className="row">
-            <img
-              src={process.env.PUBLIC_URL + "/images/mailW.svg"}
-              alt="почта"
-            />
+            <img src={mail} alt="почта" />
             <a href="mailto:mailto:liderprava@ya.ru" title="Почта для связи">
               liderprava21@ya.ru
             </a>
           </div>
           <div className="row" style={{ marginTop: "1rem" }}>
             <a href="https://t.me/liderpravapfo" title="Телеграм">
-              <img
-                src={process.env.PUBLIC_URL + "/images/tgW.svg"}
-                alt="телеграм"
-              />
+              <img src={telegram} alt="телеграм" />
             </a>
             <a href="https://vk.com/liderpravapfo" title="ВКонтакте">
-              <img
-                src={process.env.PUBLIC_URL + "/images/vkW.svg"}
-                alt="ВКонтакте"
-              />
+              <img src={vkontakte} alt="ВКонтакте" />
             </a>
             <a
               href="https://max.ru/join/KlnqqnrRDC6nN8p5G22IyKGhOCkcbRs-D830bo4qWQM"
               title="Мессенджер Макс"
             >
-              <img
-                src={process.env.PUBLIC_URL + "/images/max.svg"}
-                alt="Макс"
-              />
+              <img src={max} alt="Макс" />
             </a>
             {/*Раскомментить в лучшие времена */}
             {/*<a
@@ -97,19 +87,13 @@ export default function Footer() {
               href="https://yandex.ru/maps/org/lider_prava/34845163518/reviews/?ll=50.123226%2C55.641204&z=7"
               title="Отзывы на Яндексе"
             >
-              <img
-                src={process.env.PUBLIC_URL + "/images/yandexW.svg"}
-                alt="яндекс отзывы"
-              />
+              <img src={yandex} alt="яндекс отзывы" />
             </a>
             <a
               href="https://2gis.ru/cheboksary/firm/70000001053905641/tab/reviews"
               title="Отзывы на 2гис"
             >
-              <img
-                src={process.env.PUBLIC_URL + "/images/2gisW.svg"}
-                alt="2gis отзывы"
-              />
+              <img src={twoGis} alt="2gis отзывы" />
             </a>
           </div>
         </div>

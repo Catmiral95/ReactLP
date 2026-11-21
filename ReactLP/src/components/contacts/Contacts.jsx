@@ -1,6 +1,13 @@
 import "./contacts.css";
 import { useWindowWidth } from "../../context/WindowWidth";
 import Form from "../form/Form.jsx";
+import address from "../../assets/images/address.svg";
+import workingHours from "../../assets/images/workingHours.svg";
+import phone from "../../assets/images/phone.svg";
+import mail from "../../assets/images/mail.svg";
+import owner from "../../assets/images/owner.svg";
+import yandex from "../../assets/images/yandex.svg";
+import twoGis from "../../assets/images/2gis.svg";
 
 export default function Contacts() {
   const isMobile = useWindowWidth() <= 1200;
@@ -43,10 +50,7 @@ export default function Contacts() {
             style={{ alignItems: "flex-start", gap: "0.1lh" }}
           >
             <div className="row">
-              <img
-                src={process.env.PUBLIC_URL + "/images/address.svg"}
-                alt="адрес"
-              />
+              <img src={address} alt="адрес" />
               <p
                 style={{
                   alignItems: "flex-start",
@@ -63,19 +67,13 @@ export default function Contacts() {
               </p>
             </div>
             <div className="row">
-              <img
-                src={process.env.PUBLIC_URL + "/images/workingHours.svg"}
-                alt="часы работы"
-              />
+              <img src={workingHours} alt="часы работы" />
               <p className="workhours" style={{ textIndent: "0" }}>
                 пн-пт 9:00-18:00
               </p>
             </div>
             <div className="row phone-info">
-              <img
-                src={process.env.PUBLIC_URL + "/images/phone.svg"}
-                alt="телефон"
-              />
+              <img src={phone} alt="телефон" />
               <a
                 href="tel:+79603128406"
                 style={{ textDecoration: "none" }}
@@ -86,10 +84,7 @@ export default function Contacts() {
               </a>
             </div>
             <div className="row mail-info">
-              <img
-                src={process.env.PUBLIC_URL + "/images/mail.svg"}
-                alt="почта"
-              />
+              <img src={mail} alt="почта" />
               <a
                 href="mailto:liderprava@ya.ru"
                 style={{ textDecoration: "none" }}
@@ -100,10 +95,7 @@ export default function Contacts() {
               </a>
             </div>
             <div className="row">
-              <img
-                src={process.env.PUBLIC_URL + "/images/owner.svg"}
-                alt="владелец"
-              />
+              <img src={owner} alt="владелец" />
               <a
                 href="https://www.rusprofile.ru/ip/319213000057662"
                 className="artyom"
@@ -120,19 +112,13 @@ export default function Contacts() {
               href="https://yandex.ru/maps/org/lider_prava/34845163518/reviews/?ll=50.123226%2C55.641204&z=7"
               title="Отзывы на Яндексе"
             >
-              <img
-                src={process.env.PUBLIC_URL + "/images/yandex.svg"}
-                alt="Яндекс отзывы"
-              />
+              <img src={yandex} alt="Яндекс отзывы" />
             </a>
             <a
               href="https://2gis.ru/cheboksary/firm/70000001053905641/tab/reviews"
               title="Отзывы на 2гис"
             >
-              <img
-                src={process.env.PUBLIC_URL + "/images/2gis.svg"}
-                alt="2gis отзывы"
-              />
+              <img src={twoGis} alt="2gis отзывы" />
             </a>
             <br />
           </div>

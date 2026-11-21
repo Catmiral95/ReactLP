@@ -2,7 +2,7 @@ import "./cases.css";
 import { useState } from "react";
 import { useWindowWidth } from "../../context/WindowWidth";
 
-export default function CaseCard({ props }) {
+export default function CaseCard({ image, id, text }) {
   const [caseState, setCaseState] = useState("Читать далее");
   const isMobile = useWindowWidth() <= 1200;
 
@@ -31,16 +31,16 @@ export default function CaseCard({ props }) {
         <div className="container up preview-container">
           <div className="illustrationCase col">
             <img
-              src={process.env.PUBLIC_URL + props.picture}
-              alt={`Дело ${props.id}`}
+              src={`${import.meta.env.BASE_URL}${image}`}
+              alt={`Дело ${id}`}
               loading="lazy"
             />
-            <h3>{`Дело ${props.id}`}</h3>
+            <h3>{`Дело ${id}`}</h3>
           </div>
 
           <div className="col text-preview-container col">
             <h3>Суть происшествия</h3>
-            <p className="crux">{props.text.case}</p>
+            <p className="crux">{text.case}</p>
             <br />
             <button
               type="button"
@@ -59,7 +59,7 @@ export default function CaseCard({ props }) {
             <div className="col">
               <h3>Пострадавшие</h3>
               <ul>
-                {props.text.victim?.map((item) => (
+                {text.victim?.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
@@ -67,7 +67,7 @@ export default function CaseCard({ props }) {
             {isMobile && <br />}
             <div className="col">
               <h3>Правовое основание иска</h3>
-              <p className="align-left-mobile">{props.text?.legalBasis}</p>
+              <p className="align-left-mobile">{text?.legalBasis}</p>
             </div>
           </div>
 
@@ -75,16 +75,14 @@ export default function CaseCard({ props }) {
 
           <div className="col">
             <h3>Решение суда</h3>
-            <p>{props.text?.courtDecision}</p>
+            <p>{text?.courtDecision}</p>
             <br />
             <table>
-              {props.text.tableData?.map((item, index) => (
+              {text.tableData?.map((item, index) => (
                 <tr
                   key={item[0]}
                   className={`${
-                    index !== props.text.tableData.length - 1
-                      ? "tr-divider"
-                      : ""
+                    index !== text.tableData.length - 1 ? "tr-divider" : ""
                   }`}
                 >
                   <td className="victim-td">
@@ -111,7 +109,7 @@ export default function CaseCard({ props }) {
           <br />
           <div className="case-result col">
             <h3>Итог дела</h3>
-            <p>{formatWithRegex(props.text.result)}</p>
+            <p>{formatWithRegex(text.result)}</p>
           </div>
         </div>
       </div>

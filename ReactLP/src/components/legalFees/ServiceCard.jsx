@@ -9,7 +9,7 @@ export default function ServiceCard({ service }) {
       className={styles.card}
       style={{
         backgroundImage:
-          service.image && `url(${process.env.PUBLIC_URL + service.image})`,
+          service.image && `url(${import.meta.env.BASE_URL}${service.image})`,
       }}
     >
       <div className={styles.backdrop}>

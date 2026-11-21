@@ -1,6 +1,7 @@
 import Form from "./Form.jsx";
 import { forwardRef } from "react";
 import styles from "./formPopup.module.css";
+import close from "../../assets/images/closeSign.svg";
 
 const FormPopup = forwardRef((_props, ref) => {
   const closeForm = (_e) => {
@@ -23,7 +24,7 @@ const FormPopup = forwardRef((_props, ref) => {
         <img
           alt="Закрыть"
           role="button"
-          src={process.env.PUBLIC_URL + "/images/closeSign.svg"}
+          src={close}
           className={styles.img}
           onClick={closeForm}
         />

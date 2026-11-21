@@ -1,5 +1,5 @@
 #cases {
-  background: url("/public/images/ceilingPhoto.webp"), var(--tertiary);
+  background: url("src/assets/images/ceilingPhoto.webp"), var(--tertiary);
   background-blend-mode: multiply;
   background-size: cover;
   background-position: center;
