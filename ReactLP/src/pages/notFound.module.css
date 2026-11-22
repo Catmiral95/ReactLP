@@ -1,0 +1,40 @@
+.section {
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  min-height: 60dvh;
+  height: 100%;
+  padding: 2lh;
+
+  @media (width <= 640px) {
+    padding: 5lh;
+  }
+}
+
+.h1,
+.p {
+  color: #766d6d;
+  font-family: "Manrope", sans-serif;
+  font-weight: 200;
+  text-align: center;
+}
+
+.h1 {
+  font-size: 15dvh;
+  align-self: center;
+}
+
+.p {
+  font-size: larger;
+  width: 45dvw;
+  margin-top: 0.5lh;
+  @media (width <= 640px) {
+    width: 75dvw;
+  }
+}
+
+.hr {
+  width: 50vw;
+}

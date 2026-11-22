@@ -1,15 +1,14 @@
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, A11y } from "swiper/modules";
 import "swiper/css";
-import data from "../../data/dataJurists.json";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "./new_css.css";
+import data from "../../data/dataJurists.json";
+import styles from "./jurists.module.css";
 
 export default function Jurists() {
-  const swiper = useSwiper();
   return (
-    <main className="main-jurists">
+    <main className={styles.main}>
       <Swiper
         modules={[Navigation, Pagination, A11y]}
         grabCursor
@@ -19,31 +18,31 @@ export default function Jurists() {
         slidesPerView={"auto"}
         speed={1200}
         slideToClickedSlide={true}
-        spaceBetween={"10"}
+        spaceBetween={10}
         pagination={{ clickable: true }}
         navigation
-        className="swiper"
+        className={styles.slider}
       >
         <div className="slider-container">
           {data.map((slide) => (
             <SwiperSlide
               key={slide.id}
-              className="col swiper-slide"
+              className={`col ${styles.slide}`}
               lazy="true"
             >
-              <div className="swiper-slide-container">
+              <div className={styles.slideContainer}>
                 <img
-                  src={process.env.PUBLIC_URL + slide.picture}
+                  src={`${import.meta.env.BASE_URL}${slide.picture}`}
                   alt={slide.name}
-                  load="lazy"
-                  className="img-jurists"
-                ></img>
+                  loading="lazy"
+                  className={styles.img}
+                />
                 <div className="col captions">
-                  <div className="title-jurists">
+                  <div className={styles.title}>
                     <h4 className="col">{slide.name}</h4>
                     <small className="pos">{slide.position}</small>
                   </div>
-                  <p className="desc">{slide.description}</p>
+                  <p className={styles.desc}>{slide.description}</p>
                 </div>
               </div>
             </SwiperSlide>

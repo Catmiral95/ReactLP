@@ -1,4 +1,4 @@
-footer {
+.footer {
   background-color: var(--tertiary);
   padding-left: 3rem;
   padding-top: 0.5lh;
@@ -9,40 +9,42 @@ footer {
   }
 }
 
-footer * {
+.footer * {
   color: #cdd6e9;
   font-family: "Inter", sans-serif;
   font-weight: 100 !important;
 }
 
-footer h3 {
+.footer h3 {
   text-align: left;
   letter-spacing: -2px;
   font-weight: 100;
   font-size: 200%;
 }
 
-footer span {
+.span {
   color: #ffaa5a;
   font-weight: 200 !important;
+  margin: 0.5lh 0;
 }
 
-footer hr {
+.footer hr {
   border: none;
   border-left: 1px solid #cdd6e9;
   width: 2px;
   height: 15vh;
-  margin: 5px;
+  margin: 2lh 5px;
 
   @media (max-width: 1200px) {
     border: none;
     border-bottom: 1px solid #cdd6e9;
     width: 15vh;
     height: 2px;
+    margin: 5px;
   }
 }
 
-.footerContainer {
+.footer > div:first-of-type {
   margin: 0px;
   margin-bottom: 3lh;
   padding: 0px;
@@ -56,7 +58,7 @@ footer hr {
   }
 }
 
-.footerContainer nav {
+.footer > div:first-of-type nav {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,29 +71,28 @@ footer hr {
   }
 }
 
-.footerDiv,
-.footerDiv span,
-.feedback-footer {
+.footer > div:first-of-type > div,
+.footer > div:first-of-type > div > span {
   align-items: flex-start;
 }
 
-footer img:not([alt="лого Лидер Права"]) {
+.footer img:not([alt="лого Лидер Права"]) {
   transition: 0.5s;
   margin-right: 1rem;
 }
 
-footer img:not([alt="лого Лидер Права"]):hover,
-footer nav div a:hover {
+.footer img:not([alt="лого Лидер Права"]):hover,
+.footer nav div a:hover {
   transform: scale(1.3);
   filter: drop-shadow(0px 0px 3px #98aedb);
   transition: 0.3s;
 }
 
-footer div a {
+.footer div a {
   text-decoration: none;
 }
 
-footer div a:hover {
+.footer div a:hover {
   filter: drop-shadow(0px 0px 3px #98aedb);
   transition: 0.3s;
 }

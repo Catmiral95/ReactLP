@@ -1,4 +1,5 @@
-import "./scroll_button.css";
+import styles from "./scroll_button.module.css";
+import arrow from "../../assets/images/arrow.svg";
 
 export default function ScrollUp() {
   const scrollToTop = function () {
@@ -10,8 +11,8 @@ export default function ScrollUp() {
   };
 
   return (
-    <button className="scroll-btn" onClick={scrollToTop}>
-      <img src={process.env.PUBLIC_URL + "/images/arrow.svg"} alt="наверх" />
+    <button className={styles.button} onClick={scrollToTop}>
+      <img src={arrow} alt="наверх" />
     </button>
   );
 }

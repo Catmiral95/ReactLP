@@ -1,10 +1,11 @@
-import "./additionalPages.css";
+import "./additionalPages.module.css";
+import styles from "./additionalPages.module.css";
 
-export default function ConfidentialityPolicy() {
+export default function PrivacyPolicy() {
   return (
-    <div className="mainText col">
+    <section className={`col ${styles.section}`}>
       <h1>ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</h1>
-      <hr className="additionalPageshr" />
+      <hr />
       <p>
         Настоящая Политика конфиденциальности персональных данных (далее —
         Политика конфиденциальности) действует в отношении всей информации,
@@ -278,12 +279,12 @@ export default function ConfidentialityPolicy() {
         <br />
         8.3. Все предложения или вопросы по настоящей Политике
         конфиденциальности следует сообщать в администрацию сайта по адресу
-        электронной почты liderprerava21@ya.ru
+        электронной почты liderprava21@ya.ru.
         <br />
         8.4. Правовым основанием обработки персональных данных является
         Соглашение об обработке персональных данных, а также договоры,
         заключаемые между Компанией и Пользователем.
       </p>
-    </div>
+    </section>
   );
 }

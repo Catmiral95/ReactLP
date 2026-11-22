@@ -34,7 +34,7 @@ body {
 
 body {
   background-color: var(--main);
-
+  position: relative; /*Base UI docs recommend this so that iOS 26+ Safari works properly*/
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

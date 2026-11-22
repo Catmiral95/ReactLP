@@ -1,5 +1,6 @@
-import "./arrows.css";
-import SwipeComponent from "./swipeHook";
+import SwipeComponent from "../../hooks/swipeHook";
+import chevron from "../../assets/images/chevron.svg";
+import styles from "./arrows.module.css";
 
 export default function Arrows({
   props,
@@ -7,58 +8,59 @@ export default function Arrows({
   setAnimation,
   setRightSlideAnimation,
   setLeftSlideAnimation,
-  dataJurists,
-  currentSlides,
 }) {
   const slideNext = () => {
     setRightSlideAnimation("");
-    setAnimation("slide-left-out");
+    setAnimation(styles.slideLeftOut);
     setTimeout(() => {
       setIndex((prev) => (prev === props.length - 1 ? 0 : prev + 1));
-      setAnimation("slide-left-in");
-      setLeftSlideAnimation("fade-in");
+      setAnimation(styles.slideLeftIn);
+      setLeftSlideAnimation(styles.fadeIn);
     }, 300);
   };
+
   const slidePrev = () => {
     setLeftSlideAnimation("");
-    setAnimation("slide-right-out");
+    setAnimation(styles.slideRightOut);
     setTimeout(() => {
       setIndex((prev) => (prev === 0 ? props.length - 1 : prev - 1));
-      setAnimation("slide-right-in");
-      setRightSlideAnimation("fade-in");
+      setAnimation(styles.slideRightIn);
+      setRightSlideAnimation(styles.fadeIn);
     }, 300);
   };
 
   return (
-    <div className="row chevron_both_container">
-      <div className="chevronLeftContainer"></div>
-      <div className="arrows_container row">
+    <div className="row">
+      <div className={styles.chevronLeftContainer}></div>
+
+      <div className={`${styles.arrowsContainer} row`}>
         <img
           role="button"
           alt="предыдущий"
           id="arrowPrev"
-          src={process.env.PUBLIC_URL + "/images/chevron.svg"}
-          className="chevronPrev arrowsButton"
+          src={chevron}
+          className={`${styles.chevronPrev} ${styles.arrowsButton}`}
           onClick={slidePrev}
         />
         <img
           role="button"
           alt="следующий"
           id="arrowNext"
-          src={process.env.PUBLIC_URL + "/images/chevron.svg"}
-          className="chevronNext arrowsButton"
+          src={chevron}
+          className={`${styles.chevronNext} ${styles.arrowsButton}`}
           onClick={slideNext}
         />
       </div>
+
       <SwipeComponent
-        className="chevronLeftContainer col"
+        className={`${styles.chevronLeftContainer} col`}
         onSwipeRight={slideNext}
       ></SwipeComponent>
 
-      <div className="chevronRightContainer"></div>
+      <div className={styles.chevronRightContainer}></div>
 
       <SwipeComponent
-        className="chevronRightContainer col"
+        className={`${styles.chevronRightContainer} col`}
         onSwipeLeft={slidePrev}
       ></SwipeComponent>
     </div>

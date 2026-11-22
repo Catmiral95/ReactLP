@@ -1,69 +1,24 @@
-import "./legalFees.css";
+import styles from "./legalFees.module.css";
 import feesList from "../../data/dataFees.json";
-import { useState } from "react";
+import ServiceCard from "./ServiceCard";
 import { HashLink } from "react-router-hash-link";
-
-// Компонент для отдельной карточки услуги
-function ServiceCard({ service }) {
-  const [showDescription, setShowDescription] = useState(false);
-
-  return (
-    <div
-      className="card-wrapper"
-      style={{
-        backgroundImage: service.image
-          ? `url(${process.env.PUBLIC_URL + service.image})`
-          : "none",
-      }}
-    >
-      <div className="card col">
-        <div
-          className="row card-front"
-          onClick={() => {
-            !showDescription
-              ? setShowDescription(true)
-              : setShowDescription(false);
-          }}
-        >
-          <h3>{service.name}</h3>
-          <button
-            name="LearnMore"
-            className={
-              !showDescription ? "learnMoreFees" : "learnMoreFeesTransformed"
-            }
-          >
-            {"\u002B"}
-          </button>
-        </div>
-
-        {/* Показывает описание */}
-        <div className={`description ${showDescription ? "show" : "hide"}`}>
-          <ul>
-            {service.description.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 // Основной компонент
 export default function LegalFees() {
   return (
-    <section id="legalFees" className="col">
+    <section id="legalFees" className={`col ${styles.section}`}>
       <h1>Услуги</h1>
       <p>
-         Оказываем полный спектр юридических услуг и готовы подробно рассмотреть каждую ситуацию. Чуть ниже представлены основные
-        направления нашей деятельности.
-         <b> Консультация бесплатна.</b> 
+        Оказываем полный спектр юридических услуг и готовы подробно рассмотреть
+        каждую ситуацию. Чуть ниже представлены основные направления нашей
+        деятельности.
+        <b> Консультация бесплатна.</b>
       </p>
       <p>
         Если вас интересуют вопросы или услуги, не представленные в указанном
         списке,{" "}
         <b>
-          <HashLink to="#contacts" className="consult_link">
+          <HashLink to="#contacts" className={styles.link}>
             вы можете написать нам для консультации
           </HashLink>
           .
@@ -71,11 +26,13 @@ export default function LegalFees() {
       </p>
 
       {
-        <div className="listOfFees col">
+        <ul className={`col ${styles.ul}`}>
           {feesList.map((service) => (
-            <ServiceCard key={service.id} service={service} />
+            <li key={service.id}>
+              <ServiceCard service={service} />
+            </li>
           ))}
-        </div>
+        </ul>
       }
       <br />
 

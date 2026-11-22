@@ -1,0 +1,32 @@
+[
+  {
+    "image": "src/assets/images/mailW.svg",
+    "link": "mailto:liderprava@ya.ru",
+    "name": "почта"
+  },
+  {
+    "image": "src/assets/images/phoneW.svg",
+    "link": "tel:+7 960 312 84 06",
+    "name": "телефон"
+  },
+  {
+    "image": "src/assets/images/whatsappW.svg",
+    "link": "https://api.whatsapp.com/send/?phone=79603128406&amp;text=Здравствуйте%21%0A%0AПишу+из+приложения+2ГИС.%0A%0A&amp;type=phone_number&amp;app_absent=0",
+    "name": "WhatsApp"
+  },
+  {
+    "image": "src/assets/images/vkW.svg",
+    "link": "https://vk.ru/im?sel=-239191554",
+    "name": "ВКонтакте"
+  },
+  {
+    "image": "src/assets/images/tgW.svg",
+    "link": "https://t.me/liderpravapfo?direct",
+    "name": "Телеграм"
+  },
+  {
+    "image": "src/assets/images/max.svg",
+    "link": "https://max.ru/join/KlnqqnrRDC6nN8p5G22IyKGhOCkcbRs-D830bo4qWQM",
+    "name": "Мессенджер Макс"
+  }
+]

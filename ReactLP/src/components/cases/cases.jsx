@@ -1,126 +1,10 @@
 import "./cases.css";
 import cases from "../../data/dataCases.json";
 import { useState } from "react";
+import CaseCard from "./CaseCard";
+import { useWindowWidth } from "../../context/WindowWidth";
 
-function CaseCard({ props, windowWidth }) {
-  const [caseState, setCaseState] = useState("Читать далее");
-  const isMobile = windowWidth <= 1200;
-
-  const formatWithRegex = (text) => {
-    const regex = /(\d+(?:[\s]\d+)*)₽/g;
-    return text.split(regex).map((part, index) => {
-      // Если часть соответствует числу (нечетные индексы в результате split)
-      if (index % 2 === 1) {
-        return <strong key={index}>{part}₽</strong>;
-      }
-      return part;
-    });
-  };
-
-  const handleCaseClick = () => {
-    if (caseState == "Читать далее") {
-      setCaseState("Закрыть");
-    } else {
-      setCaseState("Читать далее");
-    }
-  };
-
-  return (
-    <div className="caseCard col">
-      <div className="textCase col">
-        <div className="container up preview-container">
-          <div className="illustrationCase col">
-            <img
-              src={process.env.PUBLIC_URL + props.picture}
-              alt={`Дело ${props.id}`}
-              loading="lazy"
-            />
-            <h3>{`Дело ${props.id}`}</h3>
-          </div>
-
-          <div className="col text-preview-container col">
-            <h3>Суть происшествия</h3>
-            <p className="crux">{props.text.case}</p>
-            <br />
-            <button
-              type="button"
-              className="read-more-btn buttonGen col"
-              onClick={handleCaseClick}
-            >
-              {caseState}
-            </button>
-          </div>
-        </div>
-
-        <div
-          className={`more-details-container ${caseState == "Читать далее" ? "hidden" : "details_shown"}`}
-        >
-          <div className="container up">
-            <div className="col">
-              <h3>Пострадавшие</h3>
-              <ul>
-                {props.text.victim?.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-            {isMobile && <br />}
-            <div className="col">
-              <h3>Правовое основание иска</h3>
-              <p className="align-left-mobile">{props.text?.legalBasis}</p>
-            </div>
-          </div>
-
-          <br />
-
-          <div className="col">
-            <h3>Решение суда</h3>
-            <p>{props.text?.courtDecision}</p>
-            <br />
-            <table>
-              {props.text.tableData?.map((item, index) => (
-                <tr
-                  key={item[0]}
-                  className={`${
-                    index !== props.text.tableData.length - 1
-                      ? "tr-divider"
-                      : ""
-                  }`}
-                >
-                  <td className="victim-td">
-                    <b>{item[0]}</b>
-                  </td>
-                  <td>
-                    {item[1]?.map((penalty) => (
-                      <ul style={{ listStyleType: "none" }} key={penalty}>
-                        <li className="no-marker">
-                          <tr className={isMobile && "col"}>
-                            <td className="penalty-sum">
-                              {formatWithRegex(penalty[0])}
-                            </td>
-                            <td className="penalty-fine">{penalty[1]}</td>
-                          </tr>
-                        </li>
-                      </ul>
-                    ))}
-                  </td>
-                </tr>
-              ))}
-            </table>
-          </div>
-          <br />
-          <div className="case-result col">
-            <h3>Итог дела</h3>
-            <p>{formatWithRegex(props.text.result)}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-//основной компонент
-export default function Cases({ windowWidth }) {
+export default function Cases() {
   const [currentCaseId, setCurrentCaseId] = useState(4);
   const currentCase = cases.find((caseItem) => caseItem.id === currentCaseId);
 
@@ -134,18 +18,19 @@ export default function Cases({ windowWidth }) {
       <br />
       <div className="textContainer">
         <p className="whiteText">
-          Наилучшее доказательство профессионализма — реальные дела и
-          судебные решения. В этом разделе вы можете ознакомиться с примерами
-          дел из нашей практики, которые мы успешно закрыли. Изучите, как мы
+          Наилучшее доказательство профессионализма — реальные дела и судебные
+          решения. В этом разделе вы можете ознакомиться с примерами дел из
+          нашей практики, которые мы успешно закрыли. Изучите, как мы
           добивались:
         </p>
         <ul className="whiteText">
           <li className="whiteText">
-            Защиты законных прав клиента при несоблюдении удовлетворения требований и
-            нарушении сроков сдачи проекта;
+            Защиты законных прав клиента при несоблюдении удовлетворения
+            требований и нарушении сроков сдачи проекта;
           </li>
           <li className="whiteText">
-            Полного взыскания справедливой компенсации за причинение морального ущерба;
+            Полного взыскания справедливой компенсации за причинение морального
+            ущерба;
           </li>
           <li className="whiteText">Поддержки при подаче апелляции.</li>
         </ul>
@@ -170,7 +55,11 @@ export default function Cases({ windowWidth }) {
           ))}
         </div>
         {currentCase && (
-          <CaseCard props={currentCase} windowWidth={windowWidth} />
+          <CaseCard
+            image={currentCase.image}
+            id={currentCase.id}
+            text={currentCase.text}
+          />
         )}
       </div>
     </section>

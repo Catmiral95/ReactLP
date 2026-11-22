@@ -1,0 +1,143 @@
+.chevronLeftContainer,
+.chevronRightContainer {
+  background-color: transparent;
+  position: absolute;
+  width: 50%;
+  height: 105%;
+  top: -0.75lh;
+  margin: 0;
+  z-index: 1;
+
+  @media (max-width: 1200px) {
+    top: -0.4lh;
+    height: 103%;
+  }
+}
+
+.chevronLeftContainer {
+  left: 0;
+  margin-left: 0%;
+
+  @media (min-width: 1200px) {
+    margin-left: 10%;
+  }
+}
+
+.chevronRightContainer {
+  right: 0;
+
+  @media (min-width: 1200px) {
+    margin-right: 10%;
+  }
+}
+
+/* Стрелки */
+
+.arrowsContainer {
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.arrowsButton {
+  background-color: #775353;
+  padding: 0.6rem 1.2rem;
+  border-radius: 2px;
+  border: none;
+  width: fit-content;
+  height: fit-content;
+  z-index: 2;
+  transition-duration: 0.3s;
+}
+
+.arrowsButton:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.arrowsButton:active {
+  transform: scale(0.9);
+}
+
+/* Должны идти после .arrowsButton, чтобы сохранить rotate */
+.chevronPrev {
+  transform: rotate(-180deg);
+}
+
+.chevronNext {
+  transform: rotate(0deg);
+}
+
+.chevronPrev:hover {
+  transform: scale(1.1) rotate(-180deg);
+}
+
+.chevronPrev:active {
+  transform: scale(0.9) rotate(-180deg);
+}
+
+/* Анимации */
+
+.slideRightOut {
+  animation: slideRightOut 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.slideLeftOut {
+  animation: slideLeftOut 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.slideRightIn {
+  animation: slideRightIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.slideLeftIn {
+  animation: slideLeftIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.fadeIn {
+  animation: fadeIn 2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@keyframes slideLeftOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-23%);
+  }
+}
+
+@keyframes slideRightOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(23%);
+  }
+}
+
+@keyframes slideLeftIn {
+  from {
+    transform: translateX(50px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRightIn {
+  from {
+    transform: translateX(-50px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

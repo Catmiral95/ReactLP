@@ -3,7 +3,7 @@
     "name": "Артемьев Артем",
     "position": "Основатель компании",
     "description": "Обширный опыт в различных отраслях права. Специализируется на помощи при ДТП, имущественных и иных спорах. Стаж — более 10 лет.",
-    "picture": "/images/LiderPravaPhotos/lawyer1.jpg",
+    "picture": "src/assets/images/LiderPravaPhotos/lawyer1.jpg",
     "id": 1
   },
 
@@ -11,7 +11,7 @@
     "name": "Мамаев Мурад",
     "position": "Юрист",
     "description": "Полное сопровождение дел по автоинцидентам, трудовым, страховым и иным видам споров. Опыт практической работы — более 7 лет.",
-    "picture": "/images/LiderPravaPhotos/lawyer3.jpg",
+    "picture": "src/assets/images/LiderPravaPhotos/lawyer3.jpg",
     "id": 2
   },
 
@@ -19,14 +19,14 @@
     "name": "Моисеева Виктория",
     "position": "Юрист",
     "description": "Широкая специализация в трудовых спорах, а также по проблемам урегулирования потребительских и иных видов споров. Стаж — более 5 лет.",
-    "picture": "/images/LiderPravaPhotos/lawyer4.jpg",
+    "picture": "src/assets/images/LiderPravaPhotos/lawyer4.jpg",
     "id": 3
   },
   {
     "name": "Морозова Яна",
     "position": "Юрист",
     "description": "Эксперт по трудовым, медицинским и другим видам судебных разбирательств со стажем более 7 лет юридической практики.",
-    "picture": "/images/LiderPravaPhotos/lawyer2.jpg",
+    "picture": "src/assets/images/LiderPravaPhotos/lawyer2.jpg",
     "id": 4
   }
 ]

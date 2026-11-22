@@ -1,6 +1,7 @@
-import "./Consent.css";
+import styles from "./consent.module.css";
 import { useState, useEffect } from "react";
 import { Link } from "react-router";
+import closeSign from "../../assets/images/closeSign.svg";
 
 export default function Consent() {
   const [showModal, setShowModal] = useState(false);
@@ -33,33 +34,24 @@ export default function Consent() {
   }
 
   return (
-    <div id="privacyModal" className="cns-area" onClick={handleOutsideClick}>
-      <div className="consent">
-        <div className="consent-content">
-          <p className="poltext">
-            Вы используете сайт на условиях Соглашения об обработке персональных
-            данных и Политики Конфиденциальности.
-          </p>
-          <div className="consent-buttons">
-            <button id="acceptButton" onClick={handleAccept}>
-              ОК
-            </button>
-            <Link
-              to="/consent"
-              id="privpolicy"
-              style={{ textDecoration: "none" }}
-            >
-              Соглашение
-            </Link>
-          </div>
+    <div className={styles.container} onClick={handleOutsideClick}>
+      <div>
+        <p className={styles.p}>
+          Вы используете сайт на условиях Соглашения об обработке персональных
+          данных и Политики Конфиденциальности.
+        </p>
+        <div className={styles.buttons}>
+          <button className={styles.button} onClick={handleAccept}>
+            ОК
+          </button>
+          <Link to="/consent" className={`${styles.link} ${styles.button}`}>
+            Соглашение
+          </Link>
         </div>
-        <button className="closeCross cns-cross" onClick={handleClose}>
-          <img
-            src={process.env.PUBLIC_URL + "/images/closeSign.svg"}
-            alt="Закрыть"
-          />
-        </button>
       </div>
+      <button className={`closeCross ${styles.close}`} onClick={handleClose}>
+        <img src={closeSign} alt="Закрыть" />
+      </button>
     </div>
   );
 }

@@ -1,8 +1,8 @@
-.scroll-btn {
+.button {
   position: fixed;
   top: 85vh;
   left: 92vw;
-  height:fit-content;
+  height: fit-content;
   width: fit-content;
   padding: 1dvw 0rem;
   z-index: 1000;
@@ -17,12 +17,11 @@
     transform: scale(1.45);
   }
 }
-
-.scroll-btn img {
+.button img {
   transform: rotate(-90deg) scale(0.5);
 }
 
-.scroll-btn:hover {
+.button :hover {
   opacity: 100%;
   background-color: royalblue;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);

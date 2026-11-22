@@ -1,0 +1,71 @@
+.dialog[open]::backdrop {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.dialog[open] {
+  background-color: var(--main);
+  padding: 1.2rem;
+  transform: translate(-50%);
+  left: 50%;
+  top: 5dvh;
+  width: 100%;
+
+  @media (min-width: 1200px) {
+    width: 55%;
+    padding: 1.2rem 2rem;
+  }
+}
+
+.dialog[open] textarea {
+  height: 5lh;
+}
+
+@keyframes slideInDown {
+  /*ВЖУХ сверху*/
+  from {
+    transform: translate(-50%, -100%);
+  }
+  to {
+    transform: translate(-50, -2%);
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.h2 {
+  flex-grow: 2;
+}
+
+.img {
+  cursor: pointer;
+  transform: scale(1.5);
+}
+
+@-webkit-keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
