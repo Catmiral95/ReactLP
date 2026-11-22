@@ -66,7 +66,7 @@ export default function Header() {
       <div className={"row navbar_container"}>
         <Navbar onClick={handleDialogClick} />
         <div className="hours-and-phone-container col">
-          <p id="working-hours">пн-пт 9:00 - 18: 00</p>
+          <p id="working-hours">пн-пт 9:00 - 18:00</p>
           <p>
             <a href="tel:+79603128406" title="Телефон для связи">
               +7(960)312-84-06

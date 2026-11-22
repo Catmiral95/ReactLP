@@ -21,7 +21,7 @@
   transform: rotate(-90deg) scale(0.5);
 }
 
-.button :hover {
+.button:hover {
   opacity: 100%;
   background-color: royalblue;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
