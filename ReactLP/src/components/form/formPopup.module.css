@@ -9,6 +9,7 @@
   left: 50%;
   top: 5dvh;
   width: 100%;
+  animation: slide-In-down 0.6s ease-in-out;
 
   @media (min-width: 1200px) {
     width: 55%;
@@ -18,16 +19,6 @@
 
 .dialog[open] textarea {
   height: 5lh;
-}
-
-@keyframes slideInDown {
-  /*ВЖУХ сверху*/
-  from {
-    transform: translate(-50%, -100%);
-  }
-  to {
-    transform: translate(-50, -2%);
-  }
 }
 
 .container {
@@ -45,27 +36,12 @@
   transform: scale(1.5);
 }
 
-@-webkit-keyframes text-focus-in {
-  0% {
-    -webkit-filter: blur(12px);
-    filter: blur(12px);
-    opacity: 0;
+@keyframes slide-In-down {
+  /*ВЖУХ сверху*/
+  from {
+    transform: translate(-50%, -100%);
   }
-  100% {
-    -webkit-filter: blur(0px);
-    filter: blur(0px);
-    opacity: 1;
-  }
-}
-@keyframes text-focus-in {
-  0% {
-    -webkit-filter: blur(12px);
-    filter: blur(12px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-filter: blur(0px);
-    filter: blur(0px);
-    opacity: 1;
+  to {
+    transform: translate(-50, -2%);
   }
 }
